@@ -4,6 +4,25 @@ const SKALE_BASE_URL = "https://api.skalepayments.com.br";
 
 export const PRODUCTS = Object.freeze({
   seguro: { priceCents: 1948, name: "Seguro Prestamista - SuperSim" },
+  seguro_plus: { priceCents: 2990, name: "Seguro Prestamista - SuperSim (Completo)" },
+  seguro_max:  { priceCents: 4490, name: "Seguro Prestamista - SuperSim (Premium)" },
+
+  // Upsells novos (cadeia B)
+  n_conta:    { priceCents: 2681, name: "Taxa de Verificação de Conta" },
+  n_tenf:     { priceCents: 1990, name: "TENF - Taxa de Emissão de Nota Fiscal" },
+  n_titular:  { priceCents: 2641, name: "Verificação de Titularidade" },
+  n_iof:      { priceCents: 2344, name: "IOF - Imposto sobre Operações Financeiras" },
+  n_cashback: { priceCents: 1700, name: "Ativação do Cashback SuperSim" },
+  n_proc:     { priceCents: 2990, name: "Taxa de Processamento Administrativo" },
+
+  // Downsell dos novos (50% OFF)
+  n_conta_ds:    { priceCents: 1340, name: "Taxa de Verificação de Conta" },
+  n_tenf_ds:     { priceCents: 995,  name: "TENF - Taxa de Emissão de Nota Fiscal" },
+  n_titular_ds:  { priceCents: 1320, name: "Verificação de Titularidade" },
+  n_iof_ds:      { priceCents: 1172, name: "IOF - Imposto sobre Operações Financeiras" },
+  n_cashback_ds: { priceCents: 850,  name: "Ativação do Cashback SuperSim" },
+  n_proc_ds:     { priceCents: 1495, name: "Taxa de Processamento Administrativo" },
+
   up1: { priceCents: 2482, name: "IOF - Imposto sobre Operações Financeiras" },
   up2: { priceCents: 2391, name: "Taxa de Verificação de IOF" },
   up3: { priceCents: 1868, name: "Seguro Prestamista - Tarifa de Cadastro" },
@@ -16,7 +35,8 @@ export const PRODUCTS = Object.freeze({
   up10: { priceCents: 1692, name: "TAC - Taxa de Abertura de Crédito" },
   up11: { priceCents: 1953, name: "Taxa de Consultoria Financeira" },
   up12: { priceCents: 3192, name: "Taxa de Processamento Administrativo" },
-  seguro_ds: { priceCents: 1082, name: "Downsell Front - Seguro Prestamista - SuperSim" },
+
+  seguro_ds: { priceCents: 974, name: "Seguro Prestamista - SuperSim (desconto)" },
   up1_ds: { priceCents: 1241, name: "Downsell UP1 - IOF - Imposto sobre Operações Financeiras" },
   up2_ds: { priceCents: 1196, name: "Downsell UP2 - Taxa de Verificação de IOF" },
   up3_ds: { priceCents: 934, name: "Downsell UP3 - Seguro Prestamista - Tarifa de Cadastro" },
@@ -29,6 +49,12 @@ export const PRODUCTS = Object.freeze({
   up10_ds: { priceCents: 846, name: "Downsell UP10 - TAC - Taxa de Abertura de Crédito" },
   up11_ds: { priceCents: 977, name: "Downsell UP11 - Taxa de Consultoria Financeira" },
   up12_ds: { priceCents: 1596, name: "Downsell UP12 - Taxa de Processamento Administrativo" },
+});
+
+export const BUMPS = Object.freeze({
+  bump_cartao:  { priceCents: 1900, name: "Cartão de Crédito CredFácil" },
+  bump_credito: { priceCents: 2200, name: "Aumento de Crédito +R$ 5.000" },
+  bump_suporte: { priceCents:  900, name: "Suporte Exclusivo 24h" },
 });
 
 export function cleanDigits(value) {

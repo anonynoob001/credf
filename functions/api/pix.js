@@ -1,4 +1,4 @@
-import { PRODUCTS, cleanDigits, cleanText, sendJson, skaleRequest } from "../_lib/skale.js";
+import { PRODUCTS, BUMPS, cleanDigits, cleanText, sendJson, skaleRequest } from "../_lib/skale.js";
 import { buildUtmifyOrder, clientIp, sendUtmifyOrder } from "../_lib/utmify.js";
 import { sendMetaEvent } from "../_lib/meta.js";
 import { initEnv } from "../_lib/config.js";
@@ -80,10 +80,31 @@ export async function onRequestPost(context) {
       event_source_url: cleanText(body.sourceUrl, 2048),
     };
 
+    const bumpKeys = Array.isArray(body.bumps) ? body.bumps.filter((k) => BUMPS[k]) : [];
+    const bumpItems = bumpKeys.map((k) => ({
+      title: BUMPS[k].name,
+      unitPrice: BUMPS[k].priceCents,
+      quantity: 1,
+      tangible: false,
+      externalRef: BUMPS[k].name,
+    }));
+    const bumpTotal = bumpItems.reduce((s, it) => s + it.unitPrice, 0);
+    const totalAmount = product.priceCents + bumpTotal;
+    const allItems = [
+      {
+        title: product.name,
+        unitPrice: product.priceCents,
+        quantity: 1,
+        tangible: false,
+        externalRef: product.name,
+      },
+      ...bumpItems,
+    ];
+
     const transaction = await skaleRequest("/transactions", {
       method: "POST",
       body: JSON.stringify({
-        amount: product.priceCents,
+        amount: totalAmount,
         paymentMethod: "pix",
         postbackUrl: `${baseUrl}/api/skale-webhook`,
         pix: { expiresInDays: 1 },
@@ -93,13 +114,7 @@ export async function onRequestPost(context) {
           phone,
           document: { number: cpf, type: "cpf" },
         },
-        items: [{
-          title: product.name,
-          unitPrice: product.priceCents,
-          quantity: 1,
-          tangible: false,
-          externalRef: product.name,
-        }],
+        items: allItems,
         metadata,
       }),
     });
@@ -116,7 +131,7 @@ export async function onRequestPost(context) {
       promise: sendUtmifyOrder(buildUtmifyOrder({
         orderId: txnId,
         status: "waiting_payment",
-        product: { id: upKey, ...product },
+        product: { id: upKey, ...product, priceCents: totalAmount },
         customer: { name, email, phone, document: cpf },
         tracking: metadata,
         createdAt: metadata.createdAt,
@@ -140,7 +155,7 @@ export async function onRequestPost(context) {
       trackingTasks.push({ provider: "meta", event: "InitiateCheckout", promise: sendMetaEvent({
         eventName: "InitiateCheckout",
         eventId: initiateCheckoutId,
-        value: product.priceCents / 100,
+        value: totalAmount / 100,
         request,
         eventSourceUrl: sourceUrl,
         user: metaUser,
@@ -172,8 +187,8 @@ export async function onRequestPost(context) {
       success: true,
       txnId,
       qrcode,
-      qrcodeImage: transaction.pix.qrcodeImage || null,
-      amount: product.priceCents / 100,
+      qrcodeImage: (transaction.pix && transaction.pix.qrcodeImage) || null,
+      amount: totalAmount / 100,
       status: transaction.status || "waiting_payment",
     });
   } catch (error) {

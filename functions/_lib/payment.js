@@ -51,10 +51,11 @@ export async function syncPaidTransaction(transaction, request, fallback = {}) {
     return { synced: false, reason: "missing_order_context" };
   }
 
+  const finalAmountCents = Number(transaction.amount) || product.priceCents;
   const utmifyPromise = sendUtmifyOrder(buildUtmifyOrder({
     orderId: transactionId,
     status: "paid",
-    product: { id: offer, ...product },
+    product: { id: offer, ...product, priceCents: finalAmountCents },
     customer,
     tracking: metadata,
     createdAt: metadata.createdAt || transaction.createdAt || fallback.createdAt,
@@ -64,7 +65,7 @@ export async function syncPaidTransaction(transaction, request, fallback = {}) {
   const metaPromise = sendMetaEvent({
     eventName: "Purchase",
     eventId: transactionId,
-    value: product.priceCents / 100,
+    value: finalAmountCents / 100,
     request,
     eventSourceUrl: metadata.event_source_url,
     user: {
