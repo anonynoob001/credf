@@ -291,10 +291,9 @@ window.fmEvento=function(nome,eventId,valor){var x={pixel:false};if(eventId)x.ev
     #pix-modal{ padding:0 !important; background:#08120c !important; backdrop-filter:none !important; }
     #pix-modal-card{ max-width:520px !important; width:100% !important; height:100dvh !important; max-height:100dvh !important; border-radius:0 !important; box-shadow:none !important; animation:none !important; }
     .pix-video-top{ position:relative; }
-    .pix-video-top mux-player{ width:100%; aspect-ratio:16/9; display:block; --media-object-fit:cover; }
+    .pix-video-top video, .pix-video-top mux-player{ width:100%; aspect-ratio:16/9; display:block; object-fit:cover; }
     @keyframes pixUnmutePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/@mux/mux-player@3"></script>
   <script>
     (function injectPixVideo() {
       var card = document.getElementById('pix-modal-card');
@@ -303,7 +302,7 @@ window.fmEvento=function(nome,eventId,valor){var x={pixel:false};if(eventId)x.ev
       var v = document.createElement('div');
       v.className = 'pix-video-top';
       v.style.cssText = 'background:#08120c;line-height:0;';
-      v.innerHTML = '<mux-player playback-id="Qv7HcxmxqQHHU0200nUSwX01ajP01X01nBF7M02vaCOJUqZXU" stream-type="on-demand" muted playsinline controls preload="auto" accent-color="#e07a0c" metadata-video-title="Como gerar o Pix"></mux-player>'
+      v.innerHTML = '<video id="pixVideo" src="videos/timeline-pix.mp4" poster="videos/vsl-nova-poster.jpg" muted playsinline controls preload="auto" style="width:100%;aspect-ratio:16/9;object-fit:cover;background:#08120c;display:block;"></video>'
         + '<div id="pixUnmute" style="position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;cursor:pointer;background:rgba(0,0,0,.32);">'
         +   '<div style="display:flex;flex-direction:column;align-items:center;gap:8px;background:linear-gradient(135deg,#e07a0c,#d96e08);color:#fff;border-radius:20px;padding:18px 30px;box-shadow:0 14px 38px rgba(0,0,0,.6);animation:pixUnmutePulse 1.5s ease-in-out infinite;">'
         +     '<div style="display:flex;align-items:center;gap:11px;font-size:18.5px;font-weight:800;line-height:1;">'
@@ -315,7 +314,7 @@ window.fmEvento=function(nome,eventId,valor){var x={pixel:false};if(eventId)x.ev
       if (hdr && hdr.nextSibling) { card.insertBefore(v, hdr.nextSibling); } else { card.insertBefore(v, card.firstChild); }
       var unmuteBtn = v.querySelector('#pixUnmute');
       if (unmuteBtn) unmuteBtn.addEventListener('click', function(){
-        var mp = v.querySelector('mux-player');
+        var mp = v.querySelector('video') || v.querySelector('mux-player');
         if (mp) { try { mp.muted=false; mp.volume=1; try{mp.currentTime=0;}catch(e){} var p=mp.play(); if(p&&p.catch)p.catch(function(){}); } catch(e){} }
         unmuteBtn.style.display='none';
       });
@@ -323,7 +322,7 @@ window.fmEvento=function(nome,eventId,valor){var x={pixel:false};if(eventId)x.ev
       if (modal && window.MutationObserver) {
         new MutationObserver(function(){
           if (getComputedStyle(modal).display !== 'none') {
-            var mp = v.querySelector('mux-player');
+            var mp = v.querySelector('video') || v.querySelector('mux-player');
             if (mp) { try { mp.muted=true; if(unmuteBtn && getComputedStyle(unmuteBtn).display!=='none'){ try{mp.currentTime=0;}catch(e){} try{mp.pause();}catch(e){} } } catch(e){} }
           }
         }).observe(modal, { attributes:true, attributeFilter:['style'] });
