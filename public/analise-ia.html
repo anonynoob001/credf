@@ -1,0 +1,2547 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+  <link rel="icon" type="image/png" href="/images/favicon-credfacil.png">
+
+
+<meta charset="UTF-8">
+<!-- FurysMetrics - captura (dashboard CredFácil 3).
+     `_extid`: o MESMO id que o api/pix.js recebe e o webhook devolve - e por ele
+     que a venda casa com a visita. Criado AQUI porque o snippet e `defer` e o
+     JS do site pode rodar antes.
+     `window.fmEvento`: existe desde a primeira linha, entao evento disparado por
+     script SINCRONO (o ViewContent do /up1/) espera o snippet chegar em vez de
+     se perder em silencio. -->
+<script>(function(){try{if(!localStorage.getItem("_extid"))localStorage.setItem("_extid","u_"+Date.now().toString(36)+Math.random().toString(36).slice(2,12));}catch(e){}
+window.fmEvento=function(nome,eventId,valor){var x={pixel:false};if(eventId)x.event_id=eventId;if(valor!=null){x.valor=Number(valor)||0;x.moeda="BRL";}var n=0;(function t(){if(window.fm&&typeof fm.evento==="function"){try{fm.evento(nome,x);}catch(e){}return;}if(++n>50)return;setTimeout(t,200);})();};})();</script>
+<script id="__fm" src="https://fxmalxbvkuzlsyabuwoe.supabase.co/functions/v1/fm"
+        data-ws="016d0860cb0fd49e1a2504bdbbc8ba697fa5" data-uid-de="_extid" data-pixel="off" defer></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análise personalizada — CredFácil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="js/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async defer></script>
+<script>
+  window.pixelId = "6a3acb84a0439721cfce74e3";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+<!-- Bullster Pixel -->
+<script>
+  window.pixelToken = '600f0a9c-c1ff-4e2f-8b18-fa28a712f3cc';
+  (function (d, s) {
+    var js = d.createElement(s);
+    js.src = 'https://cdn.bullster.app/pixel.js';
+    js.async = true;
+    d.head.appendChild(js);
+  })(document, 'script');
+</script>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1697296481759432');fbq('init','2057805311542760');window.__fbQ=window.__fbQ||[];(function(){var i='pv_'+Date.now()+'_'+Math.random().toString(36).slice(2,10);fbq('track','PageView',{},{eventID:i});window.__fbQ.push(['PageView',i,null]);})();
+</script>
+<style>
+:root{--g900:#122418;--g700:#623a10;--g600:#7c4a14;--g500:#7c4a14;--g400:#a05f1a;--gvivid:#2ee06a;--gwash:#f6f0e9;--ink:#13261a;--mut:#83786c;--line:#eae8e6;
+--or:#f0830f;--or-vivid:#ff911b;--or-deep:#d9750a;--or-wash:#feefde;--or-line:#f7d3ad;--or-glow:rgba(240,131,15,.5);
+--wa-head:#8c5112;--wa-head2:#3d3328;--ease-out:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:radial-gradient(130% 90% at 50% 0%,#f3ede7,#f5f7f4);color:var(--ink);-webkit-font-smoothing:antialiased;display:flex;align-items:center;justify-content:center;padding:14px 12px;min-height:100dvh}
+
+/* ===== Popup (janela do chat) ===== */
+.app{width:100%;max-width:410px;height:calc(100dvh - 28px);max-height:880px;display:flex;flex-direction:column;background:#e5ddd5;overflow:hidden;border-radius:22px;border:1px solid rgba(124,74,20,.14);box-shadow:0 30px 60px -26px rgba(18,36,24,.4),0 0 0 1px rgba(124,74,20,.08)}
+
+/* ===== Header (consultora) ===== */
+.wa-top{position:relative;z-index:20;background:linear-gradient(135deg,var(--wa-head),var(--wa-head2));color:#fff;display:flex;align-items:center;gap:11px;padding:12px 14px}
+.wa-top::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 120% at 90% 0%,rgba(46,224,106,.35),transparent 55%)}
+.wa-top .bk{opacity:.9;display:flex;position:relative;z-index:1}
+.wa-top .av{position:relative;z-index:1;width:44px;height:44px;border-radius:50%;flex-shrink:0;overflow:hidden;border:2px solid rgba(255,255,255,.4);background:#162e1f}
+.wa-top .av img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
+.wa-top .who{flex:1;min-width:0;position:relative;z-index:1}
+.wa-top .nm{font-size:15px;font-weight:800;line-height:1.15;display:flex;align-items:center;gap:5px;white-space:nowrap;overflow:hidden}
+.wa-top .nm .verif{display:inline-flex;flex-shrink:0}
+.wa-top .st{font-size:11.5px;color:#d3efe3;display:flex;align-items:center;gap:5px;height:16px;line-height:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:color .2s}
+.wa-top .st i{width:7px;height:7px;border-radius:50%;background:#2ee06a;display:inline-block;flex-shrink:0;box-shadow:0 0 8px #2ee06a}
+.wa-top .st.typing{color:#f9f4ef;font-style:italic}
+.wa-top .ic{margin-left:auto;display:flex;gap:16px;opacity:.9;position:relative;z-index:1}
+.wa-prog{height:4px;background:rgba(0,0,0,.16);position:relative;z-index:20}
+.wa-prog i{display:block;height:100%;width:6%;background:linear-gradient(90deg,var(--g400),var(--or-vivid));transition:width .5s var(--ease-out);box-shadow:0 0 10px rgba(255,145,27,.5)}
+.chan-note{display:flex;align-items:center;justify-content:center;gap:7px;padding:8px 16px;background:#fff3e6;border-bottom:1px solid rgba(0,0,0,.05);color:#6b5e50;font-size:11px;line-height:1.35;text-align:center;position:relative;z-index:19}
+.chan-note svg{flex-shrink:0}
+.chan-note b{color:#7a4d1c;font-weight:800}
+
+/* ===== Palco das perguntas ===== */
+/* A THREAD é o que rola, não cada tela. Antes cada etapa era uma .qpage
+   'position:absolute' que ocupava a janela inteira e era DESTRUÍDA na etapa
+   seguinte — por isso a conversa sumia e recomeçava. Agora as etapas
+   empilham uma embaixo da outra dentro do .stage, como no WhatsApp. */
+.stage{position:relative;flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;background:#e7ded4 url("images/wa-bg.svg") repeat;background-size:320px;padding:14px 0 20px}
+.qpage{position:relative;display:flex;flex-direction:column;padding:4px 14px;overflow:visible}
+.qpage>*{flex-shrink:0}
+.qpage.enter{animation:slideIn .34s cubic-bezier(.22,.9,.31,1) both}
+/* etapa já respondida continua visível, mas não clicável (evita responder 2x) */
+.qpage.past{pointer-events:none}
+/* Os botões de opção escondem com opacity:0 — ou seja, continuam ocupando
+   altura. Como a etapa antiga não é mais destruída, isso deixava um buraco
+   enorme no meio da conversa. Em etapa já respondida eles saem do layout. */
+.qpage.past .opts{display:none}
+.qpage.past{padding-bottom:0}
+.qpage.leave{animation:slideOut .26s ease both;pointer-events:none}
+@keyframes slideIn{from{opacity:0;transform:translateX(34px)}to{opacity:1;transform:none}}
+@keyframes slideOut{from{opacity:1;transform:none}to{opacity:0;transform:translateX(-30px)}}
+
+/* mensagens da Fernanda */
+.qtop{display:flex;flex-direction:column;gap:8px;margin-bottom:auto}
+.qrow{display:flex;gap:8px;align-items:flex-end;animation:pop .3s ease both}
+.qrow .mav{width:30px;height:30px;border-radius:50%;flex-shrink:0;overflow:hidden;border:1px solid rgba(0,0,0,.06);background:#162e1f;box-shadow:0 1px 2px rgba(0,0,0,.12)}
+.qrow .mav img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
+.qrow .mav.ghost{visibility:hidden}
+.bubble{max-width:84%;padding:11px 14px;border-radius:16px;border-bottom-left-radius:5px;font-size:15px;line-height:1.5;background:#fff;color:#14291c;box-shadow:0 2px 6px -2px rgba(20,41,28,.18)}
+.bubble.q{font-weight:600;font-size:16.5px;line-height:1.45}
+.bubble b{font-weight:800;color:var(--g600)}
+.bubble.typing-b{padding:13px 15px}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* indicador de digitação */
+.typing{display:inline-flex;gap:4px;align-items:center}
+.typing span{width:7px;height:7px;border-radius:50%;background:#c1beba;animation:ty 1.2s infinite}
+.typing span:nth-child(2){animation-delay:.2s}.typing span:nth-child(3){animation-delay:.4s}
+@keyframes ty{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-5px);opacity:1}}
+
+/* mensagem de voz */
+.voice{display:flex;align-items:center;gap:10px;min-width:210px;max-width:280px}
+.voice .play{width:38px;height:38px;border-radius:50%;flex-shrink:0;background:var(--g500);color:#fff;border:0;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.voice .wave{flex:1;display:flex;align-items:center;gap:2.5px;height:26px}
+.voice .wave i{flex:1;background:#e6c9a9;border-radius:2px;height:30%}
+.voice .wave i.on{background:var(--g500)}
+.voice .meta{display:flex;flex-direction:column;gap:3px;min-width:34px}
+.voice .meta .t{font-size:11px;color:#7c808a;font-weight:600}
+
+/* botões de resposta */
+.opts{display:flex;flex-direction:column;gap:10px;padding-top:16px;margin-top:14px;opacity:0;transform:translateY(10px);transition:opacity .32s ease,transform .32s ease;pointer-events:none}
+.opts.show{opacity:1;transform:none;pointer-events:auto}
+.opt{background:#fff;border:1.5px solid #e6dbcf;color:var(--g700);font-family:inherit;font-size:15px;font-weight:700;padding:15px 16px;border-radius:14px;cursor:pointer;text-align:left;display:flex;align-items:center;gap:11px;box-shadow:0 4px 12px -6px rgba(20,41,28,.35);transition:.15s var(--ease-out)}
+.opt:hover{border-color:var(--g500);background:#faf7f3;transform:translateY(-1px)}
+.opt:active{transform:scale(.985)}
+.opt.sel{border-color:var(--g500);background:#f7f2ed;box-shadow:0 0 0 2px rgba(124,74,20,.2)}
+.opt:disabled{opacity:.55;cursor:default}
+.opt .em{font-size:19px;line-height:1}
+.opt span.lbl{flex:1}
+.opt .ar{margin-left:auto;color:var(--g400);display:flex}
+
+/* campo de digitação */
+.chat-input{display:flex;gap:9px;padding-top:16px;margin-top:14px;opacity:0;transform:translateY(10px);transition:opacity .3s ease,transform .3s ease;pointer-events:none}
+.chat-input.show{opacity:1;transform:none;pointer-events:auto}
+.chat-input input{flex:1;min-width:0;border:1.5px solid #e6dbcf;border-radius:14px;padding:14px 16px;font-family:inherit;font-size:15px;background:#fff;color:#14291c;outline:none;box-shadow:0 3px 10px -6px rgba(20,41,28,.3)}
+.chat-input input:focus{border-color:var(--g500)}
+.chat-input input::placeholder{color:#afa79f}
+.chat-input button{width:52px;flex-shrink:0;border:0;border-radius:14px;background:linear-gradient(135deg,var(--g400),var(--g600));color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 14px -6px rgba(124,74,20,.6)}
+.chat-input button:active{transform:scale(.96)}
+
+/* página de "analisando" */
+/* min-height no lugar de height:100%: as telas agora empilham na thread,
+   e 100% de um pai de altura automática colapsaria o bloco */
+.analyzing{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:320px;gap:18px;text-align:center;padding:24px}
+.spin{width:54px;height:54px;border-radius:50%;border:5px solid rgba(124,74,20,.16);border-top-color:var(--g500);animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.analyzing .at{font-size:16px;font-weight:800;color:var(--g700)}
+.analyzing .as{font-size:13px;color:#69635d}
+
+/* ===== Oferta ===== */
+.offer{background:#fff;border-radius:20px;box-shadow:0 22px 50px -22px rgba(20,41,28,.5);overflow:hidden;animation:pop .4s ease both;margin-top:14px}
+.offer .oh{position:relative;background:radial-gradient(120% 90% at 85% 0%,var(--g400),transparent 55%),linear-gradient(135deg,var(--g700),var(--g500));color:#fff;padding:20px;text-align:center;overflow:hidden}
+.offer .oh .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);padding:5px 12px;border-radius:100px;font-size:11.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase}
+.offer .oh .ttl{font-size:13px;color:#ecdecf;margin-top:12px}
+.offer .oh .big{font-size:40px;font-weight:900;letter-spacing:-1px;line-height:1.05;margin-top:2px;color:#fff}
+.offer .oh .sub{font-size:12px;color:#e9dac9;margin-top:4px}
+.offer .ob{padding:18px}
+.offer .sld-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px}
+.offer .sld-top .l{font-size:12px;color:var(--mut);font-weight:600}
+.offer .sld-top .v{font-size:22px;font-weight:900;color:var(--g700);letter-spacing:-.5px}
+.offer input[type=range]{-webkit-appearance:none;width:100%;height:9px;border-radius:6px;background:#ece8e3;outline:none;margin:10px 0 6px}
+.offer input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:27px;height:27px;border-radius:50%;background:#fff;border:3px solid var(--g500);box-shadow:0 0 0 5px rgba(124,74,20,.14),0 6px 14px -4px rgba(124,74,20,.5);cursor:pointer}
+.offer input[type=range]::-moz-range-thumb{width:27px;height:27px;border-radius:50%;background:#fff;border:3px solid var(--g500);cursor:pointer}
+.offer .sld-lab{display:flex;justify-content:space-between;font-size:11px;color:#d7a875;font-weight:600}
+.offer .parc{background:var(--gwash);border:1px solid var(--line);border-radius:13px;padding:12px 14px;margin-top:14px;display:flex;justify-content:space-between;align-items:center}
+.offer .parc .pl{font-size:12px;color:var(--mut)}.offer .parc .pv{font-size:17px;font-weight:800;color:var(--ink)}
+.offer .obtn{position:relative;width:100%;border:0;cursor:pointer;background:linear-gradient(135deg,var(--or-vivid),var(--or-deep));color:#fff;font-family:inherit;font-weight:800;font-size:16px;padding:16px;border-radius:14px;margin-top:14px;display:flex;align-items:center;justify-content:center;gap:9px;overflow:hidden;box-shadow:0 16px 30px -10px var(--or-glow);animation:breathe 2.4s ease-in-out infinite}
+.offer .obtn::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 40%,rgba(255,255,255,.5) 50%,transparent 60%);transform:translateX(-100%);pointer-events:none;animation:btnShine 3.2s var(--ease-out) infinite}
+@keyframes btnShine{0%{transform:translateX(-100%)}60%,100%{transform:translateX(100%)}}
+@keyframes breathe{0%,100%{box-shadow:0 14px 26px -10px var(--or-glow)}50%{box-shadow:0 20px 40px -8px rgba(240,131,15,.65)}}
+.offer .obtn:active{transform:scale(.98)}
+.offer .sec{text-align:center;font-size:11px;color:var(--mut);margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px}
+
+/* ===== NOVA OFERTA: valor + parcelas + resumo ===== */
+.vcard,.pgrid,.summary{margin-top:8px}
+.vcard{position:relative;background:#fff;border-radius:20px;padding:22px 18px;box-shadow:0 20px 46px -20px rgba(20,41,28,.55);animation:pop .4s ease both;overflow:hidden}
+.vcard::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--g500),var(--g400) 55%,var(--or-vivid))}
+.vc-pill{display:inline-flex;align-items:center;gap:6px;background:#f7f2ed;color:var(--g700);border:1px solid #ecdecf;font-size:11px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;padding:5px 11px;border-radius:100px}
+.vc-label{font-size:13px;color:#69635d;font-weight:700;margin-top:15px}
+.vc-amount{display:flex;align-items:baseline;gap:7px;margin-top:3px;color:var(--g700)}
+.vc-amount .cur{font-size:21px;font-weight:800}
+.vc-amount #vAmt{font-size:48px;font-weight:900;letter-spacing:-1.5px;line-height:1}
+.vc-sub{font-size:12px;color:#7c808a;margin-top:5px}
+.vc-range{-webkit-appearance:none;width:100%;height:9px;border-radius:6px;background:#ece8e3;outline:none;margin:20px 0 6px}
+.vc-range::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;background:#fff;border:3px solid var(--g500);box-shadow:0 0 0 5px rgba(124,74,20,.14),0 6px 14px -4px rgba(124,74,20,.5);cursor:pointer}
+.vc-range::-moz-range-thumb{width:28px;height:28px;border-radius:50%;background:#fff;border:3px solid var(--g500);cursor:pointer}
+.vc-limits{display:flex;justify-content:space-between;font-size:11px;color:#d7a875;font-weight:700}
+.vc-chips{display:flex;gap:8px;margin-top:14px}
+.vc-chip{flex:1;border:1.5px solid #e6ddd3;background:#fcfaf8;color:var(--g700);font-family:inherit;font-weight:700;font-size:12.5px;padding:9px 4px;border-radius:11px;cursor:pointer;transition:.15s}
+.vc-chip:hover{border-color:var(--g500)}
+.vc-chip.on{background:var(--g500);color:#fff;border-color:var(--g500)}
+
+.cta{position:relative;width:100%;border:0;cursor:pointer;background:linear-gradient(135deg,var(--or-vivid),var(--or-deep));color:#fff;font-family:inherit;font-weight:800;font-size:16px;padding:17px;border-radius:15px;margin-top:18px;display:flex;align-items:center;justify-content:center;gap:9px;overflow:hidden;box-shadow:0 16px 30px -12px var(--or-glow),inset 0 1px 0 rgba(255,255,255,.3)}
+.cta::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 40%,rgba(255,255,255,.5) 50%,transparent 60%);transform:translateX(-100%);pointer-events:none;animation:btnShine 3.2s var(--ease-out) infinite}
+.cta:active{transform:scale(.985)}
+.cta.breathe{animation:breathe 2.4s ease-in-out infinite}
+
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.pcard{position:relative;background:#fff;border:1.6px solid #eae3db;border-radius:15px;padding:16px 13px;cursor:pointer;text-align:left;font-family:inherit;transition:.15s var(--ease-out);box-shadow:0 6px 16px -10px rgba(20,41,28,.5)}
+.pcard:hover{border-color:var(--g500);transform:translateY(-3px)}
+.pcard:active{transform:scale(.985)}
+.pcard.pop{border-color:var(--or);background:#fff8f1;box-shadow:0 12px 26px -10px rgba(240,131,15,.45)}
+.pc-badge{position:absolute;top:-9px;left:50%;transform:translateX(-50%);white-space:nowrap;background:linear-gradient(135deg,var(--or-vivid),var(--or-deep));color:#fff;font-size:9px;font-weight:800;letter-spacing:.3px;padding:3px 9px;border-radius:100px;text-transform:uppercase;box-shadow:0 6px 14px -5px var(--or-glow)}
+.pc-n{font-size:24px;font-weight:900;color:var(--g700);letter-spacing:-.5px}
+.pcard.pop .pc-n{color:var(--or-deep)}
+.pc-val{font-size:15px;font-weight:800;color:#14291c;margin-top:3px}
+.pc-val span{font-size:11px;font-weight:600;color:#8a8e97}
+.pc-total{font-size:11px;color:#8a8e97;margin-top:5px}
+
+.summary{background:#fff;border-radius:20px;padding:16px;box-shadow:0 20px 46px -20px rgba(20,41,28,.55);animation:pop .4s ease both}
+.sm-amount{position:relative;background:radial-gradient(120% 90% at 85% 0%,var(--g400),transparent 55%),linear-gradient(135deg,var(--g700),var(--g500));color:#fff;border-radius:16px;padding:18px;text-align:center;margin-bottom:6px;overflow:hidden}
+.sm-amount .l{font-size:11px;color:#ecdecf;text-transform:uppercase;letter-spacing:.5px;font-weight:800}
+.sm-amount .v{font-size:35px;font-weight:900;letter-spacing:-1px;margin-top:2px}
+.sm-amount .s{font-size:11.5px;color:#e9dac9;margin-top:2px}
+.srow{display:flex;align-items:center;gap:12px;padding:12px 4px;border-bottom:1px solid #f3f2f0}
+.srow .si{width:36px;height:36px;border-radius:11px;background:#f7f2ed;color:var(--g600);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.srow .sl{font-size:12.5px;color:#7c808a;font-weight:600;flex:1}
+.srow .sv{font-size:14px;color:#14291c;font-weight:700;text-align:right}
+.srow .sv b{font-weight:900;color:var(--g700)}
+.srow .sv small{display:block;font-size:10.5px;color:#a5a19c;font-weight:600;margin-top:1px}
+.s-sec{text-align:center;font-size:11px;color:var(--mut);margin-top:12px;display:flex;align-items:center;justify-content:center;gap:6px}
+
+/* ===== Assinatura ===== */
+.signcard{position:relative;background:#fff;border-radius:20px;padding:18px;margin-top:14px;box-shadow:0 20px 46px -20px rgba(20,41,28,.55);animation:pop .4s ease both;overflow:hidden}
+.signcard::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--g500),var(--g400) 55%,var(--or-vivid))}
+.sign-h{font-weight:800;color:var(--g700);font-size:16px;display:flex;align-items:center;gap:7px}
+.sign-sub{font-size:12px;color:#7c808a;margin:3px 0 12px}
+.sign-pad{position:relative;border:2px dashed #e3d8cd;border-radius:14px;background:#fdfbf9;height:175px;overflow:hidden;transition:border-color .2s}
+.sign-pad.bad{border-color:#ef4444;background:#fef2f2}
+.sign-pad::after{content:"assine aqui";position:absolute;left:0;right:0;bottom:14px;text-align:center;font-size:12px;color:#cac4be;pointer-events:none;letter-spacing:.5px}
+.sign-pad.inked::after{display:none}
+.sign-pad canvas{position:relative;z-index:2;width:100%;height:100%;display:block;touch-action:none;cursor:crosshair}
+.sign-clear{position:absolute;z-index:3;top:8px;right:8px;background:#f5f2ee;border:1px solid #e6ddd3;color:var(--g700);font-size:11px;font-weight:700;padding:6px 11px;border-radius:9px;cursor:pointer}
+.sign-name{width:100%;border:1.5px solid #e6ddd3;border-radius:12px;padding:13px 14px;font-family:inherit;font-size:15px;margin-top:12px;outline:none;color:#14291c}
+.sign-name:focus{border-color:var(--g500)}
+.sign-name.bad{border-color:#ef4444}
+
+/* ===== Documento do contrato ===== */
+.contract{background:#fff;border-radius:16px;padding:18px 16px;margin-top:12px;border:1px solid #ecedee;box-shadow:0 20px 46px -20px rgba(20,41,28,.55);animation:pop .4s ease both;color:#2f2d2a}
+.contract .doc-top{text-align:center;border-bottom:1.5px solid #f1f0ee;padding-bottom:10px;margin-bottom:10px}
+.contract .doc-top h3{font-size:13.5px;color:var(--g700);letter-spacing:.3px}
+.contract .doc-top .ds{font-size:10px;color:#8a8e97;margin-top:2px;text-transform:uppercase;letter-spacing:.5px}
+.contract .field{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dashed #f1f0ee;font-size:12.5px}
+.contract .field .k{color:#7c808a}
+.contract .field .v{font-weight:700;color:#14291c;text-align:right}
+.contract .terms{font-size:10.5px;line-height:1.65;color:#69635d;margin-top:11px}
+.contract .terms b{color:#14291c}
+.contract .sigblock{margin-top:14px;text-align:center}
+.contract .sigblock img{height:74px;max-width:78%;object-fit:contain;display:block;margin:0 auto -6px}
+.contract .sigline{border-top:1.6px solid #14291c;width:72%;margin:0 auto 5px}
+.contract .signame{font-weight:800;color:#14291c;font-size:13px}
+.contract .sigmeta{font-size:10px;color:#8a8e97;margin-top:2px}
+.contract .stamp{position:relative;margin-top:12px;text-align:center}
+.contract .stamp span{display:inline-flex;align-items:center;gap:6px;border:2px solid var(--g500);color:var(--g500);font-weight:800;font-size:10.5px;letter-spacing:.6px;padding:4px 12px;border-radius:8px;transform:rotate(-4deg);opacity:.9}
+
+/* ===== Confirmar termos ===== */
+.term-wrap{margin-top:14px}
+.term-check{display:flex;align-items:center;gap:10px;font-size:13.5px;color:#14291c;background:#fff;border:1.5px solid #e6ddd3;border-radius:13px;padding:14px;cursor:pointer}
+.term-check input{width:21px;height:21px;flex-shrink:0;accent-color:var(--g500)}
+.term-check.shake{animation:shk .45s}
+@keyframes shk{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none !important}}
+
+/* ============================================================
+   IDENTIDADE CREDFÁCIL — upgrade visual da conversa da Fernanda
+   ============================================================ */
+:root{--gold:#d99041;--gold-d:#b9752c;--gold-soft:#f6dcc0}
+
+/* moldura da janela um pouco mais "produto" */
+.app{border:1px solid rgba(18,36,24,.16);box-shadow:0 34px 70px -28px rgba(18,36,24,.5),0 0 0 1px rgba(217,144,65,.14)}
+
+/* ===== Barra de marca institucional (acima da consultora) ===== */
+.brandbar{display:flex;align-items:center;gap:10px;padding:9px 14px;background:linear-gradient(180deg,#0f2015,#122418);border-bottom:1px solid rgba(217,144,65,.3);position:relative;z-index:21}
+.brandbar .bb-logo{height:20px;width:auto;opacity:.98}
+.brandbar .bb-div{width:1px;height:15px;background:rgba(255,255,255,.18)}
+.brandbar .bb-tag{font-size:11px;font-weight:700;letter-spacing:.2px;color:#e5d3c0}
+.brandbar .bb-live{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:9.5px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:#ffd2a1}
+.brandbar .bb-live i{width:7px;height:7px;border-radius:50%;background:#ff911b;box-shadow:0 0 0 0 rgba(255,145,27,.7);animation:cfbPulse2 1.6s infinite}
+@keyframes cfbPulse2{0%{box-shadow:0 0 0 0 rgba(255,145,27,.6)}70%{box-shadow:0 0 0 7px rgba(255,145,27,0)}100%{box-shadow:0 0 0 0 rgba(255,145,27,0)}}
+
+/* ===== Consultora — institucional (verde profundo + anel dourado) ===== */
+.wa-top{background:linear-gradient(135deg,#8c5112,#3d3328)}
+.wa-top .av{border-color:rgba(217,144,65,.55)}
+.wa-top .av-on{position:absolute;right:-1px;bottom:-1px;width:12px;height:12px;border-radius:50%;background:#2ee06a;border:2px solid #122418;z-index:2}
+.wa-top .nm{font-size:15.5px}
+.wa-top .st{color:#e5d3c0}
+.wa-top .ic{align-items:center}
+.wa-top .sec-tag{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:800;color:#ffd9b0;background:rgba(217,144,65,.16);border:1px solid rgba(217,144,65,.42);padding:6px 11px;border-radius:100px;white-space:nowrap}
+.wa-top .sec-tag svg{width:12px;height:12px}
+
+/* progresso com toque dourado */
+.wa-prog i{background:linear-gradient(90deg,var(--g400),var(--gold) 58%,var(--or-vivid))}
+
+/* ===== Balões da Fernanda ===== */
+.bubble{border-radius:18px;border-bottom-left-radius:6px;box-shadow:0 3px 10px -4px rgba(20,41,28,.2);border:1px solid rgba(20,41,28,.05)}
+.bubble.q{background:linear-gradient(180deg,#ffffff,#faf8f5);border-color:rgba(124,74,20,.14)}
+.qrow .mav{border:1.5px solid rgba(217,144,65,.5)}
+
+/* ===== BOTÕES DE RESPOSTA — cards de produto CredFácil ===== */
+.opt{border:1.5px solid #e7e1db;border-radius:16px;padding:13px 14px;gap:13px;background:#fff;box-shadow:0 6px 16px -10px rgba(20,41,28,.4);transition:.18s var(--ease-out)}
+.opt .em{font-size:20px;width:42px;height:42px;min-width:42px;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#f7f2ed,#f2e8de);border:1px solid #e6dbcf;border-radius:12px;box-shadow:inset 0 1px 0 rgba(255,255,255,.7)}
+.opt span.lbl{font-size:15px;font-weight:700;color:#173121}
+.opt .ar{margin-left:auto;width:26px;height:26px;border-radius:50%;background:#f8f5f2;color:var(--g600);display:flex;align-items:center;justify-content:center;transition:.18s var(--ease-out)}
+.opt:hover{border-color:var(--g500);background:#fefdfb;transform:translateY(-2px);box-shadow:0 13px 24px -12px rgba(124,74,20,.45)}
+.opt:hover .ar{background:var(--g600);color:#fff}
+.opt.sel{border-color:var(--gold);background:#fffbf7;box-shadow:0 0 0 2px rgba(217,144,65,.38),0 10px 22px -12px rgba(217,144,65,.5)}
+.opt.sel .em{background:linear-gradient(160deg,#fbe4cb,#f4d2ae);border-color:var(--gold)}
+.opt.sel .ar{background:var(--gold);color:#fff}
+
+/* botão "continuar" (intro/recap) — ação primária sólida da marca */
+.opt#contBtn{justify-content:center;background:linear-gradient(135deg,#362d24,#122418);border-color:#122418;box-shadow:0 12px 24px -12px rgba(18,36,24,.6)}
+.opt#contBtn span.lbl{color:#fff;flex:0 0 auto}
+.opt#contBtn .ar{margin-left:8px;background:rgba(255,255,255,.16);color:#fff}
+.opt#contBtn:hover{transform:translateY(-2px);background:linear-gradient(135deg,#3f352a,#162d1e)}
+.opt#contBtn:hover .ar{background:rgba(255,255,255,.28);color:#fff}
+
+/* ===== Cartão de confirmação de identidade (consulta CPF) ===== */
+.idcard{margin-top:12px;background:#fff;border:1px solid #e9e6e2;border-radius:18px;padding:14px 16px;box-shadow:0 16px 40px -20px rgba(20,41,28,.5);animation:pop .4s ease both;overflow:hidden}
+.idcard .id-head{margin:0 -16px 6px;padding:0 16px 12px;border-bottom:1px solid #f2f0ee}
+.idcard .id-badge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:800;color:var(--g700);background:#f7f2ed;border:1px solid #ecdecf;padding:6px 11px;border-radius:100px}
+.idcard .id-badge svg{width:13px;height:13px}
+.idcard .id-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:9px 0;border-bottom:1px dashed #f2f0ee;font-size:13px}
+.idcard .id-row:last-of-type{border-bottom:0}
+.idcard .id-k{color:#7c808a;font-weight:600;flex-shrink:0}
+.idcard .id-v{color:#14291c;font-weight:700;text-align:right;word-break:break-word}
+.idcard .id-v.ok{color:var(--g600)}
+.idcard .id-foot{margin-top:12px;font-size:10.5px;color:#a5a19c;text-align:center;display:flex;align-items:center;justify-content:center;gap:5px}
+.idcard .id-foot svg{width:11px;height:11px;stroke:#a5a19c;flex-shrink:0}
+
+/* ===== Formulário de endereço (carnê) ===== */
+.addrcard{margin-top:12px;background:#fff;border-radius:18px;padding:16px;box-shadow:0 18px 44px -20px rgba(20,41,28,.5);animation:pop .4s ease both;border:1px solid #e9e6e2}
+.addr-h{display:flex;align-items:center;gap:8px;font-weight:800;color:var(--g700);font-size:15px}
+.addr-sub{font-size:12px;color:#7c808a;margin:4px 0 13px;line-height:1.4}
+.addr-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.addr-field{display:flex;flex-direction:column;gap:5px}
+.addr-field.full{grid-column:1 / -1}
+.addr-field label{font-size:11px;font-weight:700;color:#69635d;padding-left:2px}
+.addr-field input{border:1.5px solid #e6ddd3;border-radius:12px;padding:12px 13px;font-family:inherit;font-size:14.5px;color:#14291c;outline:none;background:#fff;width:100%}
+.addr-field input:focus{border-color:var(--g500);box-shadow:0 0 0 3px rgba(124,74,20,.1)}
+.addr-field input.bad{border-color:#ef4444;background:#fef2f2}
+.addr-cep-msg{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:700;min-height:15px;margin-top:1px}
+
+/* ============================================================
+   WHATSAPP AUTÊNTICO — camada final de override
+   Faz a tela parecer o WhatsApp de verdade (topo, papel de parede,
+   balões com rabinho + horário, respostas em balão verde, barra de digitar).
+   Os cartões de oferta continuam com a identidade dourada da CredFácil
+   (leem como "mensagens de template" da conta comercial).
+   ============================================================ */
+:root{
+  --wa-green:#075e54; --wa-green-d:#054c44; --wa-teal:#128c7e;
+  --wa-send:#00a884; --wa-check:#25d366;
+  --wa-out:#d9fdd3; --wa-in:#ffffff; --wa-tick:#53bdeb;
+  --wa-time:#667781; --wa-wall:#e4dcd4;
+  --wa-enc-bg:#fde4c9; --wa-enc-tx:#5b4e40; --wa-foot:#f0f2f5;
+}
+/* moldura: menos "cartão", mais tela de celular */
+.app{border-radius:28px !important;background:var(--wa-wall) !important;
+  border:1px solid rgba(4,40,34,.18) !important;
+  box-shadow:0 42px 84px -30px rgba(4,40,34,.55),0 0 0 1px rgba(0,0,0,.05) !important}
+
+/* ===== barra de status do celular ===== */
+.brandbar{display:none !important}
+.phone-status{display:flex;align-items:center;justify-content:space-between;
+  background:var(--wa-green);color:#fff;padding:7px 18px 5px;position:relative;z-index:23;
+  font-family:'Inter',system-ui,sans-serif;font-size:13px;font-weight:600;letter-spacing:.2px}
+.phone-status .ps-r{display:flex;align-items:center;gap:6px}
+.phone-status svg{display:block}
+
+/* ===== header do WhatsApp ===== */
+.wa-top{background:var(--wa-green) !important;color:#fff;gap:8px;padding:6px 10px 8px !important;align-items:center}
+.wa-top::after{display:none !important}
+.wa-top .bk{opacity:1;margin:0 -2px 0 0;padding:2px}
+.wa-top .av{width:40px !important;height:40px !important;border:0 !important;background:#0a5b51 !important}
+.wa-top .av-on{display:none !important}
+.wa-top .who{margin-left:1px}
+.wa-top .nm{font-size:16px !important;font-weight:600 !important;color:#fff}
+.wa-top .nm .verif svg path:first-child{fill:var(--wa-check)}
+.wa-top .st{font-size:12.5px !important;color:#cfe9df !important}
+.wa-top .st i{display:none !important}
+.wa-top .st.typing{color:#a7e9cf !important;font-style:normal !important;font-weight:500}
+.wa-top .ic{gap:20px !important;align-items:center;color:#fff;opacity:.97}
+.wa-top .ic .sec-tag{display:none !important}
+.wa-top .ic svg{width:22px;height:22px}
+
+/* progresso discreto e verde */
+.wa-prog{height:3px !important;background:rgba(0,0,0,.14) !important}
+.wa-prog i{background:linear-gradient(90deg,var(--wa-teal),var(--wa-send)) !important;box-shadow:none !important}
+
+/* aviso de criptografia (amarelinho característico) */
+.chan-note{background:var(--wa-enc-bg) !important;color:var(--wa-enc-tx) !important;
+  border-bottom:0 !important;font-size:10.6px !important;padding:6px 22px !important;line-height:1.35}
+.chan-note b{color:#3d3124 !important}
+.chan-note svg path{fill:#ca873f !important}
+
+/* faixa de conta verificada — cartão limpo (selo verde + texto) */
+.official-bar{display:flex;align-items:center;gap:11px;padding:9px 15px;
+  background:#f4faf7;border-bottom:1px solid #e4efe8;position:relative;z-index:19}
+.official-bar .ob-badge{width:30px;height:30px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(140deg,#2ee06a,#12a150);
+  box-shadow:0 4px 10px -3px rgba(18,161,80,.55),inset 0 1px 0 rgba(255,255,255,.35)}
+.official-bar .ob-badge svg{display:block}
+.official-bar .ob-tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px;line-height:1.2}
+.official-bar .ob-tx b{font-size:12.6px;font-weight:800;color:#0c3b31;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.official-bar .ob-tx span{font-size:10.6px;font-weight:600;color:#5f8377}
+.official-bar .ob-lock{flex-shrink:0;color:#8bb3a5}
+
+/* ===== papel de parede ===== */
+.stage{background:var(--wa-wall) url("images/wa-bg.svg") repeat !important;background-size:360px !important}
+.qpage{padding:4px 9px !important}
+.qtop{gap:5px !important}
+
+/* ===== balões ===== */
+.qrow{gap:0 !important;align-items:flex-end}
+.qrow .mav{display:none !important}
+.bubble{position:relative;background:var(--wa-in) !important;color:#111b21 !important;
+  border:0 !important;border-radius:9px !important;border-top-left-radius:0 !important;
+  box-shadow:0 1px .5px rgba(11,20,26,.13) !important;
+  padding:6px 9px 7px 10px !important;font-size:14.7px !important;line-height:1.42 !important;
+  max-width:80% !important;margin-left:7px}
+.bubble.q{background:var(--wa-in) !important;font-weight:600 !important;font-size:15px !important}
+.bubble b{color:var(--wa-green) !important}
+/* rabinho do balão que entra (topo-esquerda) */
+.qrow:not(.out) .bubble::before{content:"";position:absolute;top:0;left:-7px;width:9px;height:13px;
+  background:var(--wa-in);clip-path:polygon(100% 0,100% 100%,0 0)}
+/* horário dentro do balão */
+.bubble .bmeta{float:right;margin:5px -1px -2px 9px;font-size:10px;color:var(--wa-time);
+  line-height:1;position:relative;top:3px;white-space:nowrap;font-weight:500}
+.bubble .bmeta svg{vertical-align:-2px;margin-left:2px}
+
+/* ===== resposta do usuário: balão verde à direita ===== */
+.qrow.out{justify-content:flex-end;margin:2px 0}
+.qrow.out .bubble{background:var(--wa-out) !important;color:#111b21 !important;
+  border-top-left-radius:9px !important;border-top-right-radius:0 !important;margin:0 7px 0 0;
+  animation:popOut .22s ease both}
+.qrow.out .bubble::after{content:"";position:absolute;top:0;right:-7px;width:9px;height:13px;
+  background:var(--wa-out);clip-path:polygon(0 0,0 100%,100% 0)}
+.qrow.out .bubble .bmeta{color:#5f7c6b}
+@keyframes popOut{from{opacity:0;transform:translateY(6px) scale(.96)}to{opacity:1;transform:none}}
+
+/* ===== respostas rápidas (botões estilo WhatsApp Business) ===== */
+.opts{padding-top:12px !important;margin-top:8px !important;gap:8px !important}
+.opt{background:#fff !important;border:1px solid #e7ebed !important;border-radius:13px !important;
+  padding:12px 13px !important;gap:12px !important;box-shadow:0 1px 2px rgba(11,20,26,.09) !important}
+.opt .em{width:38px !important;height:38px !important;min-width:38px !important;border-radius:50% !important;
+  background:#e9f6f1 !important;border:1px solid #d7ede5 !important;font-size:19px !important;box-shadow:none !important}
+.opt span.lbl{color:#111b21 !important;font-weight:600 !important;font-size:14.7px !important}
+.opt .ar{background:#eef7f4 !important;color:var(--wa-teal) !important}
+.opt:hover{border-color:var(--wa-teal) !important;background:#fbfffe !important;box-shadow:0 6px 16px -10px rgba(18,140,126,.5) !important}
+.opt:hover .ar{background:var(--wa-teal) !important;color:#fff !important}
+.opt.sel{border-color:var(--wa-send) !important;background:#f1fff0 !important;box-shadow:0 0 0 2px rgba(0,168,132,.32) !important}
+.opt.sel .em,.opt.sel .ar{background:var(--wa-send) !important;color:#fff !important;border-color:var(--wa-send) !important}
+/* botão continuar/confirmar identidade — ação primária teal */
+.opt#contBtn,.opt#idBtn{justify-content:center !important;background:var(--wa-teal) !important;border-color:var(--wa-teal) !important;box-shadow:0 10px 22px -12px rgba(18,140,126,.7) !important}
+.opt#contBtn span.lbl,.opt#idBtn span.lbl{color:#fff !important;flex:0 0 auto}
+.opt#contBtn .em,.opt#idBtn .em{background:rgba(255,255,255,.2) !important;border-color:transparent !important}
+.opt#contBtn .ar,.opt#idBtn .ar{background:rgba(255,255,255,.2) !important;color:#fff !important}
+.opt#contBtn:hover,.opt#idBtn:hover{background:#0f7a6d !important}
+
+/* ===== barra de digitar (rodapé fixo do WhatsApp) ===== */
+.wa-foot{display:none;align-items:center;gap:7px;padding:7px 8px;background:var(--wa-foot);
+  position:relative;z-index:20;flex-shrink:0}
+.wa-foot.active{display:flex}
+.wa-foot .wf-pill{flex:1;min-width:0;display:flex;align-items:center;gap:8px;background:#fff;
+  border-radius:24px;padding:9px 12px;box-shadow:0 1px 1px rgba(11,20,26,.06)}
+.wa-foot .wf-pill>svg{flex-shrink:0;color:#8696a0}
+.wf-input{flex:1;min-width:0;border:0;outline:0;background:transparent;font-family:inherit;
+  font-size:15px;color:#111b21}
+.wf-input::placeholder{color:#8696a0}
+.wa-foot .wf-fab{width:46px;height:46px;flex-shrink:0;border:0;border-radius:50%;
+  background:var(--wa-send);color:#fff;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;box-shadow:0 4px 10px -3px rgba(0,168,132,.6);transition:transform .12s ease,background .2s}
+.wa-foot .wf-fab:active{transform:scale(.94)}
+.wa-foot.active .wf-pill{box-shadow:0 0 0 2px rgba(0,168,132,.25)}
+
+/* ===== sugestão de banco: aparece ACIMA do campo conforme ela digita ===== */
+.wa-foot{position:relative}
+.ac-list{position:absolute;left:10px;right:10px;bottom:calc(100% + 8px);z-index:60;background:#fff;
+  border-radius:14px;box-shadow:0 18px 40px -14px rgba(0,0,0,.45),0 0 0 1px rgba(0,0,0,.06);
+  overflow:hidden;display:none;max-height:216px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.ac-list.show{display:block;animation:acIn .16s ease both}
+@keyframes acIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.ac-item{display:flex;align-items:center;gap:10px;padding:12px 14px;font-size:14.5px;font-weight:600;
+  color:#111b21;cursor:pointer;border-bottom:1px solid #f0f2f5}
+.ac-item:last-child{border-bottom:0}
+.ac-item:active{background:#f0f2f5}
+.ac-item b{color:#00a884}
+.ac-ic{width:28px;height:28px;border-radius:8px;background:#e9f7f3;color:#00a884;display:flex;
+  align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0}
+
+/* ===== TELA DE ASSINATURA (abre por cima de tudo) ===== */
+/* z-index ACIMA da tela do contrato (9200) e do visor do PDF (9400): a
+   assinatura é chamada de dentro do contrato e precisa vir por cima dele.
+   Com 9000 ela abria ATRÁS e a pessoa não conseguia assinar. */
+.sig-tela{position:fixed;inset:0;z-index:9600;background:#0f1b16;display:flex;flex-direction:column;
+  animation:sigSobe .26s cubic-bezier(.22,.9,.31,1) both}
+@keyframes sigSobe{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.sig-topo{display:flex;align-items:center;gap:12px;padding:14px 16px;background:#12241d;color:#fff;flex-shrink:0}
+.sig-topo .volta{width:34px;height:34px;border:0;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
+.sig-topo b{font-size:15px;font-weight:800;display:block}
+.sig-topo small{display:block;font-size:11.5px;color:#9fd3bd;margin-top:1px}
+.sig-corpo{flex:1;display:flex;flex-direction:column;justify-content:center;padding:18px 16px;gap:12px;overflow-y:auto}
+.sig-instr{text-align:center;color:#cfe6dc;font-size:13.5px;font-weight:600;line-height:1.5}
+.sig-area{position:relative;background:#fff;border-radius:16px;height:min(46vh,320px);overflow:hidden;
+  box-shadow:0 20px 44px -20px rgba(0,0,0,.7)}
+.sig-area canvas{width:100%;height:100%;display:block;touch-action:none;cursor:crosshair}
+.sig-linha{position:absolute;left:26px;right:26px;bottom:64px;height:1px;background:#d8cfc6;pointer-events:none}
+.sig-linha::after{content:"assine aqui";position:absolute;left:0;top:8px;font-size:11px;color:#b9afa4;letter-spacing:.4px}
+.sig-area.tinta .sig-linha::after{opacity:0}
+.sig-limpar{position:absolute;top:10px;right:10px;border:1px solid #e6ddd4;background:#fff;color:#6b6054;
+  font-size:12px;font-weight:800;padding:7px 13px;border-radius:100px;cursor:pointer}
+.sig-nome{width:100%;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.07);color:#fff;
+  border-radius:13px;padding:14px 15px;font-family:inherit;font-size:15px;font-weight:600;outline:0}
+.sig-nome::placeholder{color:#8fae9f}
+.sig-nome.ruim{border-color:#ff8f7a;background:rgba(255,143,122,.12)}
+.sig-acoes{padding:14px 16px calc(16px + env(safe-area-inset-bottom));background:#12241d;flex-shrink:0}
+.sig-ok{width:100%;border:0;border-radius:14px;padding:16px;font-family:inherit;font-size:16px;font-weight:800;
+  color:#fff;background:linear-gradient(135deg,#25a36c,#12784c);cursor:pointer;display:flex;align-items:center;
+  justify-content:center;gap:9px;box-shadow:0 14px 28px -12px rgba(18,120,76,.8)}
+.sig-ok:disabled{opacity:.4;cursor:not-allowed;box-shadow:none}
+.sig-aviso{text-align:center;font-size:11px;color:#8fae9f;margin-top:10px;line-height:1.5}
+
+/* ===== VÍDEO DE ABERTURA (antes de confirmar os dados) ===== */
+.vintro{margin:8px 0 0 7px;max-width:86%;background:#000;border-radius:18px;overflow:hidden;position:relative;
+  box-shadow:0 14px 34px -16px rgba(12,30,19,.6);animation:pop .4s ease both}
+.vintro video{width:100%;display:block;aspect-ratio:9/16;object-fit:cover;background:#000;max-height:64vh}
+.vintro .vplay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.42));cursor:pointer;z-index:2;transition:opacity .25s ease}
+.vintro.playing .vplay{opacity:0;pointer-events:none}
+.vintro .vplay .pb{width:66px;height:66px;border-radius:50%;background:rgba(255,255,255,.94);display:flex;align-items:center;
+  justify-content:center;box-shadow:0 10px 26px rgba(0,0,0,.5)}
+.vintro .vplay .pb svg{width:28px;height:28px;color:var(--g700);margin-left:3px}
+.vintro .vplay .vlbl{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:#fff;font-size:13px;font-weight:800;
+  text-shadow:0 2px 8px rgba(0,0,0,.7);letter-spacing:.2px}
+.vintro .vbadge{position:absolute;top:11px;left:11px;z-index:3;background:rgba(255,255,255,.92);border-radius:8px;
+  padding:3px 9px;display:flex;align-items:center;gap:5px;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.vintro .vbadge img{height:13px;width:auto;display:block}
+.vintro .vbadge b{font-size:9px;font-weight:800;color:#c96e0c;letter-spacing:.4px}
+/* barrinha de progresso do vídeo */
+.vintro .vprog{position:absolute;left:0;right:0;bottom:0;height:4px;background:rgba(255,255,255,.22);z-index:3}
+.vintro .vprog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--g400),var(--gvivid))}
+/* botão continuar do gate — nasce travado até assistir */
+.vlock{display:flex;align-items:center;justify-content:center;gap:9px;margin:12px 0 0 7px;max-width:86%;
+  border:0;border-radius:14px;padding:15px;font-family:inherit;font-size:15.5px;font-weight:800;color:#fff;
+  background:linear-gradient(135deg,#25a36c,#12784c);box-shadow:0 12px 26px -12px rgba(18,120,76,.8);cursor:pointer}
+.vlock svg{width:18px;height:18px}
+.vlock:disabled{background:#e7e1db;color:#9a8f84;box-shadow:none;cursor:not-allowed}
+.vlock .vtime{font-variant-numeric:tabular-nums}
+
+/* ===== CONTRATO completo ===== */
+/* Cartão no chat que abre o documento (a Fernanda "manda" o contrato) */
+.ctr-conv{background:#fff;border:1px solid #e6ddd4;border-radius:16px;margin:8px 0 0 7px;max-width:95%;
+  padding:14px 15px;box-shadow:0 8px 22px -14px rgba(12,30,19,.35)}
+.ctr-conv .cc-top{display:flex;align-items:center;gap:11px}
+.ctr-conv .cc-ico{width:42px;height:42px;border-radius:12px;flex-shrink:0;background:#fdeedd;color:#8a4f10;
+  display:flex;align-items:center;justify-content:center}
+.ctr-conv .cc-nome{font-size:13.5px;font-weight:800;color:#122418;line-height:1.3}
+.ctr-conv .cc-sub{font-size:11.5px;color:#8a8075;margin-top:2px}
+.ctr-conv .cc-abrir{margin-top:12px;width:100%;border:0;border-radius:13px;padding:14px;cursor:pointer;
+  font-family:inherit;font-size:15px;font-weight:800;color:#082312;
+  background:linear-gradient(135deg,#ffa545,#f2881c);box-shadow:0 12px 26px -12px rgba(217,110,8,.8);
+  display:flex;align-items:center;justify-content:center;gap:8px}
+.ctr-conv .cc-abrir:active{transform:scale(.985)}
+.ctr-conv .cc-pe{margin-top:9px;font-size:10.5px;color:#9a8f84;text-align:center;line-height:1.5}
+
+/* ===== TELA CHEIA DO CONTRATO ===== */
+.ct-tela{position:fixed;inset:0;z-index:9200;background:#f1ede9;overflow-y:auto;-webkit-overflow-scrolling:touch;
+  animation:ctSobe .3s cubic-bezier(.22,.9,.31,1) both}
+@keyframes ctSobe{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.ct-in{max-width:460px;margin:0 auto;padding-bottom:34px}
+
+/* topo grafite */
+.ct-hero{background:#0a5726;color:#fff;padding:20px 20px 26px;position:relative;overflow:hidden}
+.ct-hero::after{content:"";position:absolute;right:-40px;top:-50px;width:170px;height:170px;border-radius:50%;
+  background:radial-gradient(circle,rgba(242,136,28,.22),transparent 68%)}
+.ct-volta{width:34px;height:34px;border:0;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;margin-bottom:14px}
+.ct-eyebrow{font-size:10.5px;font-weight:800;letter-spacing:1.4px;color:#f2881c;display:flex;align-items:center;gap:8px}
+.ct-eyebrow::before{content:"";width:16px;height:2px;background:#f2881c;border-radius:2px}
+.ct-hero h1{font-size:29px;line-height:1.12;font-weight:800;margin:10px 0 0;letter-spacing:-.6px;position:relative}
+.ct-hero h1 em{font-style:normal;color:#f2881c}
+.ct-hero p{font-size:13.5px;line-height:1.55;color:#c9beb3;margin:11px 0 0;position:relative}
+
+/* faixa de chips */
+.ct-chips{display:flex;background:#fbf3ea;border-bottom:1px solid #ecdece}
+.ct-chips div{flex:1;padding:12px 6px;text-align:center;font-size:9.5px;font-weight:800;letter-spacing:.7px;
+  color:#8a4f10;line-height:1.35}
+.ct-chips div+div{border-left:1px solid #ecdece}
+
+/* folha do documento */
+.ct-serra{height:11px;background:repeating-linear-gradient(-45deg,#f2881c 0 9px,transparent 9px 19px);margin:18px 14px -1px}
+.ct-folha{background:#fff;margin:0 14px;border-radius:0 0 14px 14px;padding:20px 18px 22px;
+  box-shadow:0 20px 44px -26px rgba(12,30,19,.5)}
+
+.ct-marca{font-size:9.5px;font-weight:800;letter-spacing:2.6px;color:#a09284;text-transform:uppercase}
+.ct-titulo{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-top:7px}
+.ct-titulo h2{font-size:19px;line-height:1.24;font-weight:800;color:#0a5726;letter-spacing:-.35px;margin:0}
+.ct-titulo .ic{width:34px;height:34px;flex-shrink:0;border-radius:9px;background:#fdeedd;color:#c96e0c;
+  display:flex;align-items:center;justify-content:center}
+.ct-meta{display:flex;justify-content:space-between;gap:12px;margin-top:15px;padding:11px 0;
+  border-top:1px solid #efe8e0;border-bottom:1px solid #efe8e0;font-size:11px;color:#8a8075}
+.ct-meta b{color:#3b332a;font-weight:800}
+
+/* seções */
+.ct-sec{margin-top:22px}
+.ct-h{font-size:9.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#8a4f10;
+  padding-bottom:7px;border-bottom:2px solid #f2881c;display:inline-block;margin-bottom:4px}
+.ct-l{display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:9px 0;
+  border-bottom:1px solid #f4eee7}
+.ct-l:last-child{border-bottom:0}
+.ct-l span{font-size:12.5px;color:#8a8075;flex-shrink:0}
+.ct-l b{font-size:12.5px;font-weight:800;color:#0a5726;text-align:right;word-break:break-word}
+.ct-l.forte b{color:#0f6b3f}
+
+/* cronograma */
+.ct-tab{width:100%;border-collapse:collapse;margin-top:10px;font-size:12px}
+.ct-tab th{background:#f7f2ec;color:#8a8075;font-size:9px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;
+  padding:9px 10px;text-align:left}
+.ct-tab th:last-child,.ct-tab td:last-child{text-align:right}
+.ct-tab td{padding:9px 10px;color:#3b332a;border-bottom:1px solid #f4eee7}
+.ct-tab tbody tr:nth-child(even) td{background:#fcf9f5}
+.ct-tab td:first-child{font-weight:800;color:#0a5726}
+.ct-tab td:last-child{font-weight:800;color:#0a5726}
+.ct-tab tfoot td{background:#fdf3e8;font-weight:800;color:#8a4f10;border-bottom:0;border-top:1px solid #f0dfcc}
+.ct-mais{width:100%;margin-top:9px;border:1px solid #ecdece;background:#fdf9f5;color:#8a4f10;border-radius:11px;
+  padding:11px;font-family:inherit;font-size:12px;font-weight:800;cursor:pointer}
+.ct-mais:active{transform:scale(.99)}
+
+/* cláusulas */
+/* alinhado à esquerda de propósito: justificado numa coluna estreita de celular
+   abre rios de espaço no meio da frase e o contrato fica pior de ler */
+.ct-cl{font-size:12.5px;line-height:1.65;color:#5b5248;margin-top:13px}
+.ct-cl:first-of-type{margin-top:10px}
+.ct-cl b{color:#0a5726;font-weight:800}
+
+/* assinatura */
+.ct-assarea{margin-top:8px}
+.ct-declara{font-size:11.5px;line-height:1.6;color:#8a8075;margin:10px 0 14px}
+.ct-quadro{border:1.5px dashed #ded1c4;border-radius:12px;height:150px;display:flex;align-items:center;
+  justify-content:center;background:#fdfbf9;position:relative;overflow:hidden}
+.ct-quadro .dica{font-size:12px;color:#b3a79a;font-weight:600}
+.ct-quadro.tem{border-style:solid;border-color:#e8dccf;background:#fdf6ef}
+.ct-quadro img{max-width:88%;max-height:126px;object-fit:contain}
+.ct-qnome{text-align:center;margin-top:11px}
+.ct-qnome .n{font-size:13px;font-weight:800;color:#0a5726;letter-spacing:.2px}
+.ct-qnome .c{font-size:9.5px;font-weight:800;letter-spacing:2px;color:#a09284;margin-top:3px}
+
+/* botões */
+.ct-acoes{margin-top:16px;display:flex;flex-direction:column;gap:10px}
+.ct-linha2{display:flex;gap:10px}
+.ct-btn{flex:1;border:0;border-radius:13px;padding:15px;font-family:inherit;font-size:14.5px;font-weight:800;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;letter-spacing:.3px;
+  color:#082312;background:linear-gradient(135deg,#ffa545,#f2881c);box-shadow:0 13px 26px -13px rgba(217,110,8,.85)}
+.ct-btn:active{transform:scale(.985)}
+.ct-btn:disabled{background:#e3ebe4;color:#b3a79a;box-shadow:none;cursor:not-allowed}
+.ct-btn.escuro{background:#0a5726;color:#fff;box-shadow:0 13px 26px -14px rgba(19,138,58,.9)}
+.ct-btn.escuro:disabled{background:#e3ebe4;color:#b3a79a;box-shadow:none}
+.ct-btn.vazio{background:#fff;color:#3b332a;border:1px solid #e2d8cd;box-shadow:none}
+.ct-btn.mini{flex:0 0 54px;padding:15px 0}
+.ct-aviso{text-align:center;font-size:10.5px;font-weight:800;letter-spacing:1.2px;color:#b3a79a;text-transform:uppercase}
+.ct-seg{display:flex;align-items:flex-start;gap:8px;margin-top:14px;font-size:11px;line-height:1.55;color:#8a8075}
+.ct-seg svg{flex-shrink:0;margin-top:1px;color:#0f6b3f}
+
+/* rodapé legal */
+.ct-rodape{margin:20px 20px 0;font-size:10.5px;line-height:1.65;color:#8a8075}
+.ct-rodape b{color:#5b5248}
+
+/* tela "contrato gerado" */
+.ct-ok{text-align:center;padding:8px 4px 4px}
+.ct-ok .selo{width:60px;height:60px;margin:0 auto;border-radius:50%;border:2.5px solid #0f6b3f;color:#0f6b3f;
+  display:flex;align-items:center;justify-content:center;animation:ctPop .4s cubic-bezier(.2,1.3,.4,1) both}
+@keyframes ctPop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+.ct-ok h2{font-size:24px;font-weight:800;color:#0a5726;margin:14px 0 0;letter-spacing:-.4px}
+.ct-ok p{font-size:13px;line-height:1.6;color:#8a8075;margin:9px 0 0}
+.ct-ok p b{color:#3b332a}
+.ct-resumo{border:1.5px solid #f2881c;border-radius:13px;padding:14px 15px;margin-top:18px;background:#fffbf7;text-align:left}
+.ct-resumo .rh{font-size:9.5px;font-weight:800;letter-spacing:2px;color:#8a4f10;text-align:center;margin-bottom:9px}
+.ct-resumo .ct-l{border-bottom:1px dashed #f0dfcc}
+
+/* spinner do botão gerar */
+.ct-spin{width:15px;height:15px;border-radius:50%;border:2.2px solid rgba(8,35,18,.25);
+  border-top-color:#082312;animation:ctGira .7s linear infinite;display:inline-block}
+@keyframes ctGira{to{transform:rotate(360deg)}}
+
+/* visualizador do PDF */
+.ct-visor{position:fixed;inset:0;z-index:9400;background:#183322;display:flex;flex-direction:column}
+.ct-vtopo{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;
+  background:#0a5726;color:#fff;flex-shrink:0}
+.ct-vtopo span{font-size:10.5px;font-weight:800;letter-spacing:1.4px;color:#c9beb3}
+.ct-vvolta{display:flex;align-items:center;gap:5px;border:0;background:transparent;color:#f2881c;
+  font-family:inherit;font-size:14px;font-weight:800;cursor:pointer;padding:4px 2px}
+.ct-visor iframe{flex:1;width:100%;border:0;background:#fff}
+
+/* ===== TRÊS PROPOSTAS (substitui o slider de valor) ===== */
+.props{margin:8px 0 0 7px;max-width:95%;display:flex;flex-direction:column;gap:10px}
+.props-h{font-size:12px;font-weight:800;color:#5b5045;letter-spacing:.3px;text-transform:uppercase;margin-bottom:2px}
+.prop-card{position:relative;background:#fff;border:2px solid #e8dfd6;border-radius:16px;padding:14px 14px 12px;cursor:pointer;
+  transition:border-color .18s,box-shadow .18s,transform .12s}
+.prop-card:active{transform:scale(.99)}
+.prop-card.on{border-color:#c0721e;box-shadow:0 0 0 3px rgba(192,114,30,.16),0 14px 30px -18px rgba(80,51,20,.6)}
+.prop-card .prop-tag{position:absolute;top:-9px;left:14px;font-size:9.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;
+  color:#3f352a;background:linear-gradient(135deg,#ffaf5a,#e08019);padding:3px 9px;border-radius:100px;box-shadow:0 3px 8px -2px rgba(160,92,20,.5)}
+.prop-card .prop-nome{font-size:11.5px;font-weight:800;color:#8a7b6b;letter-spacing:.4px;text-transform:uppercase}
+.prop-card .prop-val{font-family:inherit;font-size:26px;font-weight:800;color:#152d1e;letter-spacing:-.8px;line-height:1.1;margin-top:3px}
+.prop-card .prop-parc{font-size:13px;font-weight:700;color:#4a7c59;margin-top:2px}
+.prop-card .prop-parc b{color:#2f6b45}
+.prop-card .prop-grid{display:flex;gap:8px;margin-top:10px;padding-top:10px;border-top:1px dashed #eee3d8}
+.prop-card .prop-g{flex:1;min-width:0}
+.prop-card .prop-g small{display:block;font-size:9.5px;font-weight:700;color:#9a8c7e;text-transform:uppercase;letter-spacing:.3px}
+.prop-card .prop-g b{display:block;font-size:12.5px;font-weight:800;color:#3a3128;margin-top:1px}
+.prop-card .prop-pix{display:flex;align-items:center;gap:5px;margin-top:9px;font-size:11px;font-weight:700;color:#2f6b45}
+.prop-card .prop-check{position:absolute;top:12px;right:12px;width:20px;height:20px;border-radius:50%;border:2px solid #ded2c6;
+  display:flex;align-items:center;justify-content:center;background:#fff;transition:.18s}
+.prop-card.on .prop-check{background:#c0721e;border-color:#c0721e}
+.prop-card .prop-check svg{opacity:0;transition:.18s}
+.prop-card.on .prop-check svg{opacity:1}
+/* resumo do que ela escolheu + confirmar */
+.prop-sel{margin-top:4px;background:#fff8f0;border:1px solid #f0dbc4;border-radius:14px;padding:12px 14px}
+/* estado confirmado do botão */
+#pBtn.confirmado{background:#2f6b45 !important;box-shadow:none !important;opacity:1 !important;cursor:default}
+.prop-sel small{display:block;font-size:10px;font-weight:800;color:#9a8c7e;text-transform:uppercase;letter-spacing:.6px}
+.prop-sel b{display:block;font-size:21px;font-weight:800;color:#152d1e;letter-spacing:-.6px;margin-top:2px}
+.prop-sel span{display:block;font-size:12px;color:#6b6054;font-weight:600;margin-top:1px}
+
+/* cartões de oferta: mantêm o dourado, mas com respiro de "mensagem" */
+.vcard,.idcard,.summary,.signcard,.contract,.addrcard,.offer{margin-left:7px !important;max-width:95% !important}
+@media (prefers-reduced-motion:reduce){.qrow.out .bubble{animation:none}}
+</style>
+<script src="/js/tracking-shared.js"></script>
+<script src="/js/fb-capi-front.js" defer></script>
+</head>
+<body>
+<div class="app">
+  <div class="wa-top">
+    <span class="bk"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="m15 6-6 6 6 6" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <div class="av"><img src="images/atendente-credfacil.png" alt="Fernanda"><span class="av-on"></span></div>
+    <div class="who">
+      <div class="nm">Fernanda · CredFácil<span class="verif" title="Conta comercial verificada"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="#d38634" d="M12 1l2.39 1.78 2.97-.18.99 2.81 2.65 1.45-.74 2.88L24 12l-1.75 2.26.74 2.88-2.65 1.45-.99 2.81-2.97-.18L12 23l-2.39-1.95-2.97.18-.99-2.81L3 16.95l.74-2.88L2 12l1.75-2.26L3.01 6.86l2.65-1.45.99-2.81 2.97.18z"/><path fill="#fff" d="M10.6 14.62l-2.3-2.3 1.1-1.1 1.2 1.2 3.04-3.04 1.1 1.1z"/></svg></span></div>
+      <div class="st" id="st"><i></i> <span id="stTxt">online</span></div>
+    </div>
+    <div class="ic">
+      <svg fill="#fff" viewBox="0 0 24 24" aria-label="menu"><circle cx="12" cy="5" r="1.9"/><circle cx="12" cy="12" r="1.9"/><circle cx="12" cy="19" r="1.9"/></svg>
+    </div>
+  </div>
+  <div class="official-bar">
+    <span class="ob-badge"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+    <div class="ob-tx"><b>Conta comercial oficial da CredFácil</b><span>Identidade verificada · perfil autêntico</span></div>
+    <svg class="ob-lock" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+  </div>
+  <div class="wa-prog"><i id="prog"></i></div>
+  <div class="chan-note">
+    <svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><path fill="#ca873f" d="M12 1 3 5v6c0 5.6 3.8 10.7 9 12 5.2-1.3 9-6.4 9-12V5l-9-4Z"/><path fill="#fff" d="M10.6 15.6 7 12l1.4-1.4 2.2 2.2 4.4-4.4L16.4 9.8 10.6 15.6Z"/></svg>
+    <span>As mensagens são protegidas com <b>criptografia de ponta a ponta</b>. Só você e a CredFácil têm acesso.</span>
+  </div>
+  <div class="stage" id="stage"></div>
+  <div class="wa-foot">
+    <div class="wf-pill">
+      <input class="wf-input" type="text" placeholder="Mensagem" readonly autocomplete="off">
+    </div>
+    <div class="ac-list" id="acList"></div>
+    <button class="wf-fab" type="button" aria-label="gravar áudio"><svg width="23" height="23" viewBox="0 0 24 24" fill="#fff"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"/><path d="M17 12a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-2.08A7 7 0 0 0 19 12z"/></svg></button>
+  </div>
+</div>
+
+<script>
+/* ============ ESTADO ============ */
+var answers = {};
+try { answers = JSON.parse(localStorage.getItem('cf_answers') || '{}'); } catch(e){}
+function saveAns(k,v){ answers[k]=v; try{ localStorage.setItem('cf_answers', JSON.stringify(answers)); }catch(e){} }
+var nome=''; try{ nome=(localStorage.getItem('nome')||'').trim().split(' ')[0]; }catch(e){}
+var oi = nome ? (nome.charAt(0).toUpperCase()+nome.slice(1)) : '';
+function brl(v){ return 'R$ ' + Number(v).toLocaleString('pt-BR',{minimumFractionDigits:0,maximumFractionDigits:0}); }
+
+/* ===== Efeitos sonoros do chat — som de mensagem (estilo Typebot) =====
+   Toca um MP3 curto e agradável (o mesmo "ding" de app de mensagem).
+   Só toca depois do 1º toque do usuário (política de autoplay dos browsers). */
+var SFX = (function(){
+  var URL='sounds/recv.mp3';
+  var unlocked=false, muted=false, last=0;
+  try{ muted = localStorage.getItem('sfx_off')==='1'; }catch(e){}
+  function make(vol){ var a=new Audio(URL); a.volume=vol; a.preload='auto'; return a; }
+  function unlock(){
+    if(unlocked) return; unlocked=true;
+    try{ var p=make(0); var pr=p.play(); if(pr&&pr.then){ pr.then(function(){ p.pause(); p.currentTime=0; }).catch(function(){}); } }catch(e){}
+  }
+  function play(vol){
+    if(muted || !unlocked) return;
+    var n=Date.now(); if(n-last<70) return; last=n;   // evita empilhar sons
+    try{ make(vol).play().catch(function(){}); }catch(e){}
+  }
+  return {
+    unlock: unlock,
+    sent: function(){ play(0.5); },    // mensagem enviada (mais discreto)
+    recv: function(){ play(0.85); },   // mensagem recebida (o "ding" cheio)
+    setMuted: function(m){ muted=!!m; try{ localStorage.setItem('sfx_off', m?'1':'0'); }catch(e){} }
+  };
+})();
+['pointerdown','touchstart','keydown','click'].forEach(function(ev){
+  document.addEventListener(ev, function(){ SFX.unlock(); }, {once:true, passive:true});
+});
+
+/* ===== Gênero pelo primeiro nome — a Fernanda flexiona sozinha (nada de "honesto(a)") ===== */
+var _FEM=null;
+function ehFeminino(){
+  if(_FEM!==null) return _FEM;
+  var n=(localStorage.getItem('nome')||localStorage.getItem('name')||'').trim().toLowerCase().split(/\s+/)[0].replace(/[^a-zà-ú]/g,'');
+  var fem=['beatriz','ester','esther','raquel','rachel','isabel','isabela','mabel','karen','caren','carem','miriam','miria','ruth','rute','ingrid','astrid','nicole','michele','michelle','gisele','simone','ivone','yasmin','iasmin','carmen','dolores','lourdes','pilar','flor','liz','mel','agnes','ines','ines','clarice','jaqueline','jacqueline','kelly','kely','shirley','sheila','janaina','madalena','heloa','maisa','thais','tais','lais','pietra','cleide','solange','marlene','darlene','irene','helen','ellen','isadora'];
+  var masc=['luca','juca','noa','nicola','josua','joshua','ravi','ubiratan','ubirajara','sabino'];
+  var f;
+  if(fem.indexOf(n)>=0) f=true;
+  else if(masc.indexOf(n)>=0) f=false;
+  else f=/a$/.test(n);
+  _FEM=f; return f;
+}
+/* resolve "honesto(a)", "você mesmo(a)", "PRÉ-APROVADO(A)", "(a)" -> forma certa do gênero */
+function gener(s){
+  s=String(s);
+  if(ehFeminino()){
+    return s.replace(/o\(a\)/g,'a').replace(/O\(A\)/g,'A').replace(/\(a\)/g,'a').replace(/\(A\)/g,'A');
+  }
+  return s.replace(/o\(a\)/g,'o').replace(/O\(A\)/g,'O').replace(/\(a\)/g,'').replace(/\(A\)/g,'');
+}
+
+/* ============ ÁUDIOS (mensagens de voz da Fernanda) ============
+   Para ativar um áudio numa pergunta, adicione  audio:'audio/audio-1.mp3'  no objeto da pergunta.
+   Os arquivos já estão em /audio (audio-1.mp3, audio-2.mp3, audio-3.mp3).
+   Deixei DESLIGADO por padrão até confirmar qual áudio é a voz certa.            */
+var VOICE_ENABLED = false;
+var VOICE_INTRO = 'audio/audio-1.mp3';
+
+/* puxa o que a página 3 mandou pela URL */
+(function(){
+  var url=new URLSearchParams(location.search);
+  function mapFin(v){ v=(v||'').toLowerCase();
+    if(v.indexOf('dívid')>=0||v.indexOf('divid')>=0)return'dividas';
+    if(v.indexOf('saúd')>=0||v.indexOf('saud')>=0||v.indexOf('médic')>=0||v.indexOf('medic')>=0)return'medica';
+    if(v.indexOf('reform')>=0)return'reforma';
+    if(v.indexOf('investi')>=0||v.indexOf('negóc')>=0||v.indexOf('negoc')>=0)return'negocio';
+    return 'outro'; }
+  function mapRenda(v){ v=v||'';
+    if(v.indexOf('1.500 a')>=0)return 2300; if(v.indexOf('3.000 a')>=0)return 4000;
+    if(v.indexOf('5.000 a')>=0)return 7500; if(v.indexOf('Acima')>=0||v.indexOf('10.000')>=0)return 12000;
+    if(v.indexOf('Até')>=0||v.indexOf('1.500')>=0)return 1300; return 0; }
+  /* dados das 5 perguntas da página 3 chegam pela URL e têm PRIORIDADE.
+     Se a finalidade mudou em relação à anterior, zera as respostas antigas (evita recap misturada).
+     Persiste tudo no localStorage pra sincronizar mesmo abrindo o chat direto/refresh. */
+  function mapOcc(v){ v=(v||'').toLowerCase();
+    if(v.indexOf('desempreg')>=0)return'desempregado';
+    if(v.indexOf('clt')>=0||v.indexOf('empregad')>=0)return'clt';
+    if(v.indexOf('públic')>=0||v.indexOf('public')>=0||v.indexOf('funcion')>=0)return'publico';
+    if(v.indexOf('autôn')>=0||v.indexOf('auton')>=0)return'autonomo';
+    if(v.indexOf('empres')>=0||v.indexOf('mei')>=0)return'empresario';
+    if(v.indexOf('aposent')>=0||v.indexOf('pension')>=0)return'aposentado';
+    if(v.indexOf('dona')>=0||v.indexOf(' lar')>=0)return'donadecasa';
+    if(v.indexOf('estudante')>=0)return'estudante';
+    if(v.indexOf('rentista')>=0)return'rentista';
+    return'outro'; }
+  if(url.get('loanPurpose')){
+    var f=mapFin(url.get('loanPurpose'));
+    if(answers.finalidade && answers.finalidade!==f) answers={};
+    saveAns('finalidade', f);
+  }
+  if(url.get('cpfSituation')) saveAns('negativado', /negativ/i.test(url.get('cpfSituation'))?'sim':'nao');
+  if(url.get('monthlyIncome')){ var r=mapRenda(url.get('monthlyIncome')); if(r) saveAns('renda', r); }
+  if(url.get('occupation')) saveAns('ocupacao_key', mapOcc(url.get('occupation')));
+  if(url.get('education')) saveAns('escolaridade', url.get('education'));
+  /* patrimônio — pergunta nova da etapa 6 da página 3 */
+  function mapBens(v){ v=(v||'').toLowerCase();
+    if(v.indexOf('casa e')>=0||v.indexOf('ambos')>=0)return'ambos';
+    if(v.indexOf('casa')>=0||v.indexOf('im')>=0)return'proprio';
+    if(v.indexOf('ve')>=0||v.indexOf('carro')>=0||v.indexOf('moto')>=0)return'veiculo';
+    return'nenhum'; }
+  if(url.get('assets')) saveAns('bens', mapBens(url.get('assets')));
+})();
+
+/* ============ INFRA DE PÁGINAS ============ */
+var AV='images/atendente-credfacil.png';
+var stage=document.getElementById('stage'), prog=document.getElementById('prog');
+var stEl=document.getElementById('st'), stTxt=document.getElementById('stTxt');
+var step=0, totalSteps=16, gen=0;
+
+/* ===== WhatsApp: relógio, horário dos balões e rodapé de digitar ===== */
+var waFoot=document.querySelector('.wa-foot');
+var wfInput=waFoot?waFoot.querySelector('.wf-input'):null;
+var wfFab=waFoot?waFoot.querySelector('.wf-fab'):null;
+var MIC_SVG='<svg width="23" height="23" viewBox="0 0 24 24" fill="#fff"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"/><path d="M17 12a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-2.08A7 7 0 0 0 19 12z"/></svg>';
+var SEND_SVG='<svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M2.5 21 22 12 2.5 3l.01 7L16 12 2.51 14z"/></svg>';
+var TICK2='<svg width="16" height="11" viewBox="0 0 18 12" fill="none" style="vertical-align:-1px"><path d="M1 6.6 4.4 10 10 2.5" stroke="#53bdeb" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.6 6.6 10 10 16.6 2.5" stroke="#53bdeb" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+/* ===== sugestão de banco enquanto digita ===== */
+var BANCOS=['Nubank','Caixa Econômica Federal','Banco do Brasil','Bradesco','Itaú Unibanco','Santander',
+  'Banco Inter','C6 Bank','PicPay','Mercado Pago','PagBank','Neon','Next','Banco Original','Banco Pan',
+  'BMG','Banco Safra','Sicoob','Sicredi','Banrisul','Banestes','BRB','Banco da Amazônia','Banco do Nordeste',
+  'Agibank','Banco Daycoval','Sofisa','BS2','Will Bank','Digio','Banco Bari','Banco Modal','BTG Pactual',
+  'XP Investimentos','Nubank PJ','Caixa Tem','Banco Votorantim','Banco Cetelem','Banco Master','Stone','InfinitePay'];
+
+var acList=document.getElementById('acList');
+function acFechar(){ if(acList){ acList.classList.remove('show'); acList.innerHTML=''; } }
+function acAbrir(termo, escolher){
+  if(!acList) return;
+  var t=(termo||'').trim().toLowerCase();
+  if(t.length<1){ acFechar(); return; }
+  var achados=BANCOS.filter(function(b){ return b.toLowerCase().indexOf(t)>=0; });
+  /* quem COMEÇA com o que ela digitou vem primeiro */
+  achados.sort(function(a,b){ return a.toLowerCase().indexOf(t) - b.toLowerCase().indexOf(t); });
+  achados=achados.slice(0,6);
+  if(!achados.length){ acFechar(); return; }
+  acList.innerHTML=achados.map(function(b){
+    var i=b.toLowerCase().indexOf(t);
+    var marcado=b.slice(0,i)+'<b>'+b.slice(i,i+t.length)+'</b>'+b.slice(i+t.length);
+    return '<div class="ac-item" data-b="'+b.replace(/"/g,'&quot;')+'">'
+         + '<span class="ac-ic">'+b.charAt(0).toUpperCase()+'</span><span>'+marcado+'</span></div>';
+  }).join('');
+  acList.classList.add('show');
+  [].forEach.call(acList.querySelectorAll('.ac-item'), function(el){
+    el.onclick=function(){ escolher(el.getAttribute('data-b')); };
+  });
+}
+
+function nowHM(){ var d=new Date(); return d.getHours()+':'+('0'+d.getMinutes()).slice(-2); }
+(function(){ var t=document.getElementById('psTime'); if(!t)return; function tk(){ t.textContent=nowHM(); } tk(); setInterval(tk,20000); })();
+function footIdle(){ if(!wfInput)return; wfInput.value=''; wfInput.readOnly=true; wfInput.placeholder='Mensagem'; wfInput.removeAttribute('inputmode'); if(waFoot)waFoot.classList.remove('active'); if(wfFab){ wfFab.innerHTML=MIC_SVG; wfFab.onclick=null; wfFab.setAttribute('aria-label','gravar áudio'); } wfInput.onkeydown=null; wfInput.oninput=null; acFechar(); }
+function footActive(cfg, submit){ if(!wfInput)return; wfInput.readOnly=false; wfInput.value=''; wfInput.placeholder=cfg.placeholder||'Digite aqui...'; if(cfg.inputmode)wfInput.setAttribute('inputmode',cfg.inputmode); else wfInput.removeAttribute('inputmode'); if(waFoot)waFoot.classList.add('active'); if(wfFab){ wfFab.innerHTML=SEND_SVG; wfFab.setAttribute('aria-label','enviar'); wfFab.onclick=submit; } wfInput.onkeydown=function(e){ if(e.key==='Enter'){ e.preventDefault(); acFechar(); submit(); } };
+  /* campo de banco: sugere os nomes conforme ela digita, e um toque já preenche e envia */
+  acFechar();
+  if(cfg.autocomplete==='bancos'){
+    wfInput.oninput=function(){ acAbrir(wfInput.value, function(nomeBanco){ wfInput.value=nomeBanco; acFechar(); submit(); }); };
+  } else { wfInput.oninput=null; } setTimeout(function(){ try{ wfInput.focus(); }catch(_){} },40); }
+/* balão verde: resposta do usuário no chat */
+function echoOut(page, text){ var host=(page&&page.querySelector)?page.querySelector('.qtop'):null; if(!host)return; var row=document.createElement('div'); row.className='qrow out'; row.innerHTML='<div class="bubble">'+String(text).replace(/</g,'&lt;').replace(/>/g,'&gt;')+'<span class="bmeta">'+nowHM()+' '+TICK2+'</span></div>'; host.appendChild(row); scrollPage(host); SFX.sent(); }
+function md(s){ return gener(String(s)).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>'); }
+/* tempo de leitura proporcional ao texto (pra falas que avançam sozinhas) */
+function readMs(t){ t=(Array.isArray(t)?t.join(' '):String(t)); return Math.min(5200, 1300 + t.length*34); }
+function setProg(){ step++; prog.style.width=Math.min(100,(step/totalSteps)*100)+'%'; }
+/* topo fica SEMPRE "online" — o "digitando" aparece só nos pontinhos do balão, não no header */
+function setTyping(on){ /* no-op de propósito: não altera o status do topo */ }
+/* Rola a THREAD inteira até o fim — mas respeita quem subiu pra reler.
+   Se ela está lendo uma mensagem lá em cima, mensagem nova não puxa de volta. */
+var COLADA_NO_FIM=true, MARGEM_FIM=130;
+function noFimDaThread(){ return (stage.scrollHeight - stage.clientHeight - stage.scrollTop) <= MARGEM_FIM; }
+if(stage) stage.addEventListener('scroll',function(){ COLADA_NO_FIM=noFimDaThread(); },{passive:true});
+
+function scrollPage(el, forcar){
+  if(!stage) return;
+  if(!forcar && !COLADA_NO_FIM) return;
+  var ir=function(){ stage.scrollTop=stage.scrollHeight; };
+  ir(); requestAnimationFrame(ir); setTimeout(ir,90); setTimeout(ir,320);
+}
+
+/* troca a página atual por outra (transição "próxima tela").
+   incrementa gen pra invalidar timers de digitação da página anterior (anti-bug do "digitando") */
+/* Antes esta função APAGAVA a etapa anterior do DOM — era isso que fazia a
+   conversa sumir e recomeçar, sem a pessoa poder voltar pra reler.
+   Agora a etapa anterior vira histórico: continua na tela, acima, só perde
+   a interação pra ela não responder duas vezes no mesmo lugar. */
+function swapPage(node){
+  gen++;
+  footIdle();
+  var anteriores=stage.querySelectorAll('.qpage:not(.past)');
+  for(var i=0;i<anteriores.length;i++){
+    var ant=anteriores[i];
+    /* telas de espera ("Analisando...", "Gerando contrato...") NÃO são conversa:
+       elas somem quando a próxima chega. Se ficassem no histórico, o spinner
+       continuaria girando pra sempre no meio do papo. */
+    if(ant.querySelector('.analyzing')){ if(ant.parentNode) ant.parentNode.removeChild(ant); continue; }
+    ant.classList.remove('enter'); ant.classList.add('past');
+  }
+  node.classList.add('qpage','enter');
+  stage.appendChild(node);
+  /* etapa nova sempre traz a pessoa junto, mesmo se ela tinha subido */
+  scrollPage(node, true);
+}
+
+/* mensagem de voz estilo WhatsApp */
+function voiceRow(src){
+  var bars=''; for(var i=0;i<26;i++){ bars+='<i style="height:'+(22+Math.round(Math.abs(Math.sin(i*1.3))*70))+'%"></i>'; }
+  var id='v'+Math.random().toString(36).slice(2,8);
+  var row=document.createElement('div'); row.className='qrow';
+  row.innerHTML='<div class="mav"><img src="'+AV+'" alt=""></div>'
+    +'<div class="bubble"><div class="voice"><button class="play" id="'+id+'b"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>'
+    +'<div class="wave" id="'+id+'w">'+bars+'</div><div class="meta"><span class="t" id="'+id+'t">0:00</span></div></div></div>';
+  setTimeout(function(){
+    var a=new Audio(src); var btn=document.getElementById(id+'b'); var wave=document.getElementById(id+'w'); var t=document.getElementById(id+'t');
+    var pi=document.querySelector('#'+id+'b svg');
+    function fmt(s){ s=Math.floor(s||0); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); }
+    a.addEventListener('loadedmetadata',function(){ t.textContent=fmt(a.duration); });
+    a.addEventListener('timeupdate',function(){ var p=a.currentTime/(a.duration||1); var bs=wave.querySelectorAll('i'); var on=Math.round(p*bs.length); bs.forEach(function(b,i){ b.classList.toggle('on',i<on); }); t.textContent=fmt(a.duration-a.currentTime); });
+    a.addEventListener('ended',function(){ btn.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'; wave.querySelectorAll('i').forEach(function(b){b.classList.remove('on');}); t.textContent=fmt(a.duration); });
+    btn.onclick=function(){ if(a.paused){ a.play(); btn.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>'; } else { a.pause(); btn.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'; } };
+  },30);
+  return row;
+}
+
+/* monta os balões da Fernanda com DIGITAÇÃO em tempo real, depois chama done() */
+function typeMessages(page, msgs, opts, done){
+  if(typeof opts==='function'){ done=opts; opts=null; }
+  var host=page.querySelector('.qtop'); var i=0; var myGen=gen;
+  function alive(){ return myGen===gen; }
+  (function next(){
+    if(!alive()) return;
+    if(i>=msgs.length){ setTyping(false); maybeVoice(); return; }
+    setTyping(true);
+    var ghost=i>0;
+    var row=document.createElement('div'); row.className='qrow';
+    row.innerHTML='<div class="mav'+(ghost?' ghost':'')+'"><img src="'+AV+'" alt=""></div><div class="bubble typing-b"><span class="typing"><span></span><span></span><span></span></span></div>';
+    host.appendChild(row); scrollPage(host);
+    /* tempo com os "..." de digitando antes do balão aparecer.
+       Proporcional ao tamanho do texto, como alguém digitando de verdade. */
+    var txt=msgs[i], delay=Math.min(1700,620+txt.length*15);
+    setTimeout(function(){
+      if(!alive()){ if(row.parentNode) row.parentNode.removeChild(row); return; }
+      var bub=row.querySelector('.bubble');
+      bub.classList.remove('typing-b');
+      if(i===msgs.length-1) bub.classList.add('q');
+      bub.innerHTML=md(txt)+'<span class="bmeta">'+nowHM()+'</span>';
+      scrollPage(host); i++; SFX.recv();
+      if(i>=msgs.length){ setTyping(false); maybeVoice(); }
+      /* respiro entre uma mensagem e a próxima, pra dar tempo de ler */
+      else setTimeout(next, Math.min(2300, 720 + txt.length*18));
+    },delay);
+  })();
+  function maybeVoice(){
+    if(!alive()) return;
+    if(VOICE_ENABLED && opts && opts.audio){
+      setTyping(true);
+      setTimeout(function(){ if(!alive())return; setTyping(false); host.appendChild(voiceRow(opts.audio)); scrollPage(host); SFX.recv(); setTimeout(function(){ if(alive())done&&done(); },300); }, 900);
+    } else { done&&done(); }
+  }
+}
+
+/* monta página + revela opções só depois da digitação */
+function buildOptsHtml(options){
+  return options.map(function(o,idx){
+    return '<button class="opt" data-i="'+idx+'">'
+      + (o.em?'<span class="em">'+o.em+'</span>':'')
+      + '<span class="lbl">'+gener(o.label)+'</span>'
+      + '<span class="ar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m9 6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>'
+    + '</button>';
+  }).join('');
+}
+
+/* ============ MOTOR DE PERGUNTAS (uma pergunta por página) ============ */
+function askQuestion(q,done){
+  var msgs = typeof q.agent==='function'?q.agent():q.agent;
+  var page=document.createElement('div');
+  page.innerHTML='<div class="qtop"></div><div class="opts">'+buildOptsHtml(q.options)+'</div>';
+  swapPage(page);
+  var optsBox=page.querySelector('.opts');
+  page.querySelectorAll('.opt').forEach(function(b){
+    b.onclick=function(){
+      var o=q.options[+b.dataset.i];
+      page.querySelectorAll('.opt').forEach(function(x){ x.disabled=true; });
+      b.classList.add('sel');
+      echoOut(page, gener(o.label));
+      var ob=page.querySelector('.opts'); if(ob){ setTimeout(function(){ ob.style.transition='opacity .2s'; ob.style.opacity='0'; ob.style.pointerEvents='none'; },240); }
+      if(q.save) saveAns(q.save,o.val);
+      setProg();
+      var go=function(){ done&&done(o.val); };
+      if(o.reply){ setTimeout(function(){ showReply(typeof o.reply==='function'?o.reply():o.reply, go); },540); }
+      else setTimeout(go,500);
+    };
+  });
+  typeMessages(page, msgs, {audio:q.audio}, function(){ optsBox.classList.add('show'); scrollPage(page.querySelector('.qtop')); });
+}
+function askSequence(arr,done){ var i=0; (function nx(){ if(i>=arr.length){done&&done();return;} askQuestion(arr[i],function(){i++;nx();}); })(); }
+
+/* resposta empática curta da Fernanda, depois avança sozinha */
+function showReply(text,cb){
+  var page=document.createElement('div');
+  page.innerHTML='<div class="qtop"></div>';
+  swapPage(page);
+  typeMessages(page,[text],function(){ setTimeout(cb, readMs(text)); });
+}
+
+/* página intermediária (intro/recap) + botão continuar */
+function infoPage(msgs,btnLabel,cb,audio){
+  var page=document.createElement('div');
+  page.innerHTML='<div class="qtop"></div>'
+    +'<div class="opts"><button class="opt" id="contBtn"><span class="lbl">'+(btnLabel||'Continuar')+'</span><span class="ar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m9 6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></div>';
+  swapPage(page);
+  var optsBox=page.querySelector('.opts');
+  /* Antes este botão avançava SEM deixar o balão verde da resposta dela —
+     diferente de todas as outras etapas. Dava a impressão de que a conversa
+     tinha pulado sozinha. Agora ele responde igual aos outros. */
+  page.querySelector('#contBtn').onclick=function(){
+    optsBox.classList.remove('show');
+    echoOut(page, btnLabel||'Continuar');
+    setProg();
+    setTimeout(function(){ cb&&cb(); }, 480);
+  };
+  typeMessages(page,msgs,{audio:audio},function(){ optsBox.classList.add('show'); });
+}
+
+/* ====== campo de digitação (chave PIX, banco) ====== */
+function askInput(cfg, onDone){
+  var page=document.createElement('div');
+  page.innerHTML='<div class="qtop"></div>';
+  swapPage(page);
+  function submit(){
+    var v=wfInput.value.trim();
+    if(cfg.validate){ if(!cfg.validate(v)){ try{wfInput.focus();}catch(_){} return; } } else if(!v){ try{wfInput.focus();}catch(_){} return; }
+    echoOut(page, v);
+    footIdle();
+    setProg(); if(cfg.save) saveAns(cfg.save,v); if(cfg.store){ try{ localStorage.setItem(cfg.store,v); }catch(e){} }
+    setTimeout(function(){ onDone&&onDone(v); }, 360);
+  }
+  typeMessages(page, (typeof cfg.agent==='function'?cfg.agent():cfg.agent), function(){ footActive(cfg, submit); });
+}
+
+/* chave PIX: digita -> confirma -> (corrige se preciso) */
+function askPixKey(onDone){
+  var tipo=answers.pix_tipo||'PIX';
+  askInput({
+    agent:['Me manda a sua **chave Pix** ('+tipo+') 💸'],
+    placeholder:'Digite sua chave '+tipo+'...',
+    validate:function(v){ return v.length>=3; }
+  }, function(v){
+    askQuestion({ agent:['Confere pra mim:<br><br>👉 **'+v+'**<br><br>Está certa?'],
+      options:[{em:'✅',label:'Sim, está correta',val:'sim'},{em:'✏️',label:'Não, quero corrigir',val:'nao'}] },
+      function(val){
+        if(val==='sim'){ saveAns('chave_pix',v); try{localStorage.setItem('chave_pix',v);}catch(e){} onDone&&onDone(); }
+        else { askPixKey(onDone); }
+      });
+  });
+}
+
+/* ====== coleta de dados de recebimento (como no funil original) ====== */
+var Q_conta = { save:'conta_bancaria',
+  agent:['Prontinho'+(oi?(', '+oi):'')+'! Agora é só ajeitar pra onde cai o dinheiro 💸 Você tem **conta bancária** no seu nome?'],
+  options:[{em:'🏦',label:'Sim, banco tradicional',val:'tradicional'},{em:'📱',label:'Sim, banco digital',val:'digital'},{em:'✅',label:'Tenho os dois',val:'ambos'},{em:'🆕',label:'Vou abrir uma conta',val:'abrir'}] };
+var Q_pixtipo = { save:'pix_tipo',
+  agent:['Perfeito! Qual **chave Pix** você quer usar pra receber?'],
+  options:[{em:'🪪',label:'CPF/CNPJ',val:'CPF'},{em:'📱',label:'Celular',val:'Celular'},{em:'✉️',label:'E-mail',val:'E-mail'},{em:'🔑',label:'Chave aleatória',val:'Aleatória'}] };
+var Q_quando = { save:'quando_pagar',
+  agent:['Última coisa 💚 Quando você prefere **começar a pagar**?'],
+  options:[{em:'📅',label:'No próximo mês',val:'prox'},{em:'🗓️',label:'Em 30 dias',val:'30'},{em:'🗓️',label:'Em 60 dias',val:'60'},{em:'🗓️',label:'Em 90 dias',val:'90'}] };
+
+function dadosRecebimento(done){
+  askQuestion(Q_conta, function(){
+    askQuestion(Q_pixtipo, function(){
+      askPixKey(function(){
+        askInput({ agent:['E qual é o **nome do seu banco**?'], placeholder:'Comece a digitar...', save:'banco', store:'banco', autocomplete:'bancos' }, function(){
+          askQuestion(Q_quando, function(){ done&&done(); });
+        });
+      });
+    });
+  });
+}
+
+/* ============ DADOS DAS PERGUNTAS ============ */
+var Q_finalidade = { save:'finalidade', audio:VOICE_INTRO,
+  agent:[ 'Bora começar 💚 Me conta: **pra que você precisa** desse crédito?' ],
+  options:[ {em:'💳',label:'Quitar dívidas',val:'dividas'},{em:'🏥',label:'Emergência médica',val:'medica'},
+            {em:'🏠',label:'Reformar a casa',val:'reforma'},{em:'📈',label:'Investir no meu negócio',val:'negocio'},
+            {em:'✨',label:'Outro motivo',val:'outro'} ] };
+var Q_renda = { save:'renda',
+  agent:['E qual é a sua **renda mensal** hoje, mais ou menos?'],
+  options:[ {em:'💵',label:'Até R$ 1.500',val:1300},{em:'💵',label:'R$ 1.500 a R$ 3.000',val:2300},
+            {em:'💵',label:'R$ 3.000 a R$ 5.000',val:4000},{em:'💰',label:'Acima de R$ 5.000',val:6500} ] };
+var Q_negativado = { save:'negativado',
+  agent:['Aqui é zero julgamento 💚 Seu **nome está negativado** hoje?'],
+  options:[ {em:'🙏',label:'Sim, estou negativado(a)',val:'sim',reply:'Pode respirar: isso não muda **nada** aqui 💚'},
+            {em:'✅',label:'Não, meu nome está limpo',val:'nao',reply:'Ótimo! Isso ajuda a conseguir uma condição melhor 🎉'} ] };
+var Q_outroemprestimo = { save:'outro_emprestimo',
+  agent:['Você tem **outro empréstimo** em aberto hoje?'],
+  options:[{em:'🚫',label:'Não, nenhum',val:'nenhum'},{em:'1️⃣',label:'Sim, tenho um',val:'um'},{em:'➕',label:'Sim, mais de um',val:'varios'}] };
+var Q_parcelacabe = { save:'parcela_cabe',
+  agent:['E qual **parcela cabe tranquilo** no seu mês?'],
+  options:[{em:'🙂',label:'Até R$ 150 por mês',val:150},{em:'👍',label:'Entre R$ 150 e R$ 300',val:300},{em:'💪',label:'Entre R$ 300 e R$ 500',val:500},{em:'🚀',label:'Acima de R$ 500',val:700}] };
+
+/* RAMOS por finalidade (cada resposta abre perguntas próprias) */
+var BRANCH = {
+  dividas:[
+    {save:'valordivida', agent:['Decidir quitar dívida é um passo enorme 👏 **Quanto você deve** no total hoje?'],
+      options:[{label:'Até R$ 2.000',val:'ate2k'},{label:'R$ 2.000 a R$ 5.000',val:'2a5k'},{label:'R$ 5.000 a R$ 10.000',val:'5a10k'},{label:'Mais de R$ 10.000',val:'+10k'}]},
+    {save:'credor', agent:['Anotado 💚 Essa dívida é com **cartão/banco**, **outro empréstimo** ou **contas do dia a dia**?'],
+      options:[{em:'💳',label:'Cartão ou banco',val:'cartao'},{em:'📄',label:'Outro empréstimo',val:'emprestimo'},{em:'🏠',label:'Contas do dia a dia',val:'contas'}]},
+    {save:'pagaminimo', agent:['E hoje você ainda consegue pagar **o mínimo**?'],
+      options:[{em:'✅',label:'Sim, ainda consigo',val:'sim'},{em:'😔',label:'Tá bem difícil',val:'nao',reply:'É exatamente pra isso que eu tô aqui 💪'}]},
+  ],
+  medica:[
+    {save:'urgencia', agent:['Sinto muito 😔 Vou agilizar o seu caso. É urgência **pra agora**?'],
+      options:[{em:'🚨',label:'Sim, é pra agora',val:'agora'},{em:'📅',label:'Pros próximos dias',val:'dias'}]},
+    {save:'quem', agent:['É pra **você** ou pra alguém que você ama?'],
+      options:[{em:'🧑',label:'Pra mim',val:'eu'},{em:'❤️',label:'Pra um familiar',val:'familiar',reply:'Cuidar de quem a gente ama não tem preço 💚'}]},
+    {save:'temparte', agent:['Você já tem **uma parte** do valor ou precisa do total?'],
+      options:[{em:'🤝',label:'Já tenho uma parte',val:'sim'},{em:'🙏',label:'Preciso do valor total',val:'nao'}]},
+  ],
+  reforma:[
+    {save:'reformasize', agent:['Adoro reforma 🏡 É **grande** ou uns ajustes pontuais?'],
+      options:[{em:'🏗️',label:'Reforma grande',val:'grande'},{em:'🔧',label:'Ajustes pontuais',val:'peq'}]},
+    {save:'imovel', agent:['E o imóvel é **próprio** ou alugado?'],
+      options:[{em:'🏠',label:'Próprio',val:'proprio'},{em:'🔑',label:'Alugado',val:'alugado'}]},
+    {save:'orcamento', agent:['Você já tem um **orçamento** da obra?'],
+      options:[{em:'✅',label:'Sim, já tenho',val:'sim'},{em:'🤔',label:'Ainda não',val:'nao'}]},
+  ],
+  negocio:[
+    {save:'negstatus', agent:['Que orgulho de quem empreende 📈 Seu negócio **já roda** ou tá começando?'],
+      options:[{em:'🏪',label:'Já está funcionando',val:'sim'},{em:'🌱',label:'Estou começando agora',val:'novo'}]},
+    {save:'usocredito', agent:['É pra **capital de giro** ou **equipamento/estoque**?'],
+      options:[{em:'💰',label:'Capital de giro',val:'giro'},{em:'📦',label:'Equipamento/estoque',val:'equip'}]},
+    {save:'fatura', agent:['**Quanto ele fatura** por mês hoje?'],
+      options:[{em:'💵',label:'Até R$ 5 mil',val:'ate5'},{em:'💵',label:'R$ 5 mil a R$ 15 mil',val:'5a15'},{em:'💰',label:'Mais de R$ 15 mil',val:'+15'}]},
+  ],
+  outro:[
+    {save:'tipoobjetivo', agent:['Me conta: é pra uma **compra**, uma **viagem** ou outro objetivo?'],
+      options:[{em:'🛍️',label:'Uma compra',val:'compra'},{em:'✈️',label:'Uma viagem',val:'viagem'},{em:'✨',label:'Outro objetivo',val:'outro'}]},
+    {save:'planejado', agent:['É **planejado** ou é **pra agora**?'],
+      options:[{em:'📅',label:'É planejado',val:'plan'},{em:'⚡',label:'É pra agora',val:'agora'}]},
+  ]
+};
+
+/* ====== leitura do perfil da página 3 (ocupação/escolaridade) ====== */
+function ocupacaoTxt(){ return {clt:'CLT',publico:'servidor(a) público(a)',autonomo:'autônomo(a)',empresario:'empresário(a)',aposentado:'aposentado(a)/pensionista',desempregado:'sem vínculo fixo no momento',donadecasa:'do lar',estudante:'estudante',rentista:'rentista'}[answers.ocupacao_key]||''; }
+function escolaridadeTxt(){ var e=(answers.escolaridade||'').toLowerCase(); if(!e)return''; if(e.indexOf('fundam')>=0)return'ensino fundamental'; if(e.indexOf('médio')>=0||e.indexOf('medio')>=0)return'ensino médio'; if(e.indexOf('superior')>=0)return'ensino superior'; if(e.indexOf('pós')>=0||e.indexOf('pos')>=0)return'pós-graduação'; return''; }
+function ocupacaoFollowTxt(){
+  var o=answers.ocupacao_key;
+  if(o==='clt') return {novo:'há pouco tempo no emprego atual',medio:'com um bom tempo de casa',estavel:'com mais de 2 anos no mesmo emprego'}[answers.tempo_emprego]||'';
+  if(o==='publico') return answers.vinculo==='efetivo'?'como servidor(a) efetivo(a)':(answers.vinculo==='contratado'?'como servidor(a) contratado(a)':'');
+  if(o==='autonomo') return answers.estab_renda==='estavel'?'com renda autônoma estável':(answers.estab_renda==='varia'?'com renda que varia mês a mês':'');
+  if(o==='empresario') return answers.cnpj==='sim'?'com CNPJ ativo':(answers.cnpj==='mei'?'como MEI':'');
+  if(o==='aposentado') return answers.canal_beneficio?'recebendo o benefício de forma fixa':'';
+  if(o==='desempregado') return answers.renda_extra==='bico'?'fazendo bicos pra complementar a renda':'';
+  return '';
+}
+/* pergunta extra que muda de acordo com a OCUPAÇÃO informada na página 3 */
+function Q_ocupacao(){
+  var m={
+    clt:{save:'tempo_emprego', agent:['Vi que você trabalha de **CLT** 👔 Há quanto tempo você está no seu **emprego atual**?'],
+      options:[{label:'Menos de 6 meses',val:'novo'},{label:'De 6 meses a 2 anos',val:'medio'},{em:'✅',label:'Mais de 2 anos',val:'estavel'}]},
+    publico:{save:'vinculo', agent:['Como você é **servidor(a) público(a)** 🏛️ você é efetivo(a)/concursado(a)?'],
+      options:[{em:'✅',label:'Sim, sou efetivo(a)',val:'efetivo'},{label:'Sou contratado(a)',val:'contratado'}]},
+    autonomo:{save:'estab_renda', agent:['Vi que você é **autônomo(a)** 💪 Sua renda costuma ser **estável** ou varia bastante por mês?'],
+      options:[{em:'✅',label:'É bem estável',val:'estavel'},{label:'Varia bastante',val:'varia'}]},
+    empresario:{save:'cnpj', agent:['Boa, você é **empresário(a)** 📈 Sua empresa tem **CNPJ ativo**?'],
+      options:[{em:'✅',label:'Sim, CNPJ ativo',val:'sim'},{label:'Ainda não / sou MEI',val:'mei'}]},
+    aposentado:{save:'canal_beneficio', agent:['Vi que você é **aposentado(a)/pensionista** 💚 Você recebe seu benefício por onde?'],
+      options:[{label:'Banco tradicional',val:'banco'},{label:'Caixa / Caixa Tem',val:'caixa'},{label:'Outro',val:'outro'}]},
+    desempregado:{save:'renda_extra', agent:['Sem problema nenhum 💚 Mesmo sem um emprego fixo agora, você tem alguma **renda extra** (bicos, ajuda)?'],
+      options:[{em:'💪',label:'Sim, faço bicos',val:'bico'},{label:'Não no momento',val:'nao'}]},
+    donadecasa:{save:'fonte_renda', agent:['Entendi! E hoje a **renda da casa** vem principalmente de quê?'],
+      options:[{label:'Do meu companheiro(a)',val:'conjuge'},{label:'De bicos/autônomo',val:'autonomo'},{label:'De benefício',val:'beneficio'}]},
+    estudante:{save:'fonte_renda', agent:['Show! E como **estudante**, você tem alguma renda hoje?'],
+      options:[{label:'Faço estágio/bicos',val:'bico'},{label:'Recebo dos pais',val:'familia'},{label:'Tenho renda fixa',val:'fixa'}]}
+  };
+  return m[answers.ocupacao_key] || {save:'fonte_renda', agent:['Pra completar sua análise, qual a sua **principal fonte de renda** hoje?'],
+      options:[{label:'Renda fixa mensal',val:'fixa'},{label:'Renda variável',val:'variavel'},{label:'Ajuda de familiares',val:'familia'}]};
+}
+
+/* ============ FLUXO ============ */
+/* --- confirmação de identidade (consulta CPF) + saudação --- */
+function fmtCPFmask(){
+  var c=(localStorage.getItem('cpf')||localStorage.getItem('document')||'').replace(/\D/g,'').slice(0,11);
+  if(c.length!==11) return '';
+  return c.slice(0,3)+'.•••.•••-'+c.slice(9,11);
+}
+function idField(label,val){ return val?('<div class="id-row"><span class="id-k">'+label+'</span><span class="id-v">'+String(val).replace(/</g,'&lt;')+'</span></div>'):''; }
+function confirmarIdentidade(done){
+  var page=document.createElement('div');
+  page.innerHTML='<div class="qtop"></div>'
+    +'<div class="opts"><button class="opt" id="idBtn"><span class="em">✅</span><span class="lbl">Sim, sou eu — pode continuar</span><span class="ar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m9 6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></div>';
+  swapPage(page);
+  var optsBox=page.querySelector('.opts');
+  var greet=[
+    (oi?('Oi, '+oi+'! 💚'):'Oi! 💚')+' Eu sou a **Fernanda**, consultora de crédito aqui da CredFácil — e a partir de agora sou **eu** que vou cuidar pessoalmente do seu caso.',
+    'Pra sua **segurança**, a primeira coisa que eu fiz foi uma **consulta oficial** pra confirmar que é você mesmo(a). Confere pra mim se está tudo certo 👇'
+  ];
+  typeMessages(page, greet, function(){
+    var nome=getFullName(), cpf=fmtCPFmask(), nasc=(localStorage.getItem('data_nasc')||''), mae=(localStorage.getItem('nome_mae')||'');
+    var shield='<svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    var card=document.createElement('div'); card.className='idcard';
+    card.innerHTML='<div class="id-head"><span class="id-badge">'+shield+' Consulta segura realizada</span></div>'
+      + idField('Nome completo', nome)
+      + idField('CPF', cpf)
+      + idField('Data de nascimento', nasc)
+      + idField('Nome da mãe', mae)
+      + '<div class="id-foot">'+shield+' Dados protegidos pela LGPD (Lei nº 13.709/2018)</div>';
+    page.querySelector('.qtop').appendChild(card);
+    scrollPage(page.querySelector('.qtop'));
+    optsBox.classList.add('show');
+  });
+  /* mesmo caso do infoPage: confirmar a identidade também tem que deixar
+     o balão verde dela, senão a conversa parece pular sozinha */
+  page.querySelector('#idBtn').onclick=function(){
+    var b=page.querySelector('#idBtn');
+    b.disabled=true;
+    optsBox.classList.remove('show');
+    echoOut(page, 'Sim, sou eu');
+    setProg();
+    setTimeout(function(){ done&&done(); }, 480);
+  };
+}
+/* --- fala curta da Fernanda que avança sozinha (prova social / selo) --- */
+function juliaSay(msgs, cb){ var page=document.createElement('div'); page.innerHTML='<div class="qtop"></div>'; swapPage(page); typeMessages(page, msgs, function(){ setTimeout(cb||function(){}, readMs(msgs)); }); }
+/* ====== BEAT DE PROVA SOCIAL — com DEPOIMENTO EM VÍDEO no meio da conversa ======
+   Fica AQUI de propósito: a pessoa já respondeu tudo e o próximo passo é entregar
+   os dados de recebimento (chave Pix) — é o ponto de maior desconfiança do funil.
+   É onde o depoimento paga: quem fala não é a página, é uma cliente.
+   NÃO pode ir pro começo: lá já tem o vídeo de abertura da Fernanda, e dois vídeos
+   seguidos antes da conversa engatar derrubam a pessoa. */
+function socialProofBeat(cb){
+  var n=320+(((answers.finalidade?answers.finalidade.length:4)*13)%79);
+  juliaSay([
+    'Ó, só pra te deixar tranquilo(a): **essa semana eu já ajudei mais de '+n+' pessoas** com um perfil bem parecido com o seu 💚',
+    'Deixa eu te mostrar uma delas, antes de a gente ir pros seus dados 👇'
+  ], function(){
+    videoDepoimento(function(){
+      juliaSay(['Agora bora só ajeitar **pra onde vai o seu dinheiro**, tá? É bem rapidinho.'], cb);
+    });
+  });
+}
+
+/* ====== DEPOIMENTO EM VÍDEO (meio do funil) ======
+   Mesmo ritmo de WhatsApp do vídeo de abertura: a Fernanda fala, dá um respiro pra
+   ler, volta a "digitar" e SÓ ENTÃO o vídeo chega. O botão de continuar nasce
+   TRAVADO e só libera quando o vídeo termina (ou passa de 85%) — senão a pessoa
+   pula o depoimento no reflexo e ele não serve pra nada.
+   O card reusa o CSS .vintro/.vlock, que já é 9/16 — os depoimentos são verticais. */
+var DEPO = { src:'videos/depoimentos/dep9-1.mp4', poster:'videos/depoimentos/dep9-1.jpg', nome:'Gabriela' };
+function videoDepoimento(done){
+  var page=document.createElement('div');
+  page.innerHTML='<div class="qtop"></div>';
+  swapPage(page);
+  var host=page.querySelector('.qtop');
+  var myGen=gen;
+  function alive(){ return myGen===gen; }
+
+  var fala='Olha só: a **'+DEPO.nome+'** recebeu o dinheiro dela **ontem** 💸 Ela me deixou te mandar esse vídeo — assiste que é rapidinho 👇';
+
+  typeMessages(page, [fala], function(){
+    if(!alive()) return;
+    setTimeout(function(){
+      if(!alive()) return;
+      var tp=document.createElement('div'); tp.className='qrow';
+      tp.innerHTML='<div class="mav ghost"><img src="'+AV+'" alt=""></div>'
+        +'<div class="bubble typing-b"><span class="typing"><span></span><span></span><span></span></span></div>';
+      host.appendChild(tp); scrollPage(host);
+      setTimeout(function(){
+        if(!alive()) return;
+        if(tp.parentNode) tp.parentNode.removeChild(tp);
+        montarDepo();
+        SFX.recv();
+      }, 1900);
+    }, 1500);
+  });
+
+  function montarDepo(){
+    var card=document.createElement('div'); card.className='vintro';
+    card.innerHTML=''
+      +'<div class="vbadge"><img src="images/credfacil-logo.png" alt="CredFácil"><b>CLIENTE</b></div>'
+      +'<video id="vdepoV" src="'+DEPO.src+'" poster="'+DEPO.poster+'" playsinline preload="metadata"></video>'
+      +'<div class="vplay" id="vdepoPlay"><span class="pb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlbl">Toque para assistir</span></div>'
+      +'<div class="vprog"><i id="vdepoBar"></i></div>';
+    page.appendChild(card);
+
+    var btn=document.createElement('button'); btn.className='vlock'; btn.disabled=true;
+    btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> <span id="vdepoTxt">Assista o depoimento para continuar</span>';
+    page.appendChild(btn);
+    scrollPage(host);
+
+    var v=card.querySelector('#vdepoV'), bar=card.querySelector('#vdepoBar');
+    var overlay=card.querySelector('#vdepoPlay'), txt=btn.querySelector('#vdepoTxt');
+    var liberou=false;
+    function liberar(){
+      if(liberou) return; liberou=true;
+      btn.disabled=false;
+      btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg> Continuar';
+    }
+    function tocar(){ if(v.paused){ var p=v.play(); if(p&&p.catch)p.catch(function(){}); } else { v.pause(); } }
+    overlay.onclick=tocar; v.onclick=tocar;
+    v.addEventListener('play', function(){ card.classList.add('playing'); });
+    v.addEventListener('pause', function(){ if(!v.ended) card.classList.remove('playing'); });
+    v.addEventListener('timeupdate', function(){
+      var d=v.duration||1, pct=Math.min(100, v.currentTime/d*100);
+      bar.style.width=pct+'%';
+      if(!liberou){
+        var rest=Math.max(0, Math.ceil(d - v.currentTime));
+        txt.textContent='Assista o depoimento · faltam '+rest+'s';
+        if(v.currentTime >= d*0.85) liberar();
+      }
+    });
+    v.addEventListener('ended', function(){ card.classList.remove('playing'); overlay.style.display='none'; liberar(); });
+
+    /* Rede de segurança: se o vídeo não carregar (rede ruim, arquivo fora do ar),
+       libera o botão em 12s. Prender a pessoa num vídeo que nunca vai tocar é
+       perder a venda — o depoimento é reforço, não pedágio. */
+    setTimeout(function(){ if(!liberou && (v.readyState===0 || v.error)) liberar(); }, 12000);
+    v.addEventListener('error', liberar);
+
+    btn.onclick=function(){
+      if(btn.disabled) return;
+      try{ v.pause(); }catch(e){}
+      echoOut(page, 'Assisti ✅');
+      setTimeout(function(){ done&&done(); }, 460);
+    };
+  }
+}
+/* ====== VÍDEO DE ABERTURA: a atendente pede pra assistir ANTES de tudo ======
+   Só depois de assistir (o vídeo é curto) o chat segue pra confirmação dos dados.
+
+   RITMO (é o ponto): a pessoa cai no chat e NÃO leva o vídeo na cara. Primeiro ela
+   vê a conversa vazia, aí a Fernanda aparece "digitando" alguns segundos, manda a
+   primeira mensagem, dá um respiro pra ela ler, volta a "digitar" e SÓ ENTÃO o
+   vídeo chega — como chegaria no WhatsApp de verdade. Despejar tudo de uma vez
+   entrega que é página, não conversa. */
+function videoIntro(done){
+  var page=document.createElement('div');
+  page.innerHTML='<div class="qtop"></div>';
+  swapPage(page);
+  var host=page.querySelector('.qtop');
+  var myGen=gen;
+  function alive(){ return myGen===gen; }
+
+  var abertura='Oi'+(oi?(', '+oi):'')+'! 💛 Antes da gente começar, **dá play nesse vídeo** 👇 Assiste até o fim que eu já te explico como você recebe o seu dinheiro.';
+
+  /* 1) "digitando…" → 2) a mensagem → 3) respiro pra ler → 4) "digitando…" de novo → 5) o vídeo */
+  typeMessages(page, [abertura], function(){
+    if(!alive()) return;
+    setTimeout(function(){
+      if(!alive()) return;
+      var tp=document.createElement('div'); tp.className='qrow';
+      tp.innerHTML='<div class="mav ghost"><img src="'+AV+'" alt=""></div>'
+        +'<div class="bubble typing-b"><span class="typing"><span></span><span></span><span></span></span></div>';
+      host.appendChild(tp); scrollPage(host);
+      setTimeout(function(){
+        if(!alive()) return;
+        if(tp.parentNode) tp.parentNode.removeChild(tp);
+        montarVideo();
+        SFX.recv();
+      }, 2100);
+    }, 1500);
+  });
+
+  function montarVideo(){
+    var card=document.createElement('div'); card.className='vintro';
+    card.innerHTML=''
+      +'<div class="vbadge"><img src="images/credfacil-logo.png" alt="CredFácil"><b>ASSISTA</b></div>'
+      +'<video id="vintroV" src="videos/video-credfacil-1.mp4" poster="videos/video-credfacil-1-poster.jpg" playsinline preload="metadata"></video>'
+      +'<div class="vplay" id="vintroPlay"><span class="pb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlbl">Toque para assistir</span></div>'
+      +'<div class="vprog"><i id="vintroBar"></i></div>';
+    page.appendChild(card);
+
+    var btn=document.createElement('button'); btn.className='vlock'; btn.disabled=true;
+    btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> <span id="vlockTxt">Assista o vídeo para continuar</span>';
+    page.appendChild(btn);
+    scrollPage(page.querySelector('.qtop'));
+
+    var v=card.querySelector('#vintroV'), bar=card.querySelector('#vintroBar');
+    var overlay=card.querySelector('#vintroPlay'), txt=btn.querySelector('#vlockTxt');
+    var liberou=false;
+    function liberar(){
+      if(liberou) return; liberou=true;
+      btn.disabled=false;
+      btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg> Continuar';
+    }
+    function tocar(){ if(v.paused){ var p=v.play(); if(p&&p.catch)p.catch(function(){}); } else { v.pause(); } }
+    overlay.onclick=tocar; v.onclick=tocar;
+    v.addEventListener('play', function(){ card.classList.add('playing'); });
+    v.addEventListener('pause', function(){ if(!v.ended) card.classList.remove('playing'); });
+    v.addEventListener('timeupdate', function(){
+      var d=v.duration||1, pct=Math.min(100, v.currentTime/d*100);
+      bar.style.width=pct+'%';
+      if(!liberou){
+        var rest=Math.max(0, Math.ceil(d - v.currentTime));
+        txt.textContent='Assista o vídeo · faltam '+rest+'s';
+        if(v.currentTime >= d*0.85) liberar();   /* assistiu quase tudo → libera */
+      }
+    });
+    v.addEventListener('ended', function(){ card.classList.remove('playing'); overlay.style.display='none'; liberar(); });
+
+    btn.onclick=function(){
+      if(btn.disabled) return;
+      try{ v.pause(); }catch(e){}
+      echoOut(page, 'Já assisti ✅');
+      setProg();
+      setTimeout(function(){ done&&done(); }, 460);
+    };
+  }
+}
+
+function run(){ videoIntro(function(){ confirmarIdentidade(function(){ startFlow(); }); }); }
+function startFlow(){
+  if(answers.finalidade){
+    var fimMap={dividas:'quitar suas dívidas',medica:'uma emergência médica',reforma:'reformar a sua casa',negocio:'investir no seu negócio',outro:'o seu objetivo'};
+    var neg = answers.negativado==='sim' ? ' e que seu nome está **negativado** hoje — mas isso fica comigo, viu 💚'
+            : (answers.negativado==='nao' ? ' e que seu **nome está limpo** 🎉' : '');
+    infoPage([
+      'Então... vi aqui que é pra **'+(fimMap[answers.finalidade]||'o seu objetivo')+'**'+neg+'.',
+      'Vou te fazer só umas perguntinhas, com calma, pra montar a **melhor proposta possível** — e pode confiar: eu analiso **cada resposta** sua de verdade.'
+    ], 'Pode começar', function(){ askSequence(BRANCH[answers.finalidade]||BRANCH.outro, afterBranch); }, VOICE_INTRO);
+  } else {
+    askQuestion(Q_finalidade, function(){ askSequence(BRANCH[answers.finalidade]||BRANCH.outro, afterBranch); });
+  }
+}
+function afterBranch(){
+  askQuestion(Q_ocupacao(), function(){
+    var seq=[];
+    seq.push(Q_outroemprestimo);
+    if(!answers.renda) seq.push(Q_renda);
+    seq.push(Q_parcelacabe);
+    if(answers.negativado==null) seq.push(Q_negativado);
+    askSequence(seq, function(){ socialProofBeat(function(){ dadosRecebimento(synthesisOffer); }); });
+  });
+}
+
+/* ============ OFERTA (calcula com VÁRIOS fatores) ============ */
+function rendaTxt(){ var r=Number(answers.renda)||0;
+  if(r<=1300)return 'cerca de R$ 1.500'; if(r<=2300)return 'entre R$ 1.500 e R$ 3.000';
+  if(r<=4000)return 'entre R$ 3.000 e R$ 5.000'; if(r<=7500)return 'acima de R$ 5.000'; return 'acima de R$ 10.000'; }
+function calcAprovado(){
+  var renda=Number(answers.renda)||2300, max=renda*6;
+  if(answers.negativado==='sim') max*=0.55;
+  if(answers.finalidade==='negocio'){ max*=1.12; if(answers.fatura==='+15')max*=1.15; if(answers.fatura==='ate5')max*=0.9; }
+  if(answers.finalidade==='reforma'){ max*=1.05; if(answers.imovel==='proprio')max*=1.08; }
+  if(answers.finalidade==='dividas'){ if(answers.valordivida==='+10k')max*=0.9; if(answers.pagaminimo==='nao')max*=0.85; }
+  if(answers.finalidade==='medica' && answers.temparte==='sim') max*=1.05;
+  var occ=answers.ocupacao_key;
+  if(occ==='publico'||occ==='aposentado') max*=1.10;
+  if(occ==='clt'){ if(answers.tempo_emprego==='estavel') max*=1.06; else if(answers.tempo_emprego==='novo') max*=0.96; }
+  if(occ==='empresario' && answers.cnpj==='sim') max*=1.05;
+  if(occ==='autonomo' && answers.estab_renda==='varia') max*=0.93;
+  if(occ==='desempregado') max*=0.62;
+  var esc=escolaridadeTxt(); if(esc==='ensino superior'||esc==='pós-graduação') max*=1.04;
+  /* teto do PRÉ-APROVADO (só o que aparece no slider pra ela escolher).
+     Pode passar de 5k pra ela poder pedir mais alto, mas o que é LIBERADO de fato
+     (calcLiberado, após o Serasa) é sempre travado abaixo de 5k. */
+  max=Math.min(8000,max); max=Math.max(2000,Math.round(max/500)*500);
+  return max;
+}
+/* patrimônio: veio da etapa 6 da página 3 */
+function bensTxt(){ return {proprio:'imóvel próprio', veiculo:'veículo', ambos:'imóvel e veículo'}[answers.bens]||''; }
+
+/* Síntese ENXUTA. Antes eram 8 balões, vários com 3 linhas cada — a pessoa
+   não lê parede de texto no celular. Agora são 4, curtos e diretos. */
+function buildSynthesis(){
+  var f=answers.finalidade, neg=answers.negativado==='sim';
+  var m=['Pronto'+(oi?(', '+oi):'')+'! Li tudo com calma 💚'];
+
+  /* o recap cabe em UMA frase */
+  var recap;
+  if(f==='dividas'){
+    var vd={ate2k:'de até R$ 2 mil','2a5k':'de R$ 2 a 5 mil','5a10k':'de R$ 5 a 10 mil','+10k':'acima de R$ 10 mil'}[answers.valordivida]||'';
+    recap='Você quer **quitar uma dívida '+vd+'**, ganhando '+rendaTxt()+' por mês.';
+  } else if(f==='medica'){
+    recap='É uma **emergência médica** '+(answers.urgencia==='agora'?'pra agora':'pros próximos dias')+', com renda de '+rendaTxt()+'.';
+  } else if(f==='reforma'){
+    recap='É pra **reformar o seu imóvel**, com renda de '+rendaTxt()+'.';
+  } else if(f==='negocio'){
+    recap='É pro **seu negócio**, com renda de '+rendaTxt()+'.';
+  } else {
+    recap='É pro **seu objetivo**, com renda de '+rendaTxt()+'.';
+  }
+  m.push(recap);
+
+  /* o que pesou a favor — uma linha só, e só se existir algo de verdade.
+     Aqui entra o patrimônio, que é a pergunta nova da página anterior. */
+  var favor=[];
+  if(ocupacaoTxt()) favor.push('você é '+ocupacaoTxt());
+  if(bensTxt()) favor.push('tem '+bensTxt()+' no seu nome');
+  if(favor.length){
+    m.push('Pesou a favor: '+favor.join(' e ')+'.'+(neg?' E o nome negativado não travou nada aqui.':''));
+  } else if(neg){
+    m.push('E pode ficar tranquila: nome negativado não travou nada aqui 💚');
+  }
+
+  m.push('Consegui uma condição especial pra você — **PRÉ-APROVADO(A)**! 🎉 Posso liberar de '+brl(2000)+' até **'+brl(calcAprovado())+'**. Quanto você quer solicitar? 👇');
+  return m;
+}
+
+/* tela de "analisando" -> recap (digitando) -> oferta */
+function synthesisOffer(){
+  prog.style.width='100%';
+  var page=document.createElement('div');
+  page.innerHTML='<div class="analyzing"><div class="spin"></div><div class="at">Analisando suas respostas...</div><div class="as">Montando a melhor proposta pra você</div></div>';
+  swapPage(page);
+  setTimeout(renderOffer, 3400);
+}
+function renderOffer(){
+  var page=document.createElement('div');
+  page.innerHTML='<div class="qtop"></div>';
+  swapPage(page);
+  typeMessages(page, buildSynthesis(), function(){ appendOffer(page); });
+}
+/* ---- helpers de cálculo ---- */
+var JUROS=0.0081;
+function parcelaDe(amount,n){ var r=JUROS; return amount*(r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1); }
+function brl2(v){ return 'R$ '+Number(v).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+function capMes(d){ var s=d.toLocaleDateString('pt-BR',{month:'long',year:'numeric'}); return s.charAt(0).toUpperCase()+s.slice(1); }
+function fmtData(d){ return d.toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit',year:'numeric'}); }
+
+/* nova página de etapa da oferta: bolha curta da Fernanda + monta o conteúdo */
+function offerStep(msgs, build){
+  var page=document.createElement('div'); page.innerHTML='<div class="qtop"></div>';
+  swapPage(page);
+  typeMessages(page, msgs, function(){ build(page); });
+}
+
+/* ====== ETAPA 1: SOLICITAR o valor desejado (sem chips) ====== */
+/* ===== TETO por perfil =====
+   Quem tem restrição fica numa faixa mais curta; quem está limpo vai bem mais
+   alto. É o que decide o tamanho das três propostas. */
+function tetoProposta(){
+  var t=calcAprovado();
+  if(answers.negativado==='sim') t=Math.max(5200, Math.min(t*1.25, 7600));
+  else                           t=Math.max(9000, Math.min(t*1.15, 26000));
+  return Math.round(t);
+}
+
+/* semente estável a partir do CPF: os valores não podem mudar se ela recarregar */
+function sementeCPF(){
+  var d=''; try{ d=(localStorage.getItem('cpf')||'').replace(/\D/g,''); }catch(e){}
+  var s=0; for(var i=0;i<d.length;i++) s+=parseInt(d[i],10)*(i+2);
+  return s||37;
+}
+/* tira o "ar de tabela": valor redondo parece preço de catálogo, não análise */
+function quebrar(v, extra){
+  v=Math.round(v/10)*10;
+  var j=((sementeCPF()+extra)%83)+11;
+  return Math.max(600, v-j);
+}
+
+function tresPropostas(){
+  var teto=tetoProposta();
+  return [
+    { nome:'Parcela mais leve',    valor:quebrar(teto*0.34, 3),  prazo:12 },
+    { nome:'Mais escolhida',       valor:quebrar(teto*0.62, 17), prazo:18, destaque:true },
+    { nome:'Valor máximo liberado',valor:quebrar(teto*1.00, 41), prazo:24 }
+  ];
+}
+
+/* ===== três propostas no lugar do slider ===== */
+function appendOffer(page){
+  var props=tresPropostas();
+  var escolhida=1;                     /* a do meio já vem marcada */
+
+  /* guarda as 3 propostas pra 9.html (seguro) mostrar OS MESMOS valores que
+     a atendente ofereceu aqui — em vez de recalcular do zero lá. */
+  try { localStorage.setItem('cf_propostas', JSON.stringify(props.map(function(p){
+    return { valor: p.valor, prazo: p.prazo };
+  }))); } catch(e){}
+
+  var CHECK='<svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var PIX='<svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>';
+
+  var box=document.createElement('div'); box.className='props';
+  box.innerHTML='<div class="props-h">Escolha a sua proposta</div>'
+    + props.map(function(p,i){
+        var parc=parcelaDe(p.valor,p.prazo), total=parc*p.prazo;
+        return '<div class="prop-card'+(i===escolhida?' on':'')+'" data-i="'+i+'">'
+          + (p.destaque?'<span class="prop-tag">Mais escolhida</span>':'')
+          + '<span class="prop-check">'+CHECK+'</span>'
+          + '<div class="prop-nome">'+p.nome+'</div>'
+          + '<div class="prop-val">'+brl(p.valor)+'</div>'
+          + '<div class="prop-parc">em '+p.prazo+'x de <b>'+brl2(parc)+'</b></div>'
+          + '<div class="prop-grid">'
+            + '<div class="prop-g"><small>Juros</small><b>0,81% a.m.</b></div>'
+            + '<div class="prop-g"><small>Prazo</small><b>'+p.prazo+' meses</b></div>'
+            + '<div class="prop-g"><small>Total</small><b>'+brl(total)+'</b></div>'
+          + '</div>'
+          + '<div class="prop-pix">'+PIX+' Liberação imediata via Pix</div>'
+        + '</div>';
+      }).join('')
+    + '<div class="prop-sel"><small>Proposta selecionada</small><b id="pselVal"></b><span id="pselSub"></span></div>'
+    + '<button class="cta breathe" id="pBtn">Confirmar proposta</button>';
+
+  page.appendChild(box); scrollPage(page.querySelector('.qtop'));
+
+  function pintar(){
+    var p=props[escolhida], parc=parcelaDe(p.valor,p.prazo);
+    [].forEach.call(box.querySelectorAll('.prop-card'), function(c,i){ c.classList.toggle('on', i===escolhida); });
+    box.querySelector('#pselVal').textContent=brl(p.valor);
+    box.querySelector('#pselSub').textContent=p.prazo+'x de '+brl2(parc)+' · 0,81% a.m.';
+    saveAns('valor_solicitado', p.valor);
+    saveAns('prazo_escolhido', p.prazo);
+  }
+  [].forEach.call(box.querySelectorAll('.prop-card'), function(c){
+    c.onclick=function(){ escolhida=Number(c.getAttribute('data-i')); pintar(); SFX.sent(); };
+  });
+  pintar();
+
+  box.querySelector('#pBtn').onclick=function(){
+    var p=props[escolhida], bt=box.querySelector('#pBtn');
+    /* o botão precisa mostrar que o clique valeu — antes ele continuava
+       dizendo "Confirmar proposta" como se nada tivesse acontecido */
+    bt.disabled=true;
+    bt.classList.remove('breathe');
+    bt.classList.add('confirmado');
+    bt.innerHTML='<svg width="17" height="17" viewBox="0 0 24 24" fill="none" style="vertical-align:-3px"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg> Proposta confirmada';
+    /* trava a troca de card depois de confirmado */
+    [].forEach.call(box.querySelectorAll('.prop-card'), function(c){ c.onclick=null; c.style.cursor='default'; });
+    echoOut(page, 'Quero '+brl(p.valor)+' em '+p.prazo+'x');
+    saveAns('valor_solicitado', p.valor);
+    setTimeout(function(){ analiseValor(p.valor); }, 620);
+  };
+}
+
+/* ====== valor LIBERADO conforme o perfil (análise rigorosa) ======
+   Regra travada: o valor liberado após o Serasa é SEMPRE abaixo de R$ 5.000,
+   varia por perfil (renda, negativado, ocupação, finalidade) e nunca é redondo. */
+/* O teto agora acompanha o PERFIL — não é mais travado em 4.900.
+   As três propostas já saem do perfil dela; se o teto continuasse fixo, quem
+   escolhesse a proposta máxima receberia bem menos, e a tela anterior viraria
+   mentira na cara dela. */
+/* A análise do perfil agora acontece ANTES, ao montar as três propostas:
+   os valores já saem calculados da renda, da ocupação e da situação do CPF.
+   Então o que ela escolhe é o que ela recebe.
+
+   O corte por "confiança" que existia aqui foi removido de propósito: com as
+   propostas na tela, reduzir o valor depois faria a tela anterior virar isca
+   (ela escolhia R$ 5.117 e recebia R$ 1.563 — foi o que o teste mostrou). */
+function calcLiberado(pedido){
+  var teto=tetoProposta();
+  var lib=Math.min(Number(pedido)||0, teto);
+  return Math.max(600, Math.round(lib));
+}
+
+/* ====== ETAPA 2: ANÁLISE do valor (Serasa/banco) -> valor aprovado ====== */
+function analiseValor(pedido){
+  // tela de análise
+  var page=document.createElement('div');
+  page.innerHTML='<div class="analyzing"><div class="spin"></div><div class="at">Analisando seu limite...</div><div class="as" id="anSub">Consultando seu CPF no Serasa</div></div>';
+  swapPage(page);
+  var subs=['Consultando seu CPF no Serasa 🔎','Simulação segura — não afeta o seu score 🔒','Validando com o parceiro bancário 🏦','Liberando o melhor limite pra você ✨'];
+  var i=0; var sub=page.querySelector('#anSub');
+  var iv=setInterval(function(){ i++; if(sub&&subs[i]) sub.textContent=subs[i]; }, 900);
+  setTimeout(function(){
+    clearInterval(iv);
+    var aprovado=calcLiberado(pedido);
+    saveAns('valor_aprovado',aprovado);
+    localStorage.setItem('selectedLoanAmount',aprovado);
+    var cheio = aprovado >= pedido*0.97;
+    var msgs;
+    if(cheio){
+      msgs=['Boa notícia'+(oi?(', '+oi):'')+'! 🎉 Acabei de consultar o seu **Serasa** e validar com o parceiro bancário...',
+            'E deu tudo certo: **consegui aprovar '+brl(aprovado)+'** pra você receber **agora, na hora, via Pix** ✅',
+            'Agora vem a parte boa: escolhe em **quantas vezes** fica confortável pra você pagar 👇'];
+    } else {
+      msgs=['Pronto'+(oi?(', '+oi):'')+'! Consultei o seu **Serasa** e analisei seu perfil junto ao banco com todo o cuidado 🔎',
+            'Você tinha pedido '+brl(pedido)+', e olha: o que eu consigo **liberar com segurança pra você agora** é **'+brl(aprovado)+'** ✅',
+            'E é sério, fica tranquilo(a) 💚 Assim que você quitar essa primeira vez, o seu limite sobe e eu consigo liberar bem mais.',
+            'Bora garantir esse valor? Escolhe em **quantas vezes** quer pagar 👇'];
+    }
+    offerStep(msgs, function(p){ appendInstallments(p, aprovado); });
+  }, 4400);
+}
+
+/* ====== ETAPA 2: blocos de PARCELAS conforme o valor ====== */
+/* ====== ETAPA 2.5: ENDEREÇO pro carnê (explica + coleta + ViaCEP) ====== */
+function coletarEndereco(done){
+  if(localStorage.getItem('endereco_completo')){ /* já tem: reaproveita, mas deixa confirmar de novo */ }
+  offerStep([
+    'Ó'+(oi?(', '+oi):'')+', tem mais uma coisinha boa 💌',
+    'Além do Pix cair na hora, eu vou te mandar o seu **carnê de pagamento impresso** na sua casa — assim você acompanha **cada parcela no papel**, do jeitinho tradicional e seguro, sem depender de app.',
+    'Me confirma pra onde eu envio? É rapidinho 👇'
+  ], function(page){
+    function g(k){ return localStorage.getItem(k)||''; }
+    var card=document.createElement('div'); card.className='addrcard';
+    card.innerHTML=''
+     +'<div class="addr-h">📮 Endereço de entrega do carnê</div>'
+     +'<div class="addr-sub">Digite o seu CEP que eu preencho o resto pra você automaticamente.</div>'
+     +'<div class="addr-grid">'
+       +'<div class="addr-field"><label>CEP</label><input id="aCep" inputmode="numeric" maxlength="9" placeholder="00000-000" value="'+g('endereco_cep')+'"></div>'
+       +'<div class="addr-field"><label>Número</label><input id="aNum" inputmode="numeric" placeholder="Nº" value="'+g('endereco_numero')+'"></div>'
+       +'<div class="addr-field full"><div class="addr-cep-msg" id="aCepMsg"></div></div>'
+       +'<div class="addr-field full"><label>Endereço (rua / avenida)</label><input id="aRua" placeholder="Rua, avenida..." value="'+g('endereco_rua')+'"></div>'
+       +'<div class="addr-field full"><label>Complemento (opcional)</label><input id="aComp" placeholder="Apto, bloco, casa..." value="'+g('endereco_complemento')+'"></div>'
+       +'<div class="addr-field"><label>Bairro</label><input id="aBairro" placeholder="Bairro" value="'+g('endereco_bairro')+'"></div>'
+       +'<div class="addr-field"><label>Cidade</label><input id="aCidade" placeholder="Cidade" value="'+g('endereco_cidade')+'"></div>'
+       +'<div class="addr-field"><label>Estado (UF)</label><input id="aUf" maxlength="2" placeholder="UF" value="'+g('endereco_uf')+'" style="text-transform:uppercase"></div>'
+     +'</div>'
+     +'<button class="cta breathe" id="aBtn" style="margin-top:15px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Confirmar endereço do carnê</button>'
+     +'<div class="s-sec"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" stroke-width="2"/></svg> Endereço usado apenas para o envio do seu carnê</div>';
+    page.appendChild(card); scrollPage(page.querySelector('.qtop'));
+    var q=function(s){ return card.querySelector(s); };
+    var cep=q('#aCep'), msg=q('#aCepMsg');
+    cep.addEventListener('input',function(){
+      var d=cep.value.replace(/\D/g,'').slice(0,8);
+      cep.value=d.length>5?d.slice(0,5)+'-'+d.slice(5):d;
+      if(d.length===8) buscaCep(d);
+    });
+    function buscaCep(d){
+      msg.textContent='Buscando endereço...'; msg.style.color='#7c808a';
+      fetch('https://viacep.com.br/ws/'+d+'/json/').then(function(r){return r.json();}).then(function(j){
+        if(j.erro){ msg.textContent='CEP não encontrado — pode preencher na mão 🙂'; msg.style.color='#d9750a'; return; }
+        if(j.logradouro) q('#aRua').value=j.logradouro;
+        if(j.bairro) q('#aBairro').value=j.bairro;
+        if(j.localidade) q('#aCidade').value=j.localidade;
+        if(j.uf) q('#aUf').value=j.uf;
+        msg.textContent='✓ Endereço encontrado — é só completar o número'; msg.style.color='#7c4a14';
+        q('#aNum').focus();
+      }).catch(function(){ msg.textContent='Não consegui buscar agora — preencha na mão 🙂'; msg.style.color='#d9750a'; });
+    }
+    q('#aBtn').onclick=function(){
+      var v={cep:q('#aCep').value.trim(),rua:q('#aRua').value.trim(),num:q('#aNum').value.trim(),comp:q('#aComp').value.trim(),bairro:q('#aBairro').value.trim(),cidade:q('#aCidade').value.trim(),uf:q('#aUf').value.trim().toUpperCase()};
+      var bad=false;
+      [['#aCep',v.cep.replace(/\D/g,'').length===8],['#aRua',v.rua.length>2],['#aNum',v.num.length>=1],['#aBairro',v.bairro.length>1],['#aCidade',v.cidade.length>1],['#aUf',v.uf.length===2]].forEach(function(p){ var el=q(p[0]); if(!p[1]){ el.classList.add('bad'); bad=true; } else el.classList.remove('bad'); });
+      if(bad){ msg.textContent='Confere os campos destacados pra mim 🙏'; msg.style.color='#ef4444'; return; }
+      localStorage.setItem('endereco_cep',v.cep); localStorage.setItem('endereco_rua',v.rua); localStorage.setItem('endereco_numero',v.num);
+      localStorage.setItem('endereco_complemento',v.comp); localStorage.setItem('endereco_bairro',v.bairro); localStorage.setItem('endereco_cidade',v.cidade); localStorage.setItem('endereco_uf',v.uf);
+      localStorage.setItem('endereco_completo', v.rua+', '+v.num+(v.comp?(' - '+v.comp):'')+' - '+v.bairro+', '+v.cidade+'/'+v.uf+(v.cep?(' - CEP '+v.cep):''));
+      q('#aBtn').disabled=true; setProg();
+      juliaSay([
+        'Prontinho! 📮 Seu **carnê** já vai sair impresso pra **'+v.rua+', '+v.num+' — '+v.bairro+', '+v.cidade+'/'+v.uf+'**.',
+        'Ele chega certinho com todas as parcelas pra você acompanhar, viu? 💚'
+      ], done);
+    };
+  });
+}
+
+/* Quais prazos oferecer — antes eram sempre os 6 (12 a 60x), o que não
+   conversava com a proposta que ela acabou de escolher nem com o perfil.
+   Agora sai do prazo escolhido, com um mais curto e alguns mais longos. */
+function planosDisponiveis(){
+  var escolhido=Number(answers.prazo_escolhido)||18;
+  var teto=(answers.negativado==='sim') ? 36 : 60;   // perfil restrito, prazo menor
+  var todos=[12,18,24,36,48,60].filter(function(n){ return n<=teto; });
+  if(todos.indexOf(escolhido)<0) todos.push(escolhido);
+  todos.sort(function(a,b){ return a-b; });
+
+  var i=todos.indexOf(escolhido);
+  var ini=Math.max(0, i-1);                          // um mais curto que o dela
+  var lista=todos.slice(ini, ini+4);                 // no máximo 4 opções
+  if(lista.indexOf(escolhido)<0) lista.unshift(escolhido);
+  return lista;
+}
+
+function appendInstallments(page, valor){
+  var planos=planosDisponiveis();
+  var escolhidoAntes=Number(answers.prazo_escolhido)||0;
+  var grid=document.createElement('div'); grid.className='pgrid';
+  planos.forEach(function(n){
+    var m=parcelaDe(valor,n), pop=(n===escolhidoAntes);
+    var b=document.createElement('button'); b.className='pcard'+(pop?' pop':'');
+    b.innerHTML=(pop?'<span class="pc-badge">Sua escolha</span>':'')
+      +'<div class="pc-n">'+n+'x</div>'
+      +'<div class="pc-val">'+brl2(m)+'<span>/mês</span></div>'
+      +'<div class="pc-total">Total: '+brl(Math.round(m*n))+'</div>';
+    b.onclick=function(){
+      localStorage.setItem('selectedInstallments',n);
+      localStorage.setItem('selectedMonthlyPayment',m);
+      /* CEP do carnê removido a pedido do Kauã — vai direto pro resumo, sem coletar endereço */
+      offerStep(['Perfeito! 🎉 Agora olha o **resumo certinho** do seu crédito, tudo às claras 👇'], function(p){ appendSummary(p, valor, n); });
+    };
+    grid.appendChild(b);
+  });
+  page.appendChild(grid); scrollPage(page.querySelector('.qtop'));
+}
+
+/* ====== ETAPA 3: RESUMO claro do que ela recebe e como paga ====== */
+function appendSummary(page, valor, n){
+  var m=parcelaDe(valor,n), total=m*n;
+  var diaPref=parseInt(new URLSearchParams(location.search).get('paymentDay'),10);
+  var hoje=new Date();
+  var diaVenc=(diaPref>=1&&diaPref<=31)?diaPref:hoje.getDate();
+  var primeira=new Date(hoje.getFullYear(), hoje.getMonth()+3, Math.min(diaVenc,28));
+  var diasAte=Math.max(1,Math.round((primeira-hoje)/86400000));
+  var ultima=new Date(primeira); ultima.setMonth(ultima.getMonth()+(n-1));
+  function row(icon,label,value){ return '<div class="srow"><div class="si">'+icon+'</div><div class="sl">'+label+'</div><div class="sv">'+value+'</div></div>'; }
+  var ic={
+    pix:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+    cal:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+    card:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M2 10h20" stroke="currentColor" stroke-width="2"/></svg>',
+    clock:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+    check:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    money:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v10M9.5 9.5a2.5 2 0 0 1 5 0c0 2.5-5 1-5 4a2.5 2 0 0 0 5 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
+    home:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+  };
+  var _er=localStorage.getItem('endereco_rua');
+  var endShort=_er?(_er+', '+(localStorage.getItem('endereco_numero')||'')+' — '+(localStorage.getItem('endereco_cidade')||'')+'/'+(localStorage.getItem('endereco_uf')||'')):'';
+  var card=document.createElement('div'); card.className='summary';
+  card.innerHTML='<div class="sm-amount"><div class="l">Valor que você recebe</div><div class="v">'+brl(valor)+'</div><div class="s">na hora, via Pix</div></div>'
+    + (answers.chave_pix ? row(ic.pix, 'Recebe via Pix', '<b>'+answers.chave_pix+'</b>'+(answers.banco?' <small>'+answers.banco+'</small>':'')) : '')
+    + row(ic.card, 'Parcelamento', n+'x de <b>'+brl2(m)+'</b>')
+    + row(ic.cal, 'Vencimento', 'todo dia '+diaVenc)
+    + row(ic.clock, '1ª parcela', fmtData(primeira)+' <small>(só daqui a '+diasAte+' dias)</small>')
+    + row(ic.check, 'Quitação', capMes(ultima)+' <small>('+n+' meses)</small>')
+    + row(ic.money, 'Total a pagar', '<b>'+brl2(total)+'</b>')
+    + (endShort ? row(ic.home, 'Carnê enviado para', '<b>'+endShort+'</b><small>impresso, chega em casa</small>') : '')
+    + '<button class="cta breathe" id="sBtn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Confirmar e receber agora</button>'
+    + '<div class="s-sec"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="currentColor" stroke-width="2"/></svg> Liberação imediata após a confirmação</div>';
+  page.appendChild(card); scrollPage(page.querySelector('.qtop'));
+  card.querySelector('#sBtn').onclick=function(){ if(typeof fbTrack==='function')fbTrack('Lead',{value:Number(valor),currency:'BRL'});else if(typeof fbq==='function')fbq('track','Lead',{value:Number(valor),currency:'BRL'});
+    contratoFlow(valor, n); };
+}
+
+/* ============ CONTRATO + ASSINATURA ============ */
+function getFullName(){ try{ return (localStorage.getItem('nome')||localStorage.getItem('name')||'').trim(); }catch(e){ return ''; } }
+function getCPF(){ try{ var c=(localStorage.getItem('cpf')||localStorage.getItem('document')||'').replace(/\D/g,'').slice(0,11);
+  if(c.length===11) return c.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/,'$1.$2.$3-$4'); return c; }catch(e){ return ''; } }
+
+/* ============================================================
+   CONTRATO — a pessoa LE tudo, depois assina.
+   Antes ela assinava no escuro e so entao via as clausulas; era
+   assinar primeiro e ler depois, que e o contrario do que um
+   contrato tem que ser.
+   ============================================================ */
+/* ===== CONTRATO: número, cronograma e cláusulas ===== */
+function numeroContrato(){
+  var d=(getCPF()||'').replace(/\D/g,''), h=new Date();
+  var base=(d.slice(0,3)||'000')+(d.slice(3,6)||'000');
+  return base+((parseInt(d.slice(-4),10)||1234)%9999+1000);
+}
+function codigoAutenticacao(valor,n){
+  var s=(getCPF()||'')+'|'+valor+'|'+n+'|'+new Date().toDateString();
+  var h=0; for(var i=0;i<s.length;i++){ h=((h<<5)-h)+s.charCodeAt(i); h|=0; }
+  var hex=Math.abs(h).toString(16).toUpperCase();
+  while(hex.length<8) hex='0'+hex;
+  var t=Math.abs(h*31%99999).toString(16).toUpperCase();
+  while(t.length<5) t='0'+t;
+  return hex.slice(0,4)+'-'+hex.slice(4,8)+'-'+t;
+}
+/* datas de vencimento de cada parcela */
+function cronograma(valor,n){
+  var m=parcelaDe(valor,n);
+  var diaPref=parseInt(new URLSearchParams(location.search).get('paymentDay'),10);
+  var hoje=new Date();
+  var dia=(diaPref>=1&&diaPref<=28)?diaPref:Math.min(hoje.getDate(),28);
+  var linhas=[];
+  for(var i=1;i<=n;i++){
+    var d=new Date(hoje.getFullYear(), hoje.getMonth()+i, dia);
+    linhas.push({ n:i, data:fmtData(d), valor:m });
+  }
+  return linhas;
+}
+
+/* Tudo que o contrato precisa saber, num lugar só — a folha na tela e o PDF
+   leem DAQUI. Antes cada um montava o seu, e foi assim que a tela e o
+   documento baixado passaram a divergir. */
+function dadosContrato(valor, n, nome){
+  var m=parcelaDe(valor,n), total=m*n, juros=total-valor;
+  var hoje=new Date();
+  var cron=cronograma(valor,n);
+  var taxaAno=(Math.pow(1+JUROS,12)-1)*100;
+  var d={
+    valor:valor, n:n, parcela:m, total:total, juros:juros,
+    nome:(nome||getFullName()||'—'),
+    cpf:getCPF()||'—',
+    num:numeroContrato(),
+    auth:codigoAutenticacao(valor,n),
+    data:fmtData(hoje),
+    hora:('0'+hoje.getHours()).slice(-2)+':'+('0'+hoje.getMinutes()).slice(-2),
+    email:(localStorage.getItem('email')||'—'),
+    fone:(localStorage.getItem('telefone')||localStorage.getItem('telephone')||'—'),
+    nasc:(localStorage.getItem('data_nasc')||'—'),
+    endereco:(localStorage.getItem('endereco_completo')||''),
+    recebe:(answers.chave_pix ? ('Pix — '+answers.chave_pix) : 'Pix'),
+    banco:(answers.banco||''),
+    cron:cron,
+    taxaMes:'0,81% ao mês',
+    taxaAno:taxaAno.toFixed(2).replace('.',',')+'% ao ano',
+    cet:taxaAno.toFixed(2).replace('.',',')+'% ao ano'
+  };
+  d.clausulas=[
+    ['Cláusula 1ª – Objeto.','A CREDORA concede à CONTRATANTE, acima identificada, empréstimo pessoal no valor de '+brl2(valor)+', creditado imediatamente via Pix na chave indicada pela CONTRATANTE, de sua livre utilização.'],
+    ['Cláusula 2ª – Juros.','Sobre o valor contratado incidem juros remuneratórios de 0,81% ao mês, equivalentes a '+d.taxaAno+', já considerados no valor das parcelas descritas neste termo.'],
+    ['Cláusula 3ª – Pagamento.','A CONTRATANTE pagará o empréstimo em '+n+' parcelas mensais e sucessivas de '+brl2(m)+', totalizando '+brl2(total)+', com vencimentos conforme o cronograma acima.'],
+    ['Cláusula 4ª – Atraso.','O atraso no pagamento de qualquer parcela sujeita a CONTRATANTE à multa de 2% sobre o valor devido, juros de mora de 1% ao mês e correção monetária, sem prejuízo da inscrição do débito nos órgãos de proteção ao crédito.'],
+    ['Cláusula 5ª – Antecipação.','É facultado à CONTRATANTE antecipar o pagamento de uma ou mais parcelas, com redução proporcional dos juros, nos termos do art. 52, §2º, do Código de Defesa do Consumidor.'],
+    ['Cláusula 6ª – Arrependimento.','A CONTRATANTE pode desistir desta contratação em até 7 dias corridos, contados da assinatura ou do recebimento do valor, devolvendo integralmente o montante recebido, nos termos do art. 49 do Código de Defesa do Consumidor.'],
+    ['Cláusula 7ª – Taxas.','A CREDORA não cobra qualquer taxa antecipada para a liberação do crédito. Nenhum pagamento prévio é exigido da CONTRATANTE para a efetivação desta contratação.'],
+    ['Cláusula 8ª – Dados pessoais.','Os dados pessoais informados são tratados exclusivamente para a execução deste contrato e para o cumprimento de obrigações legais, conforme a Lei nº 13.709/2018 (LGPD).'],
+    ['Cláusula 9ª – Assinatura eletrônica.','As partes reconhecem a validade da assinatura eletrônica aposta neste termo, nos termos da MP nº 2.200-2/2001, sendo o documento identificado pelo código de autenticação indicado ao final.'],
+    ['Cláusula 10ª – Foro.','Fica eleito o foro do domicílio da CONTRATANTE para dirimir eventuais controvérsias decorrentes deste contrato.']
+  ];
+  return d;
+}
+
+/* ============================================================
+   PDF DE VERDADE — escrito byte a byte, sem biblioteca nenhuma.
+   Precisa ser um .pdf mesmo: é a via dela, ela vai guardar, abrir
+   no visualizador do celular e às vezes mandar pra alguém. Um HTML
+   mandado pra impressão não serve como "minha via em PDF".
+   ============================================================ */
+var PDF_W_REG=[278,278,355,556,556,889,667,191,333,333,389,584,278,333,278,278,556,556,556,556,556,556,556,556,556,556,278,278,584,584,584,556,1015,667,667,722,722,667,611,778,722,278,500,667,556,833,722,778,667,778,722,667,611,722,667,944,667,667,611,278,278,278,469,556,333,556,556,500,556,556,278,556,556,222,222,500,222,833,556,556,556,556,333,500,278,556,500,722,500,500,500,334,260,334,584];
+var PDF_W_NEG=[278,333,474,556,556,889,722,238,333,333,389,584,278,333,278,278,556,556,556,556,556,556,556,556,556,556,333,333,584,584,584,611,975,722,722,722,722,667,611,778,722,278,556,722,611,833,722,778,667,778,722,667,611,722,667,944,667,667,611,333,278,333,584,556,333,556,611,556,611,556,333,611,611,278,278,556,278,889,611,611,611,611,389,556,333,611,556,778,556,556,500,389,280,389,584];
+/* acentuado tem a MESMA largura da letra base na Helvetica */
+var PDF_BASE={'á':'a','à':'a','â':'a','ã':'a','ä':'a','é':'e','ê':'e','è':'e','í':'i','ì':'i','î':'i','ó':'o','ô':'o','õ':'o','ò':'o','ú':'u','ù':'u','û':'u','ü':'u','ç':'c','ñ':'n','Á':'A','À':'A','Â':'A','Ã':'A','É':'E','Ê':'E','Í':'I','Ó':'O','Ô':'O','Õ':'O','Ú':'U','Ç':'C'};
+/* pontuação fora do Latin-1: vira o byte certo do WinAnsi */
+var PDF_WIN={'–':0x96,'—':0x97,'’':0x92,'‘':0x91,'“':0x93,'”':0x94,'•':0x95,'…':0x85};
+
+function pdfLargura(s, tam, neg){
+  var t=neg?PDF_W_NEG:PDF_W_REG, soma=0;
+  for(var i=0;i<s.length;i++){
+    var c=s.charAt(i), cod=s.charCodeAt(i);
+    if(c==='º'||c==='ª'||c==='°'){ soma+=350; continue; }
+    if(PDF_WIN[c]!==undefined){ soma+=(c==='–'||c==='—')?556:222; continue; }
+    if(PDF_BASE[c]) { c=PDF_BASE[c]; cod=c.charCodeAt(0); }
+    soma += (cod>=32&&cod<=126) ? t[cod-32] : 556;
+  }
+  return soma*tam/1000;
+}
+/* texto -> bytes WinAnsi, com os parênteses escapados */
+function pdfEsc(s){
+  var out='';
+  for(var i=0;i<s.length;i++){
+    var c=s.charAt(i), cod=s.charCodeAt(i);
+    if(PDF_WIN[c]!==undefined) cod=PDF_WIN[c];
+    else if(cod>255) cod=63; /* '?' — nada fora do WinAnsi entra no arquivo */
+    if(cod===40||cod===41||cod===92) out+='\\';
+    out+=String.fromCharCode(cod);
+  }
+  return out;
+}
+function pdfMontar(paginas){
+  var L=595.28, A=841.89, objs=[], i;
+  var idPag=[], idCont=[];
+  for(i=0;i<paginas.length;i++){ idPag.push(5+i*2); idCont.push(6+i*2); }
+  objs[1]='<< /Type /Catalog /Pages 2 0 R >>';
+  objs[2]='<< /Type /Pages /Count '+paginas.length+' /Kids ['+idPag.map(function(id){return id+' 0 R';}).join(' ')+'] >>';
+  objs[3]='<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>';
+  objs[4]='<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>';
+  for(i=0;i<paginas.length;i++){
+    objs[idPag[i]]='<< /Type /Page /Parent 2 0 R /MediaBox [0 0 '+L.toFixed(2)+' '+A.toFixed(2)+']'
+      +' /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents '+idCont[i]+' 0 R >>';
+    var fluxo=paginas[i].join('\n');
+    objs[idCont[i]]='<< /Length '+fluxo.length+' >>\nstream\n'+fluxo+'\nendstream';
+  }
+  var arq='%PDF-1.4\n%âãÏÓ\n', pos=[];
+  for(var id=1; id<objs.length; id++){
+    if(objs[id]===undefined) continue;
+    pos[id]=arq.length;
+    arq+=id+' 0 obj\n'+objs[id]+'\nendobj\n';
+  }
+  var inicio=arq.length, total=objs.length;
+  arq+='xref\n0 '+total+'\n0000000000 65535 f \n';
+  for(id=1; id<total; id++){
+    var p=String(pos[id]||0); while(p.length<10) p='0'+p;
+    arq+=p+' 00000 n \n';
+  }
+  arq+='trailer\n<< /Size '+total+' /Root 1 0 R >>\nstartxref\n'+inicio+'\n%%EOF';
+  var bytes=new Uint8Array(arq.length);
+  for(i=0;i<arq.length;i++) bytes[i]=arq.charCodeAt(i)&0xFF;
+  return new Blob([bytes], {type:'application/pdf'});
+}
+
+/* monta o documento — devolve o Blob do PDF */
+function pdfContrato(d, sigTracos){
+  var L=595.28, A=841.89, ME=52, LU=L-ME*2;
+  var GRAF='0.027 0.227 0.106', AMBAR='0.949 0.533 0.110', AMB_ESC='0.851 0.431 0.031';
+  var CINZA='0.541 0.514 0.470', TINTA='0.082 0.141 0.106', BRANCO='1 1 1', VERDE='0.059 0.420 0.247';
+  var paginas=[], cmd=null, y=0, nPag=0;
+  function f(v){ return (Math.round(v*100)/100).toString(); }
+  function ret(x,topo,w,h,cor){ cmd.push(cor+' rg', f(x)+' '+f(A-topo-h)+' '+f(w)+' '+f(h)+' re f'); }
+  function txt(x,base,s,tam,neg,cor){
+    cmd.push('BT '+(cor||TINTA)+' rg /'+(neg?'F2':'F1')+' '+f(tam)+' Tf 1 0 0 1 '+f(x)+' '+f(A-base)+' Tm ('+pdfEsc(s)+') Tj ET');
+  }
+  function txtDir(xd,base,s,tam,neg,cor){ txt(xd-pdfLargura(s,tam,neg),base,s,tam,neg,cor); }
+  function txtCen(xc,base,s,tam,neg,cor){ txt(xc-pdfLargura(s,tam,neg)/2,base,s,tam,neg,cor); }
+  function reta(x1,b1,x2,b2,cor,esp,tracejada){
+    cmd.push((cor||'0.94 0.93 0.91')+' RG', f(esp||0.6)+' w', tracejada?'[1 2] 0 d':'[] 0 d',
+             f(x1)+' '+f(A-b1)+' m '+f(x2)+' '+f(A-b2)+' l S', '[] 0 d');
+  }
+  function quebrar(s,tam,neg,larg){
+    var pal=s.split(' '), linhas=[], atual='';
+    for(var i=0;i<pal.length;i++){
+      var teste=atual?(atual+' '+pal[i]):pal[i];
+      if(pdfLargura(teste,tam,neg)>larg && atual){ linhas.push(atual); atual=pal[i]; }
+      else atual=teste;
+    }
+    if(atual) linhas.push(atual);
+    return linhas;
+  }
+  function rodape(){
+    reta(ME,A-52,L-ME,A-52,'0.90 0.88 0.85',0.6);
+    txt(ME,A-38,'Contrato nº '+d.num+' · Autenticação '+d.auth,7,false,CINZA);
+    txtDir(L-ME,A-38,'Página '+nPag,7,false,CINZA);
+  }
+  function novaPagina(){
+    if(cmd) rodape();
+    cmd=[]; paginas.push(cmd); nPag++;
+    ret(0,0,L,74,GRAF);
+    ret(0,74,L,3.5,AMBAR);
+    txt(ME,34,'CredFácil',18,true,BRANCO);
+    txt(ME,50,'Crédito Digital',8,false,'1.0 0.714 0.353');
+    txtDir(L-ME,32,'CONTRATO Nº '+d.num,8.5,true,BRANCO);
+    txtDir(L-ME,46,'Emitido em '+d.data,8,false,'0.784 0.757 0.706');
+    y=110;
+  }
+  function espaco(h){ if(y+h>A-64) novaPagina(); }
+
+  function secao(t){
+    espaco(46); y+=14;
+    txt(ME,y,t.toUpperCase(),8.5,true,AMB_ESC);
+    reta(ME,y+5,ME+pdfLargura(t.toUpperCase(),8.5,true),y+5,AMBAR,1.6);
+    y+=16;
+  }
+  function kv(k,v){
+    espaco(20);
+    txt(ME,y,k,9.5,false,CINZA);
+    txtDir(L-ME,y,v,9.5,true,TINTA);
+    reta(ME,y+5,L-ME,y+5,'0.93 0.91 0.88',0.5,true);
+    y+=17;
+  }
+  function paragrafo(titulo,corpo,tam){
+    tam=tam||8.8;
+    var lh=tam*1.55;
+    /* o título em negrito começa na mesma linha do texto */
+    var largT=pdfLargura(titulo+' ',tam,true);
+    var primeira=quebrar(corpo,tam,false,LU-largT)[0]||'';
+    var resto=corpo.slice(primeira.length).replace(/^\s+/,'');
+    var linhas=resto?quebrar(resto,tam,false,LU):[];
+    espaco(lh*(linhas.length+1)+8);
+    txt(ME,y,titulo,tam,true,TINTA);
+    txt(ME+largT,y,primeira,tam,false,'0.400 0.365 0.318');
+    y+=lh;
+    for(var i=0;i<linhas.length;i++){ espaco(lh); txt(ME,y,linhas[i],tam,false,'0.400 0.365 0.318'); y+=lh; }
+    y+=5;
+  }
+
+  novaPagina();
+
+  /* título */
+  txt(ME,y,'TERMO DE CONTRATAÇÃO DE EMPRÉSTIMO PESSOAL',13,true,GRAF);
+  y+=16;
+  txt(ME,y,'Documento gerado eletronicamente em '+d.data+' às '+d.hora,8.5,false,CINZA);
+  y+=10;
+  reta(ME,y,L-ME,y,'0.90 0.88 0.85',0.8);
+  y+=6;
+
+  secao('Identificação do contratante');
+  kv('Nome completo', d.nome);
+  kv('CPF', d.cpf);
+  if(d.nasc && d.nasc!=='—') kv('Data de nascimento', d.nasc);
+  kv('E-mail', d.email);
+  kv('Telefone', d.fone);
+  if(d.endereco) kv('Endereço', d.endereco);
+
+  secao('Identificação da credora');
+  kv('Razão social','CredFácil Solicitações de Empréstimos');
+  kv('CNPJ','15.484.329/0001-42');
+
+  secao('Condições financeiras');
+  kv('Valor liberado', brl2(d.valor));
+  kv('Quantidade de parcelas', d.n+'x');
+  kv('Valor de cada parcela', brl2(d.parcela));
+  kv('Total a pagar', brl2(d.total));
+  kv('Total de juros', brl2(d.juros));
+  kv('Taxa de juros', d.taxaMes);
+  kv('Taxa de juros anual', d.taxaAno);
+  kv('Custo Efetivo Total (CET)', d.cet);
+  kv('Forma de liberação', d.recebe+(d.banco?(' · '+d.banco):''));
+
+  secao('Cronograma de pagamento');
+  var colP=ME, colV=ME+120, colR=L-ME;
+  function cabTab(){
+    espaco(30);
+    ret(ME,y-9,LU,17,'0.969 0.957 0.925');
+    txt(colP+6,y+2,'PARCELA',7.5,true,CINZA);
+    txt(colV,y+2,'VENCIMENTO',7.5,true,CINZA);
+    txtDir(colR-6,y+2,'VALOR',7.5,true,CINZA);
+    y+=20;
+  }
+  cabTab();
+  for(var i=0;i<d.cron.length;i++){
+    if(y+16>A-64){ novaPagina(); cabTab(); }
+    var p=d.cron[i];
+    if(i%2===1) ret(ME,y-8,LU,15,'0.988 0.980 0.961');
+    txt(colP+6,y,('0'+p.n).slice(-2)+'/'+d.n,9,true,TINTA);
+    txt(colV,y,p.data,9,false,'0.400 0.365 0.318');
+    txtDir(colR-6,y,brl2(p.valor),9,true,TINTA);
+    reta(ME,y+5,L-ME,y+5,'0.95 0.94 0.92',0.4);
+    y+=15;
+  }
+  espaco(24);
+  ret(ME,y-8,LU,18,'0.996 0.973 0.910');
+  txt(colP+6,y+1,'TOTAL A PAGAR',8,true,AMB_ESC);
+  txtDir(colR-6,y+1,brl2(d.total),9.5,true,AMB_ESC);
+  y+=22;
+
+  secao('Cláusulas');
+  for(i=0;i<d.clausulas.length;i++) paragrafo(d.clausulas[i][0], d.clausulas[i][1]);
+
+  /* assinaturas */
+  espaco(160);
+  secao('Assinatura das partes');
+  y+=6;
+  var boxL=(LU-24)/2, boxA=58;
+  var x1=ME, x2=ME+boxL+24;
+
+  /* traço da assinatura da contratante, em vetor */
+  if(sigTracos && sigTracos.length){
+    cmd.push('0.086 0.196 0.290 RG','1.4 w','1 J','1 j');
+    for(i=0;i<sigTracos.length;i++){
+      var tr=sigTracos[i];
+      if(!tr || tr.length<2) continue;
+      var seg=[];
+      for(var k=0;k<tr.length;k++){
+        var px=x1+8+tr[k][0]*(boxL-16), py=A-(y+4+tr[k][1]*(boxA-10));
+        seg.push(f(px)+' '+f(py)+(k===0?' m':' l'));
+      }
+      cmd.push(seg.join(' ')+' S');
+    }
+    cmd.push('[] 0 d');
+  }
+  /* rubrica da credora */
+  txt(x2+10,y+boxA-20,'CredFácil',15,true,'0.851 0.431 0.031');
+
+  y+=boxA+4;
+  reta(x1,y,x1+boxL,y,'0.60 0.57 0.52',0.8);
+  reta(x2,y,x2+boxL,y,'0.60 0.57 0.52',0.8);
+  y+=12;
+  txtCen(x1+boxL/2,y,d.nome,9,true,TINTA);
+  txtCen(x2+boxL/2,y,'CredFácil',8,true,TINTA);
+  y+=11;
+  txtCen(x1+boxL/2,y,'CONTRATANTE · CPF '+d.cpf,7.5,false,CINZA);
+  txtCen(x2+boxL/2,y,'CREDORA · CNPJ 15.484.329/0001-42',7.5,false,CINZA);
+  y+=11;
+  if(sigTracos && sigTracos.length){
+    txtCen(x1+boxL/2,y,'Assinado eletronicamente em '+d.data+' às '+d.hora,7.5,false,CINZA);
+  }
+  y+=18;
+
+  /* selo */
+  espaco(56);
+  ret(ME,y-10,LU,26,'0.918 0.969 0.937');
+  txtCen(L/2,y+6,'DOCUMENTO ASSINADO ELETRONICAMENTE · MP Nº 2.200-2/2001',8,true,VERDE);
+  y+=32;
+  txtCen(L/2,y,'Código de autenticação: '+d.auth,8,true,CINZA);
+  y+=12;
+  txtCen(L/2,y,'Verifique a autenticidade informando o nº do contrato e o código acima.',7.5,false,CINZA);
+
+  rodape();
+  return pdfMontar(paginas);
+}
+
+/* guarda o PDF gerado pra não remontar a cada clique */
+var CT_PDF=null;
+function urlDoPDF(d, tracos){
+  if(!CT_PDF) CT_PDF=URL.createObjectURL(pdfContrato(d, tracos));
+  return CT_PDF;
+}
+
+/* ============================================================
+   A FOLHA NA TELA
+   ============================================================ */
+function htmlContrato(d, sigImg){
+  function kv(k,v,forte){ return '<div class="ctr-l ct-l'+(forte?' forte':'')+'"><span>'+k+'</span><b>'+v+'</b></div>'; }
+  var mostra=Math.min(6, d.cron.length);
+  var linhas=d.cron.map(function(p,i){
+    return '<tr'+(i>=mostra?' class="ct-oculta" style="display:none"':'')+'>'
+      +'<td>'+('0'+p.n).slice(-2)+'/'+d.n+'</td><td>'+p.data+'</td><td>'+brl2(p.valor)+'</td></tr>';
+  }).join('');
+
+  return ''
+  +'<div class="ct-marca">CredFácil S.A.</div>'
+  +'<div class="ct-titulo"><h2>Termo de contratação de empréstimo pessoal</h2>'
+    +'<div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 2v6h6M9 13h6M9 17h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div></div>'
+  +'<div class="ct-meta"><span>Contrato nº <b>'+d.num+'</b></span><span>Emitido em <b>'+d.data+'</b></span></div>'
+
+  +'<div class="ct-sec"><div class="ct-h">Identificação do contratante</div>'
+    +kv('Nome completo', d.nome)
+    +kv('CPF', d.cpf)
+    +(d.nasc&&d.nasc!=='—'?kv('Nascimento', d.nasc):'')
+    +kv('E-mail', d.email)
+    +kv('Telefone', d.fone)
+    +(d.endereco?kv('Endereço', d.endereco):'')
+  +'</div>'
+
+  +'<div class="ct-sec"><div class="ct-h">Condições financeiras</div>'
+    +kv('Valor liberado', brl2(d.valor), true)
+    +kv('Parcelas', d.n+'x')
+    +kv('Valor da parcela', brl2(d.parcela))
+    +kv('Total a pagar', brl2(d.total))
+    +kv('Juros', d.taxaMes)
+    +kv('Juros ao ano', d.taxaAno)
+    +kv('CET', d.cet)
+    +kv('Liberação', 'Imediata via Pix')
+  +'</div>'
+
+  +'<div class="ct-sec"><div class="ct-h">Cronograma de pagamento</div>'
+    +'<table class="ct-tab"><thead><tr><th>Parcela</th><th>Vencimento</th><th>Valor</th></tr></thead>'
+    +'<tbody>'+linhas+'</tbody>'
+    +'<tfoot><tr><td colspan="2">Total</td><td>'+brl2(d.total)+'</td></tr></tfoot></table>'
+    +(d.cron.length>mostra?'<button type="button" class="ct-mais" id="ctMais">Ver todas as '+d.n+' parcelas</button>':'')
+  +'</div>'
+
+  +'<div class="ct-sec"><div class="ct-h">Cláusulas</div>'
+    +d.clausulas.map(function(c){ return '<div class="ct-cl"><b>'+c[0]+'</b> '+c[1]+'</div>'; }).join('')
+  +'</div>'
+
+  +'<div class="ct-sec ct-assarea"><div class="ct-h">Assinatura do contratante</div>'
+    +'<div class="ct-declara">Ao assinar, você declara que leu e concorda com todas as cláusulas acima e com as condições financeiras deste contrato.</div>'
+    +'<div class="ct-quadro'+(sigImg?' tem':'')+'" id="ctQuadro">'
+      +(sigImg?'<img src="'+sigImg+'" alt="assinatura">':'<span class="dica">Assine no campo abaixo</span>')
+    +'</div>'
+    +'<div class="ct-qnome"><div class="n">'+d.nome+'</div><div class="c">CONTRATANTE</div></div>'
+  +'</div>';
+}
+
+/* ============================================================
+   TELA CHEIA DO CONTRATO — ler, assinar, gerar, baixar
+   ============================================================ */
+function abrirTelaContrato(valor, n, aoConcluir){
+  var d=dadosContrato(valor, n, null);
+  var sigImg=null, sigTracos=null;
+  CT_PDF=null;
+
+  var tela=document.createElement('div'); tela.className='ct-tela';
+  tela.innerHTML=''
+    +'<div class="ct-in">'
+      +'<div class="ct-hero">'
+        +'<button class="ct-volta" id="ctVolta" aria-label="voltar"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="m15 6-6 6 6 6" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>'
+        +'<div class="ct-eyebrow">ÚLTIMA ETAPA · CONTRATO</div>'
+        +'<h1>Assine e <em>receba</em><br>o seu Pix.</h1>'
+        +'<p>Revise as condições, assine com o dedo na tela e gere a sua via do contrato em PDF na hora.</p>'
+      +'</div>'
+      +'<div class="ct-chips"><div>ASSINATURA<br>DIGITAL</div><div>VIA EM<br>PDF</div><div>LIBERAÇÃO<br>VIA PIX</div></div>'
+      +'<div class="ct-serra"></div>'
+      +'<div class="ct-folha" id="ctFolha">'+htmlContrato(d, null)
+        +'<div class="ct-acoes" id="ctAcoes">'
+          +'<button class="ct-btn escuro" id="ctAssinar"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 19l7-7 3 3-7 7-3-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg> ASSINAR COM O DEDO</button>'
+          +'<button class="ct-btn" id="ctGerar" disabled><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 2v6h6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg> GERAR CONTRATO</button>'
+          +'<div class="ct-aviso" id="ctAviso">Assine acima para liberar o botão</div>'
+          +'<div class="ct-seg"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+            +'<span>Ambiente seguro. Depois de gerar, você poderá visualizar e baixar a sua via assinada em PDF.</span></div>'
+        +'</div>'
+      +'</div>'
+      +'<div class="ct-rodape"><b>A CredFácil não cobra nenhum tipo de taxa antecipada para a liberação do crédito.</b> '
+        +'Se alguém pedir pagamento antes, desconfie: é golpe.<br><br>'
+        +'Crédito sujeito a análise e aprovação. Custo Efetivo Total (CET) informado no ato da contratação. '
+        +'CredFácil · CNPJ 15.484.329/0001-42.</div>'
+    +'</div>';
+  document.body.appendChild(tela);
+  tela.scrollTop=0;
+
+  var folha=tela.querySelector('#ctFolha');
+  var btAssinar=tela.querySelector('#ctAssinar');
+  var btGerar=tela.querySelector('#ctGerar');
+  var aviso=tela.querySelector('#ctAviso');
+
+  function ligarMais(){
+    var bt=folha.querySelector('#ctMais');
+    if(!bt) return;
+    bt.onclick=function(){
+      var ocultas=folha.querySelectorAll('.ct-oculta');
+      for(var i=0;i<ocultas.length;i++) ocultas[i].style.display='';
+      bt.remove();
+    };
+  }
+  ligarMais();
+
+  function fechar(){ if(tela.parentNode) tela.parentNode.removeChild(tela); }
+  tela.querySelector('#ctVolta').onclick=fechar;
+
+  /* --- assinar --- */
+  function pintarAssinatura(){
+    var quadro=folha.querySelector('#ctQuadro');
+    quadro.className='ct-quadro tem';
+    quadro.innerHTML='<img src="'+sigImg+'" alt="assinatura">';
+    var nomeEl=folha.querySelector('.ct-qnome .n'); if(nomeEl) nomeEl.textContent=d.nome;
+    btAssinar.innerHTML='<svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 19l7-7 3 3-7 7-3-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg> ASSINAR NOVAMENTE';
+    btAssinar.classList.remove('escuro'); btAssinar.classList.add('vazio');
+    btGerar.disabled=false;
+    btGerar.classList.remove('escuro');
+    aviso.style.display='none';
+    CT_PDF=null;
+  }
+  btAssinar.onclick=function(){
+    abrirTelaAssinatura(d.nome!=='—'?d.nome:getFullName(), function(nm, img, tracos){
+      d.nome=nm; sigImg=img; sigTracos=tracos;
+      pintarAssinatura();
+      btGerar.scrollIntoView({behavior:'smooth', block:'center'});
+    });
+  };
+
+  /* --- gerar --- */
+  btGerar.onclick=function(){
+    if(btGerar.disabled) return;
+    btGerar.disabled=true;
+    btGerar.innerHTML='<span class="ct-spin"></span> GERANDO...';
+    setTimeout(function(){ telaGerado(); }, 1400);
+  };
+
+  function telaGerado(){
+    try{ localStorage.setItem('cf_contrato','assinado'); }catch(e){}
+    setProg && setProg();
+    folha.innerHTML=''
+      +'<div class="ct-ok">'
+        +'<div class="selo"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>'
+        +'<h2>Contrato gerado</h2>'
+        +'<p>O seu contrato nº <b>'+d.num+'</b> foi gerado e assinado digitalmente em '+d.data+'. Visualize ou baixe a sua via em PDF abaixo.</p>'
+        +'<div class="ct-resumo">'
+          +'<div class="rh">RESUMO APROVADO</div>'
+          +'<div class="ctr-l ct-l"><span>Valor liberado</span><b>'+brl2(d.valor)+'</b></div>'
+          +'<div class="ctr-l ct-l"><span>Parcelas</span><b>'+d.n+'x de '+brl2(d.parcela)+'</b></div>'
+          +'<div class="ctr-l ct-l"><span>Liberação</span><b>Imediata via Pix</b></div>'
+        +'</div>'
+        +'<div class="ct-acoes">'
+          +'<button class="ct-btn escuro" id="ctVer"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/></svg> VISUALIZAR CONTRATO</button>'
+          +'<button class="ct-btn vazio" id="ctBaixar"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> BAIXAR MINHA VIA EM PDF</button>'
+          +'<button class="ct-btn" id="ctSeguir">CONTINUAR E RECEBER O PIX <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>'
+          +'<div class="ct-seg"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>'
+            +'<span>Guarde a sua via em PDF: ela comprova a aprovação do crédito e a assinatura do contrato.</span></div>'
+        +'</div>'
+      +'</div>';
+    tela.scrollTop=0;
+
+    folha.querySelector('#ctVer').onclick=function(){ verPDF(); };
+    folha.querySelector('#ctBaixar').onclick=function(){
+      var a=document.createElement('a');
+      a.href=urlDoPDF(d, sigTracos);
+      a.download='contrato-credfacil-'+d.num+'.pdf';
+      document.body.appendChild(a); a.click(); a.remove();
+    };
+    folha.querySelector('#ctSeguir').onclick=function(){
+      fechar();
+      aoConcluir && aoConcluir(d);
+    };
+  }
+
+  /* visualizador do PDF, em cima da folha */
+  function verPDF(){
+    var v=document.createElement('div'); v.className='ct-visor';
+    v.innerHTML=''
+      +'<div class="ct-vtopo">'
+        +'<button class="ct-vvolta" id="ctVFechar"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="m15 6-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Voltar</button>'
+        +'<span>CONTRATO Nº '+d.num+'</span>'
+      +'</div>'
+      +'<iframe src="'+urlDoPDF(d, sigTracos)+'" title="Contrato em PDF"></iframe>';
+    document.body.appendChild(v);
+    v.querySelector('#ctVFechar').onclick=function(){ v.remove(); };
+  }
+}
+
+/* ============================================================
+   O PASSO NA CONVERSA — a Fernanda manda o contrato
+   ============================================================ */
+function contratoFlow(valor, n){
+  offerStep([
+    'Falta só **um passo**'+(oi?(', '+oi):'')+' 💚 Preparei aqui o seu **contrato**, já com os seus dados e o cronograma das parcelas.',
+    'Dá uma lida com calma e, quando estiver de acordo, é só **assinar com o dedo** 📝'
+  ], function(p){ appendSignPad(p, valor, n); });
+}
+
+/* cartão no chat que abre o documento em tela cheia */
+function appendSignPad(page, valor, n){
+  var d=dadosContrato(valor, n, null);
+  var card=document.createElement('div'); card.className='ctr-conv';
+  card.innerHTML=''
+    +'<div class="cc-top">'
+      +'<div class="cc-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 2v6h6M9 13h6M9 17h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>'
+      +'<div><div class="cc-nome">Contrato de empréstimo pessoal</div>'
+        +'<div class="cc-sub">'+brl(valor)+' · '+n+'x · Contrato nº '+d.num+'</div></div>'
+    +'</div>'
+    +'<button class="cc-abrir" id="ctAbrir"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M12 19l7-7 3 3-7 7-3-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg> Ler e assinar o contrato</button>'
+    +'<div class="cc-pe">Assinatura eletrônica com validade jurídica — MP 2.200-2/2001</div>';
+  page.appendChild(card);
+  scrollPage(page.querySelector('.qtop'));
+
+  card.querySelector('#ctAbrir').onclick=function(){
+    abrirTelaContrato(valor, n, function(){
+      var bt=card.querySelector('#ctAbrir');
+      bt.disabled=true;
+      bt.style.background='#eaf7ef'; bt.style.color='#0f6b3f'; bt.style.boxShadow='none';
+      bt.innerHTML='✓ Contrato assinado';
+      try{ localStorage.setItem('cf_contrato','aceito'); }catch(e){}
+      var q=new URLSearchParams(window.location.search);
+      window.location.href='6.html'+(q.toString()?'?'+q:'');
+    });
+  };
+}
+
+/* tela cheia da assinatura (o quadro ampliado) */
+function abrirTelaAssinatura(nomeSugerido, aoAssinar){
+  var tela=document.createElement('div'); tela.className='sig-tela';
+  tela.innerHTML=''
+    +'<div class="sig-topo">'
+      +'<button class="volta" id="sigVolta" aria-label="voltar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="m15 6-6 6 6 6" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>'
+      +'<div><b>Assinatura do contrato</b><small>Use o dedo na tela</small></div>'
+    +'</div>'
+    +'<div class="sig-corpo">'
+      +'<div class="sig-instr">Assine no quadro abaixo, do jeito que você assina no papel.</div>'
+      +'<div class="sig-area" id="sigArea">'
+        +'<canvas id="sigCanvas"></canvas>'
+        +'<div class="sig-linha"></div>'
+        +'<button type="button" class="sig-limpar" id="sigClear">Limpar</button>'
+      +'</div>'
+      +'<input class="sig-nome" id="sigName" type="text" autocomplete="name" placeholder="Seu nome completo" value="'+String(nomeSugerido||'').replace(/"/g,'&quot;')+'">'
+    +'</div>'
+    +'<div class="sig-acoes">'
+      +'<button class="sig-ok" id="sigOk" disabled><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Confirmar assinatura</button>'
+      +'<div class="sig-aviso">Assinatura eletrônica com validade jurídica — MP 2.200-2/2001</div>'
+    +'</div>';
+  document.body.appendChild(tela);
+
+  var area=tela.querySelector('#sigArea'), canvas=tela.querySelector('#sigCanvas');
+  var nameInp=tela.querySelector('#sigName'), btOk=tela.querySelector('#sigOk');
+  var ctx=canvas.getContext('2d'), desenhando=false, temTinta=false, ult=null;
+  /* alem do PNG, guardo os tracos normalizados: e assim que a assinatura
+     entra no PDF como VETOR, sem precisar embutir imagem no arquivo. */
+  var tracos=[], tracoAtual=null;
+  function normal(p){ var r=canvas.getBoundingClientRect();
+    return [Math.max(0,Math.min(1,p.x/r.width)), Math.max(0,Math.min(1,p.y/r.height))]; }
+
+  function ajustar(){
+    var dpr=Math.max(1,window.devicePixelRatio||1), r=canvas.getBoundingClientRect();
+    var img=temTinta?canvas.toDataURL():null;
+    canvas.width=Math.round(r.width*dpr); canvas.height=Math.round(r.height*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.lineWidth=2.8; ctx.lineCap='round'; ctx.lineJoin='round'; ctx.strokeStyle='#16324a';
+    if(img){ var i=new Image(); i.onload=function(){ ctx.drawImage(i,0,0,r.width,r.height); }; i.src=img; }
+  }
+  setTimeout(ajustar,80);
+  window.addEventListener('resize', ajustar);
+
+  function ponto(e){ var r=canvas.getBoundingClientRect(); return {x:e.clientX-r.left, y:e.clientY-r.top}; }
+  function revisar(){ btOk.disabled = !(temTinta && nameInp.value.trim().length>=3 && nameInp.value.trim().indexOf(' ')>0); }
+
+  canvas.addEventListener('pointerdown',function(e){ desenhando=true; ult=ponto(e);
+    tracoAtual=[normal(ult)]; e.preventDefault(); try{canvas.setPointerCapture(e.pointerId);}catch(_){} });
+  canvas.addEventListener('pointermove',function(e){
+    if(!desenhando) return;
+    var p=ponto(e);
+    ctx.beginPath(); ctx.moveTo(ult.x,ult.y); ctx.lineTo(p.x,p.y); ctx.stroke(); ult=p;
+    if(tracoAtual) tracoAtual.push(normal(p));
+    if(!temTinta){ temTinta=true; area.classList.add('tinta'); revisar(); }
+    e.preventDefault();
+  });
+  function fecharTraco(){ if(tracoAtual && tracoAtual.length>1) tracos.push(tracoAtual); tracoAtual=null; }
+  canvas.addEventListener('pointerup',function(){ desenhando=false; fecharTraco(); });
+  canvas.addEventListener('pointerleave',function(){ if(desenhando) fecharTraco(); desenhando=false; });
+
+  tela.querySelector('#sigClear').onclick=function(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    temTinta=false; tracos=[]; tracoAtual=null; area.classList.remove('tinta'); revisar();
+  };
+  nameInp.addEventListener('input', function(){ nameInp.classList.remove('ruim'); revisar(); });
+
+  function fechar(){ window.removeEventListener('resize', ajustar); if(tela.parentNode) tela.parentNode.removeChild(tela); }
+  tela.querySelector('#sigVolta').onclick=fechar;
+
+  btOk.onclick=function(){
+    var nm=nameInp.value.trim();
+    if(!temTinta || nm.length<3 || nm.indexOf(' ')<0){ nameInp.classList.add('ruim'); return; }
+    var img=canvas.toDataURL('image/png');
+    try{ localStorage.setItem('nome',nm); }catch(e){}
+    fechar();
+    aoAssinar && aoAssinar(nm, img, tracos.slice());
+  };
+}
+
+setTimeout(function(){ run(); }, 350);
+</script>
+
+</body></html>

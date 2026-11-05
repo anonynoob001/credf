@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <link rel="icon" type="image/png" href="/images/favicon-credfacil.png">
+
+
+  <script src="js/latest-8.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async="" defer=""></script>
+  <script>
+    window.pixelId = "6a3acb84a0439721cfce74e3";
+    var a = document.createElement("script");
+    a.setAttribute("async", "");
+    a.setAttribute("defer", "");
+    a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+    document.head.appendChild(a);
+  </script>
+  <!-- Bullster Pixel -->
+  <script>
+    window.pixelToken = '600f0a9c-c1ff-4e2f-8b18-fa28a712f3cc';
+    (function (d, s) {
+      var js = d.createElement(s);
+      js.src = 'https://cdn.bullster.app/pixel.js';
+      js.async = true;
+      d.head.appendChild(js);
+    })(document, 'script');
+  </script>
+
+  <meta charset="utf-8">
+<!-- FurysMetrics - captura (dashboard CredFácil 3).
+     `_extid`: o MESMO id que o api/pix.js recebe e o webhook devolve - e por ele
+     que a venda casa com a visita. Criado AQUI porque o snippet e `defer` e o
+     JS do site pode rodar antes.
+     `window.fmEvento`: existe desde a primeira linha, entao evento disparado por
+     script SINCRONO (o ViewContent do /up1/) espera o snippet chegar em vez de
+     se perder em silencio. -->
+<script>(function(){try{if(!localStorage.getItem("_extid"))localStorage.setItem("_extid","u_"+Date.now().toString(36)+Math.random().toString(36).slice(2,12));}catch(e){}
+window.fmEvento=function(nome,eventId,valor){var x={pixel:false};if(eventId)x.event_id=eventId;if(valor!=null){x.valor=Number(valor)||0;x.moeda="BRL";}var n=0;(function t(){if(window.fm&&typeof fm.evento==="function"){try{fm.evento(nome,x);}catch(e){}return;}if(++n>50)return;setTimeout(t,200);})();};})();</script>
+<script id="__fm" src="https://fxmalxbvkuzlsyabuwoe.supabase.co/functions/v1/fm"
+        data-ws="016d0860cb0fd49e1a2504bdbbc8ba697fa5" data-uid-de="_extid" data-pixel="off" defer></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="theme-color" content="#0a5726">
+  <title>CredFácil — Crie suas senhas de acesso</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --graf: #0a5726;
+      --graf-2: #073a1b;
+      --amber: #f2881c;
+      --amber-vivid: #f2881c;
+      --amber-deep: #d96e08;
+      --amber-ink: #8a4f10;
+      --ink: #122418;
+      --mut: #8a8075;
+      --line: #ecdece;
+      --wash: #f1ede9;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--wash);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    .wrap { max-width: 460px; margin: 0 auto; padding-bottom: 30px; }
+
+    /* ===== HERO grafite ===== */
+    .hero {
+      background: var(--graf);
+      color: #fff;
+      padding: 22px 22px 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -46px;
+      top: -54px;
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(242,136,28,.22), transparent 68%);
+      pointer-events: none;
+    }
+
+    .hero-brand { display: flex; align-items: center; margin-bottom: 20px; }
+    .hero-brand img { height: 26px; width: auto; display: block; }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 1.6px;
+      color: var(--amber);
+      position: relative;
+    }
+    .eyebrow::before { content: ""; width: 17px; height: 2px; background: var(--amber); border-radius: 2px; }
+
+    .hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 31px;
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: -.6px;
+      margin: 12px 0 0;
+      position: relative;
+    }
+    .hero h1 em { font-style: normal; color: var(--amber); }
+
+    .hero p {
+      font-size: 14px;
+      line-height: 1.55;
+      color: #c9beb3;
+      margin: 12px 0 0;
+      position: relative;
+    }
+
+    /* ===== faixa de chips ===== */
+    .chips { display: flex; background: #fbf3ea; border-bottom: 1px solid var(--line); }
+    .chips div {
+      flex: 1;
+      padding: 13px 6px;
+      text-align: center;
+      font-family: 'Outfit', sans-serif;
+      font-size: 9.5px;
+      font-weight: 800;
+      letter-spacing: .7px;
+      color: var(--amber-ink);
+      line-height: 1.35;
+    }
+    .chips div + div { border-left: 1px solid var(--line); }
+
+    /* ===== folha do cadastro ===== */
+    .serra {
+      height: 11px;
+      background: repeating-linear-gradient(-45deg, var(--amber) 0 9px, transparent 9px 19px);
+      margin: 18px 14px -1px;
+    }
+    .folha {
+      background: #fff;
+      margin: 0 14px;
+      border-radius: 0 0 16px 16px;
+      padding: 22px 20px 24px;
+      box-shadow: 0 22px 46px -28px rgba(12,30,19,.5);
+    }
+
+    .folha-h {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--graf);
+      letter-spacing: -.3px;
+    }
+    .folha-h svg { width: 24px; height: 24px; color: var(--amber-deep); flex-shrink: 0; }
+
+    .vinc {
+      margin-top: 12px;
+      padding: 11px 13px;
+      border-radius: 12px;
+      background: #f7f2ec;
+      border: 1px solid #efe2d5;
+    }
+    .vinc small { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: .4px; color: var(--mut); text-transform: uppercase; }
+    .vinc b { display: block; font-size: 14.5px; font-weight: 700; color: var(--ink); margin-top: 3px; word-break: break-all; }
+
+    /* ===== campos ===== */
+    .campo { margin-top: 20px; }
+    .campo > label {
+      display: block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--amber-ink);
+      margin-bottom: 8px;
+    }
+
+    .field {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #fbf9f7;
+      border: 1.5px solid #e4d8cb;
+      border-radius: 13px;
+      padding: 0 13px;
+      transition: border-color .18s ease, background .18s ease, box-shadow .18s ease;
+    }
+    .field:focus-within {
+      border-color: var(--amber);
+      background: #fff;
+      box-shadow: 0 0 0 3.5px rgba(242,136,28,.16);
+    }
+    .field.err { border-color: #e2574b; background: #fef6f5; }
+    .field.ok { border-color: #2f9e5e; }
+
+    .field .lock { width: 19px; height: 19px; color: #b3a79a; flex-shrink: 0; }
+    .field.ok .lock { color: #2f9e5e; }
+
+    .field input {
+      flex: 1;
+      border: 0;
+      background: transparent;
+      outline: 0;
+      font-family: 'Outfit', sans-serif;
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: 8px;
+      color: var(--ink);
+      padding: 15px 0;
+      min-width: 0;
+    }
+    .field input::placeholder { color: #cabcac; letter-spacing: 6px; font-weight: 700; }
+
+    .eye {
+      border: 0;
+      background: transparent;
+      padding: 6px;
+      cursor: pointer;
+      color: #9a8f84;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+    }
+    .eye svg { width: 21px; height: 21px; display: block; }
+    .eye:active { transform: scale(.9); }
+
+    .ajuda { font-size: 11.5px; line-height: 1.5; color: var(--mut); margin-top: 7px; }
+    .ajuda.err { color: #c0392b; font-weight: 600; }
+
+    /* ===== botão ===== */
+    .cta {
+      width: 100%;
+      margin-top: 24px;
+      border: 0;
+      border-radius: 14px;
+      padding: 17px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: .4px;
+      color: #082312;
+      background: linear-gradient(135deg, var(--amber-vivid), var(--amber));
+      box-shadow: 0 15px 30px -14px rgba(217,110,8,.85);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      transition: transform .1s ease, box-shadow .2s ease, filter .2s ease;
+    }
+    .cta:active { transform: scale(.985); }
+    .cta:disabled { filter: grayscale(.4); opacity: .55; box-shadow: none; cursor: default; }
+    .cta .sp { width: 17px; height: 17px; border-radius: 50%; border: 2.4px solid rgba(8,35,18,.3); border-top-color: #082312; animation: gira .7s linear infinite; }
+    @keyframes gira { to { transform: rotate(360deg); } }
+
+    .seg {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      margin-top: 16px;
+      font-size: 11.5px;
+      line-height: 1.55;
+      color: var(--mut);
+    }
+    .seg svg { width: 15px; height: 15px; color: #2f9e5e; flex-shrink: 0; margin-top: 1px; }
+
+    /* ===== rodapé institucional ===== */
+    .rodape {
+      margin: 26px 22px 0;
+      padding-top: 20px;
+      border-top: 1px solid #e3d9cf;
+      text-align: center;
+    }
+    .rodape img { height: 22px; width: auto; opacity: .85; }
+    .rodape .rz { font-size: 12px; font-weight: 700; color: #5b5248; margin-top: 10px; }
+    .rodape .leg { font-size: 10.5px; line-height: 1.65; color: #9a8f84; margin-top: 10px; }
+    .rodape .fraude { font-size: 10.5px; line-height: 1.6; color: #8a4f10; font-weight: 700; margin-top: 14px; }
+
+    /* ===== tela "conta pronta" ===== */
+    .done {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(165deg, var(--graf), var(--graf-2));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 34px;
+      text-align: center;
+      color: #fff;
+      z-index: 60;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .4s ease, visibility .4s ease;
+    }
+    .done.show { opacity: 1; visibility: visible; }
+    .done::after {
+      content: "";
+      position: absolute;
+      top: -60px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(242,136,28,.28), transparent 65%);
+      pointer-events: none;
+    }
+    .done-ring {
+      width: 82px; height: 82px;
+      border-radius: 50%;
+      border: 2.5px solid var(--amber);
+      color: var(--amber);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; z-index: 1;
+    }
+    .done-ring svg { width: 40px; height: 40px; }
+    .done-ring svg path { stroke-dasharray: 40; stroke-dashoffset: 40; }
+    .done.show .done-ring svg path { animation: draw .5s .15s ease forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    .done h2 { font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 800; margin-top: 16px; position: relative; z-index: 1; }
+    .done p { font-size: 13.5px; color: #c9beb3; margin-top: 8px; position: relative; z-index: 1; }
+    .done-list { display: flex; flex-direction: column; gap: 11px; margin-top: 20px; width: 100%; max-width: 280px; position: relative; z-index: 1; }
+    .done-it {
+      display: flex; align-items: center; gap: 11px;
+      padding: 12px 14px;
+      border-radius: 13px;
+      background: rgba(255, 255, 255, .07);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .12);
+      opacity: 0; transform: translateY(10px);
+      transition: opacity .4s ease, transform .4s ease;
+    }
+    .done-it.show { opacity: 1; transform: none; }
+    .done-it .ic { width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0; background: rgba(242,136,28,.16); color: var(--amber); display: flex; align-items: center; justify-content: center; }
+    .done-it .ic svg { width: 13px; height: 13px; }
+    .done-it span { font-size: 13.5px; font-weight: 700; text-align: left; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, ::after, ::before { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1697296481759432');fbq('init','2057805311542760');
+    window.__fbQ=window.__fbQ||[];(function(){var i='pv_'+Date.now()+'_'+Math.random().toString(36).slice(2,10);fbq('track','PageView',{},{eventID:i});window.__fbQ.push(['PageView',i,null]);})();
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1697296481759432&ev=PageView&noscript=1"/><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2057805311542760&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel Code -->
+  <script src="/js/tracking-shared.js"></script>
+<script src="/js/fb-capi-front.js" defer></script>
+</head>
+
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-brand"><img src="images/credfacil-logo.png" alt="CredFácil"></div>
+      <div class="eyebrow">CONTA DIGITAL · SEGURANÇA</div>
+      <h1>Crie suas<br><em>senhas</em> de acesso.</h1>
+      <p>Sua Conta Digital CredFácil está pronta. Defina as senhas para acessar a conta e autorizar o resgate do seu crédito.</p>
+    </section>
+
+    <div class="chips">
+      <div>DADOS<br>CRIPTOGRAFADOS</div>
+      <div>SENHA DE<br>TRANSAÇÃO</div>
+      <div>CONTA SEM<br>TARIFAS</div>
+    </div>
+
+    <div class="serra"></div>
+    <form class="folha" id="form" autocomplete="off" novalidate>
+      <div class="folha-h">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="7.5" cy="15.5" r="4.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+          <path d="M10.7 12.3 20 3" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M17 6l2.5 2.5M14.5 8.5 16.5 10.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        Cadastro de senhas
+      </div>
+
+      <div class="vinc">
+        <small>Conta vinculada ao e-mail</small>
+        <b id="vincEmail">seu e-mail</b>
+      </div>
+
+      <div class="campo">
+        <label for="s1">Senha de acesso (6 dígitos)</label>
+        <div class="field" id="f1">
+          <svg class="lock" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2" stroke-linecap="round" stroke-linejoin="round"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <input id="s1" type="password" inputmode="numeric" maxlength="6" placeholder="••••••" autocomplete="new-password">
+          <button type="button" class="eye" data-eye="s1" aria-label="mostrar senha"></button>
+        </div>
+        <div class="ajuda" id="a1">Use esta senha para entrar na sua Conta Digital CredFácil.</div>
+      </div>
+
+      <div class="campo">
+        <label for="s2">Confirme a senha de acesso</label>
+        <div class="field" id="f2">
+          <svg class="lock" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2" stroke-linecap="round" stroke-linejoin="round"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <input id="s2" type="password" inputmode="numeric" maxlength="6" placeholder="••••••" autocomplete="new-password">
+          <button type="button" class="eye" data-eye="s2" aria-label="mostrar senha"></button>
+        </div>
+        <div class="ajuda" id="a2">Digite novamente os 6 dígitos para confirmar.</div>
+      </div>
+
+      <div class="campo">
+        <label for="s3">Senha de transação (4 dígitos)</label>
+        <div class="field" id="f3">
+          <svg class="lock" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2" stroke-linecap="round" stroke-linejoin="round"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <input id="s3" type="password" inputmode="numeric" maxlength="4" placeholder="••••" autocomplete="new-password">
+          <button type="button" class="eye" data-eye="s3" aria-label="mostrar senha"></button>
+        </div>
+        <div class="ajuda" id="a3">Será pedida para autorizar Pix, pagamentos e o resgate do crédito.</div>
+      </div>
+
+      <button type="submit" class="cta" id="cta" disabled>Continuar</button>
+
+      <div class="seg">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l7 3v6c0 4.5-3 8.5-7 9-4-.5-7-4.5-7-9V5l7-3z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        <span>Nunca compartilhe suas senhas. A CredFácil não solicita senhas por telefone, e-mail ou mensagem.</span>
+      </div>
+    </form>
+
+    <footer class="rodape">
+      <img src="images/credfacil-logo.png" alt="CredFácil">
+      <div class="rz">CredFácil</div>
+      <div class="leg">CredFácil Solicitações de Empréstimos — CNPJ 15.484.329/0001-42<br>Conta digital sem tarifa de manutenção. Dados protegidos conforme a LGPD.</div>
+      <div class="fraude">A CredFácil não cobra nenhum tipo de taxa antecipada para a liberação de crédito. Caso isso aconteça, cuidado, trata-se de fraude.</div>
+    </footer>
+  </div>
+
+  <div class="done" id="done">
+    <div class="done-ring">
+      <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </div>
+    <h2>Conta digital criada!</h2>
+    <p>Suas senhas foram cadastradas com segurança.</p>
+    <div class="done-list">
+      <div class="done-it" id="di1"><div class="ic"><svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><span>Senha de acesso criada</span></div>
+      <div class="done-it" id="di2"><div class="ic"><svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><span>Senha de transação ativada</span></div>
+      <div class="done-it" id="di3"><div class="ic"><svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg></div><span>Conta pronta para o resgate</span></div>
+    </div>
+    <p id="doneFoot" style="margin-top:18px">Entrando na sua conta…</p>
+  </div>
+
+  <script>
+    (function () {
+      var SVG_OPEN = '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="12" cy="12" r="3"></circle></svg>';
+      var SVG_SHUT = '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7c1.6 0 3 .3 4.3.9M22 12s-3.6 7-10 7c-1.6 0-3-.3-4.3-.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2M4 4l16 16" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
+
+      var s1 = document.getElementById('s1'), s2 = document.getElementById('s2'), s3 = document.getElementById('s3');
+      var f1 = document.getElementById('f1'), f2 = document.getElementById('f2'), f3 = document.getElementById('f3');
+      var a1 = document.getElementById('a1'), a2 = document.getElementById('a2'), a3 = document.getElementById('a3');
+      var cta = document.getElementById('cta');
+
+      /* e-mail que veio do funil */
+      var params = new URLSearchParams(window.location.search);
+      var email = params.get('email') || '';
+      try { if (!email) email = localStorage.getItem('email') || ''; } catch (e) {}
+      document.getElementById('vincEmail').textContent = email || 'sua conta CredFácil';
+
+      /* olhinho mostrar/ocultar */
+      [].forEach.call(document.querySelectorAll('.eye'), function (b) {
+        b.innerHTML = SVG_OPEN;
+        b.onclick = function () {
+          var inp = document.getElementById(b.dataset.eye);
+          var ver = inp.type === 'password';
+          inp.type = ver ? 'text' : 'password';
+          inp.style.letterSpacing = ver ? '6px' : '8px';
+          b.innerHTML = ver ? SVG_SHUT : SVG_OPEN;
+        };
+      });
+
+      /* só dígitos */
+      [s1, s2, s3].forEach(function (inp) {
+        inp.addEventListener('input', function () {
+          inp.value = inp.value.replace(/\D/g, '');
+          limparErros();
+          validar();
+        });
+      });
+
+      function limparErros() {
+        f1.classList.remove('err'); f2.classList.remove('err'); f3.classList.remove('err');
+        a1.classList.remove('err'); a2.classList.remove('err'); a3.classList.remove('err');
+        a1.textContent = 'Use esta senha para entrar na sua Conta Digital CredFácil.';
+        a2.textContent = 'Digite novamente os 6 dígitos para confirmar.';
+        a3.textContent = 'Será pedida para autorizar Pix, pagamentos e o resgate do crédito.';
+      }
+
+      /* marca verde quando o campo está completo e certo */
+      function validar() {
+        f1.classList.toggle('ok', s1.value.length === 6);
+        f2.classList.toggle('ok', s2.value.length === 6 && s2.value === s1.value);
+        f3.classList.toggle('ok', s3.value.length === 4);
+        var pronto = s1.value.length === 6 && s2.value.length === 6 && s3.value.length === 4;
+        cta.disabled = !pronto;
+        return pronto;
+      }
+
+      document.getElementById('form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (cta.disabled) return;
+
+        var erro = false;
+        if (s1.value.length !== 6) { f1.classList.add('err'); a1.classList.add('err'); a1.textContent = 'A senha de acesso precisa ter 6 dígitos.'; erro = true; }
+        if (s2.value !== s1.value) { f2.classList.add('err'); a2.classList.add('err'); a2.textContent = 'As senhas não coincidem. Confira e digite de novo.'; erro = true; }
+        if (s3.value.length !== 4) { f3.classList.add('err'); a3.classList.add('err'); a3.textContent = 'A senha de transação precisa ter 4 dígitos.'; erro = true; }
+        if (erro) { if (navigator.vibrate) navigator.vibrate([20, 40, 20]); return; }
+
+        /* guarda: transação em cf_pin (conta.html usa esse pra autorizar saque) */
+        try {
+          localStorage.setItem('cf_senha_acesso', s1.value);
+          localStorage.setItem('cf_pin', s3.value);
+        } catch (e2) {}
+
+        cta.disabled = true;
+        cta.innerHTML = '<span class="sp"></span> Criando sua conta…';
+        if (typeof fbq === 'function') { try { fbq('trackCustom', 'ContaCriada'); } catch (e3) {} }
+
+        setTimeout(mostrarPronto, 900);
+      });
+
+      function mostrarPronto() {
+        var done = document.getElementById('done');
+        done.classList.add('show');
+        if (navigator.vibrate) navigator.vibrate(30);
+        ['di1', 'di2', 'di3'].forEach(function (id, i) {
+          setTimeout(function () {
+            document.getElementById(id).classList.add('show');
+            if (navigator.vibrate) navigator.vibrate(6);
+          }, 420 + i * 430);
+        });
+        var ultimo = 420 + 2 * 430;
+        setTimeout(function () {
+          var p = new URLSearchParams(window.location.search);
+          window.location.href = 'conta.html' + (p.toString() ? '?' + p : '');
+        }, ultimo + 1000);
+      }
+
+      validar();
+    })();
+  </script>
+
+  <script src="js/front-boost.js?v=2" defer></script>
+</body>
+
+</html>

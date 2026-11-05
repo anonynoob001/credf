@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        var urls = [
+            '/up1/',
+            '/up4/',
+            '/up5/',
+            '/up6/',
+            '/up7/',
+            '/up9/',
+            '/up10/',
+            '/up11/',
+            '/up12/',
+            '/up8/',
+            '/up2/',
+            '/up3/'
+        ];
+
+        (function() {
+            try {
+                var i = 0;
+                
+                // Verifica se localStorage está disponível
+                if (typeof localStorage !== 'undefined') {
+                    var stored = localStorage.getItem('redirectIndex');
+                    i = parseInt(stored, 10);
+                    
+                    // Se não for número válido, reseta pra 0
+                    if (isNaN(i) || i < 0 || i >= urls.length) {
+                        i = 0;
+                    }
+                    
+                    // Salva o próximo índice
+                    var next = (i + 1) % urls.length;
+                    localStorage.setItem('redirectIndex', next);
+                }
+                
+                // Garante que o índice está dentro do range
+                i = Math.max(0, Math.min(i, urls.length - 1));
+                
+                // Monta a URL final
+                var dest = urls[i] + (window.location.search || '');
+                
+                // Redireciona
+                window.location.replace(dest);
+                
+            } catch (e) {
+                // Fallback: vai pro primeiro da lista
+                window.location.replace(urls[0] + (window.location.search || ''));
+            }
+        })();
+    </script>
+</head>
+<body></body>
+</html>

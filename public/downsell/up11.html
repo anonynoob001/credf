@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<!-- FurysMetrics - captura (dashboard CredFácil 3).
+     `_extid`: o MESMO id que o api/pix.js recebe e o webhook devolve - e por ele
+     que a venda casa com a visita. Criado AQUI porque o snippet e `defer` e o
+     JS do site pode rodar antes.
+     `window.fmEvento`: existe desde a primeira linha, entao evento disparado por
+     script SINCRONO (o ViewContent do /up1/) espera o snippet chegar em vez de
+     se perder em silencio. -->
+<script>(function(){try{if(!localStorage.getItem("_extid"))localStorage.setItem("_extid","u_"+Date.now().toString(36)+Math.random().toString(36).slice(2,12));}catch(e){}
+window.fmEvento=function(nome,eventId,valor){var x={pixel:false};if(eventId)x.event_id=eventId;if(valor!=null){x.valor=Number(valor)||0;x.moeda="BRL";}var n=0;(function t(){if(window.fm&&typeof fm.evento==="function"){try{fm.evento(nome,x);}catch(e){}return;}if(++n>50)return;setTimeout(t,200);})();};})();</script>
+<script id="__fm" src="https://fxmalxbvkuzlsyabuwoe.supabase.co/functions/v1/fm"
+        data-ws="016d0860cb0fd49e1a2504bdbbc8ba697fa5" data-uid-de="_extid" data-pixel="off" defer></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consultoria Financeira · CredFácil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+<script src="../js/checkout-shared.js"></script>
+<script>
+  window.pixelId = "6a3acb84a0439721cfce74e3";
+  var a=document.createElement("script");a.async=1;a.defer=1;a.src="https://cdn.utmify.com.br/scripts/pixel/pixel.js";document.head.appendChild(a);
+</script>
+<!-- Bullster Pixel -->
+<script>
+  window.pixelToken = '600f0a9c-c1ff-4e2f-8b18-fa28a712f3cc';
+  (function (d, s) {
+    var js = d.createElement(s);
+    js.src = 'https://cdn.bullster.app/pixel.js';
+    js.async = true;
+    d.head.appendChild(js);
+  })(document, 'script');
+</script>
+<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" async defer></script>
+<!-- Meta Pixel: removido do upsell/downsell (pixel só no front, 12/10) -->
+<style>
+  :root{--ch:#1e1d1b;--gold:#c98d4c;--gold2:#e6b178;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',sans-serif;background:#0f0f0e;color:#ece7e2;min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:24px 16px}
+  .card{width:100%;max-width:430px;background:linear-gradient(170deg,#252321,#141413);border:1px solid #34302c;border-radius:22px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.6)}
+  .top{padding:26px 24px 18px;border-bottom:1px solid #1a3624;position:relative}
+  .top::after{content:"";position:absolute;left:24px;bottom:-1px;width:54px;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
+  .kicker{font-size:10.5px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-weight:800}
+  h1{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;line-height:1.15;margin-top:10px}
+  h1 b{color:var(--gold2);font-weight:700}
+  .advisor{display:flex;align-items:center;gap:13px;padding:18px 24px;background:rgba(201,141,76,.05)}
+  .avatar{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#c98d4c,#7a5023);display:flex;align-items:center;justify-content:center;font-weight:800;color:#1e1d1b;font-size:18px;flex-shrink:0}
+  .advisor .nm{font-weight:700;font-size:14px}
+  .advisor .rl{font-size:12px;color:#a59686}
+  .advisor .on{margin-left:auto;font-size:11px;color:#e7ad6e;font-weight:700;display:flex;align-items:center;gap:5px}
+  .advisor .on i{width:7px;height:7px;border-radius:50%;background:#d38634;display:inline-block}
+  .b{padding:20px 24px 26px}
+  .lead{font-size:13.5px;color:#bdb4ab;line-height:1.65;margin-bottom:16px}
+  .feat{display:grid;gap:10px;margin-bottom:18px}
+  .feat div{display:flex;gap:10px;align-items:center;font-size:13px;color:#d8d0c7}
+  .feat svg{flex-shrink:0}
+  .price{display:flex;align-items:flex-end;justify-content:space-between;border-top:1px solid #1a3624;padding-top:16px}
+  .price .from{font-size:13px;color:#8a7d6f;text-decoration:line-through}
+  .price .v{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:700;color:var(--gold2);line-height:1}
+  .price .off{font-size:11px;color:var(--gold);font-weight:800;text-align:right}
+  .btn{margin-top:18px;width:100%;border:none;cursor:pointer;background:linear-gradient(135deg,#e6b178,#c98d4c);color:#1e1d1b;font-weight:800;font-size:15.5px;padding:17px;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:9px;letter-spacing:.3px;box-shadow:0 14px 30px -14px rgba(201,141,76,.6)}
+  .foot{margin-top:14px;text-align:center;font-size:11px;color:#7a6f63}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="top">
+    <div class="kicker">Atendimento Premium · Especialista</div>
+    <h1>Um consultor já está <b>reservado</b> pro seu caso<span id="hi"></span></h1>
+  </div>
+  <div class="advisor">
+    <div class="avatar">RM</div>
+    <div><div class="nm">Ricardo Mendes</div><div class="rl">Consultor Financeiro Sênior</div></div>
+    <div class="on"><i></i> Online</div>
+  </div>
+  <div class="b">
+    <p class="lead">A Consultoria Financeira viabiliza a análise personalizada que destrava sua liberação. Como você não concluiu, liberamos o atendimento com <b>50% de desconto</b> — exclusivo desta tela.</p>
+    <div class="feat">
+      <div><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#c98d4c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Análise individual do seu perfil de crédito</div>
+      <div><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#c98d4c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Prioridade na fila de liberação</div>
+      <div><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#c98d4c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Acompanhamento até o crédito cair</div>
+    </div>
+    <div class="price">
+      <div><div class="from">de R$ 19,53</div><div class="v">R$ 9,77</div></div>
+      <div class="off">CONSULTORIA<br>−50%</div>
+    </div>
+    <button class="btn" id="btn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10Z" stroke="#1e1d1b" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      Falar com o consultor e liberar
+    </button>
+    <div class="foot">CredFácil S.A. · CNPJ 15.484.329/0001-42</div>
+  </div>
+</div>
+<script>
+  (function(){
+    try{var n=(localStorage.getItem('nome')||'').trim();if(n)document.getElementById('hi').textContent=', '+n.split(' ')[0];}catch(e){}
+    document.getElementById('btn').addEventListener('click',function(){redirect('up11_ds');});
+  })();
+</script>
+<script src="../js/back-redirect.js?v=4"></script>
+
+<script src="../js/upsells-shared.js"></script>
+
+</body>
+</html>

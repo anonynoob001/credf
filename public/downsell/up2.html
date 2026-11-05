@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<!-- FurysMetrics - captura (dashboard CredFácil 3).
+     `_extid`: o MESMO id que o api/pix.js recebe e o webhook devolve - e por ele
+     que a venda casa com a visita. Criado AQUI porque o snippet e `defer` e o
+     JS do site pode rodar antes.
+     `window.fmEvento`: existe desde a primeira linha, entao evento disparado por
+     script SINCRONO (o ViewContent do /up1/) espera o snippet chegar em vez de
+     se perder em silencio. -->
+<script>(function(){try{if(!localStorage.getItem("_extid"))localStorage.setItem("_extid","u_"+Date.now().toString(36)+Math.random().toString(36).slice(2,12));}catch(e){}
+window.fmEvento=function(nome,eventId,valor){var x={pixel:false};if(eventId)x.event_id=eventId;if(valor!=null){x.valor=Number(valor)||0;x.moeda="BRL";}var n=0;(function t(){if(window.fm&&typeof fm.evento==="function"){try{fm.evento(nome,x);}catch(e){}return;}if(++n>50)return;setTimeout(t,200);})();};})();</script>
+<script id="__fm" src="https://fxmalxbvkuzlsyabuwoe.supabase.co/functions/v1/fm"
+        data-ws="016d0860cb0fd49e1a2504bdbbc8ba697fa5" data-uid-de="_extid" data-pixel="off" defer></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verificação de IOF · CredFácil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="../js/checkout-shared.js"></script>
+<script>
+  window.pixelId = "6a3acb84a0439721cfce74e3";
+  var a=document.createElement("script");a.async=1;a.defer=1;a.src="https://cdn.utmify.com.br/scripts/pixel/pixel.js";document.head.appendChild(a);
+</script>
+<!-- Bullster Pixel -->
+<script>
+  window.pixelToken = '600f0a9c-c1ff-4e2f-8b18-fa28a712f3cc';
+  (function (d, s) {
+    var js = d.createElement(s);
+    js.src = 'https://cdn.bullster.app/pixel.js';
+    js.async = true;
+    d.head.appendChild(js);
+  })(document, 'script');
+</script>
+<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" async defer></script>
+<!-- Meta Pixel: removido do upsell/downsell (pixel só no front, 12/10) -->
+<style>
+  :root{--b1:#6b3d0b;--b2:#c06d15;--b3:#f38d21;--cy:#ee8b22;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',sans-serif;background:#0a150e;color:#f6f0e9;min-height:100dvh;display:flex;flex-direction:column;align-items:center;padding:22px 16px}
+  .wrap{width:100%;max-width:430px}
+  .scanner{position:relative;background:linear-gradient(160deg,#173121,#13271a);border:1px solid #66421c;border-radius:22px;padding:30px 22px;text-align:center;overflow:hidden}
+  .scanner::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,var(--cy),transparent);animation:scan 2.4s linear infinite}
+  @keyframes scan{0%{top:0}100%{top:100%}}
+  .ring{width:96px;height:96px;margin:0 auto 16px;border-radius:50%;border:3px solid rgba(238,139,34,.25);display:flex;align-items:center;justify-content:center;position:relative}
+  .ring::after{content:"";position:absolute;inset:-3px;border-radius:50%;border:3px solid transparent;border-top-color:var(--cy);animation:spin 1.4s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .chk{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#c06d15,#ee8b22);display:flex;align-items:center;justify-content:center}
+  .eye{font-size:11px;letter-spacing:2px;color:var(--cy);font-weight:700;text-transform:uppercase}
+  h1{font-size:22px;font-weight:800;margin:6px 0 8px;line-height:1.25}
+  h1 b{color:var(--cy)}
+  .sub{font-size:13.5px;color:#dfb990;line-height:1.6}
+  .steps{margin:22px 0;text-align:left;display:grid;gap:10px}
+  .st{display:flex;align-items:center;gap:12px;background:#152d1e;border:1px solid #66421c;border-radius:12px;padding:12px 14px;font-size:13.5px}
+  .st .dot{width:22px;height:22px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:12px}
+  .st.ok .dot{background:#9f5f1a;color:#fff}
+  .st.now .dot{background:var(--cy);color:#142a1c}
+  .st.now{border-color:var(--cy);box-shadow:0 0 0 1px var(--cy) inset}
+  .price{margin:6px 0 4px;background:linear-gradient(135deg,#6b3d0b,#c06d15);border-radius:16px;padding:18px;text-align:center}
+  .price .from{color:#e9d9c8;text-decoration:line-through;font-size:14px}
+  .price .v{font-size:40px;font-weight:900;letter-spacing:-1px}
+  .price .tag{display:inline-block;margin-top:6px;background:var(--cy);color:#142a1c;font-weight:800;font-size:12px;padding:4px 12px;border-radius:100px}
+  .btn{margin-top:18px;width:100%;border:none;cursor:pointer;background:linear-gradient(135deg,#f38d21,#d6740b);color:#fff;font-weight:800;font-size:16px;padding:17px;border-radius:13px;display:flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 14px 30px -12px rgba(243,141,33,.6)}
+  .foot{margin-top:18px;text-align:center;font-size:11px;color:#c07e38;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="scanner">
+    <div class="eye">Sistema de verificação · IOF</div>
+    <div class="ring"><div class="chk"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4L19 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    <h1>Falta só a <b>verificação final</b> do seu IOF<span id="hi"></span></h1>
+    <p class="sub">Seu pagamento ficou pendente. Antes de cancelar, o sistema liberou a taxa de verificação com <b>50% de desconto</b> — válido só agora.</p>
+
+    <div class="steps">
+      <div class="st ok"><span class="dot">✓</span> Cadastro confirmado</div>
+      <div class="st ok"><span class="dot">✓</span> IOF aprovado</div>
+      <div class="st now"><span class="dot">!</span> Verificação final pendente</div>
+    </div>
+
+    <div class="price">
+      <div class="from">de R$ 23,91</div>
+      <div class="v">R$ 11,96</div>
+      <div class="tag">⚡ 50% OFF na verificação</div>
+    </div>
+
+    <button class="btn" id="btn">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Concluir verificação com desconto
+    </button>
+    <div class="foot">Conexão criptografada SSL · CredFácil S.A.<br>CNPJ 15.484.329/0001-42</div>
+  </div>
+</div>
+<script>
+  (function(){
+    try{var n=(localStorage.getItem('nome')||'').trim();if(n)document.getElementById('hi').textContent=', '+n.split(' ')[0];}catch(e){}
+    document.getElementById('btn').addEventListener('click',function(){redirect('up2_ds');});
+  })();
+</script>
+<script src="../js/back-redirect.js?v=4"></script>
+
+<script src="../js/upsells-shared.js"></script>
+
+</body>
+</html>

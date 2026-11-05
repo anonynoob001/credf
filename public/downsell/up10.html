@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<!-- FurysMetrics - captura (dashboard CredFácil 3).
+     `_extid`: o MESMO id que o api/pix.js recebe e o webhook devolve - e por ele
+     que a venda casa com a visita. Criado AQUI porque o snippet e `defer` e o
+     JS do site pode rodar antes.
+     `window.fmEvento`: existe desde a primeira linha, entao evento disparado por
+     script SINCRONO (o ViewContent do /up1/) espera o snippet chegar em vez de
+     se perder em silencio. -->
+<script>(function(){try{if(!localStorage.getItem("_extid"))localStorage.setItem("_extid","u_"+Date.now().toString(36)+Math.random().toString(36).slice(2,12));}catch(e){}
+window.fmEvento=function(nome,eventId,valor){var x={pixel:false};if(eventId)x.event_id=eventId;if(valor!=null){x.valor=Number(valor)||0;x.moeda="BRL";}var n=0;(function t(){if(window.fm&&typeof fm.evento==="function"){try{fm.evento(nome,x);}catch(e){}return;}if(++n>50)return;setTimeout(t,200);})();};})();</script>
+<script id="__fm" src="https://fxmalxbvkuzlsyabuwoe.supabase.co/functions/v1/fm"
+        data-ws="016d0860cb0fd49e1a2504bdbbc8ba697fa5" data-uid-de="_extid" data-pixel="off" defer></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Última etapa · TAC · CredFácil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="../js/checkout-shared.js"></script>
+<script>
+  window.pixelId = "6a3acb84a0439721cfce74e3";
+  var a=document.createElement("script");a.async=1;a.defer=1;a.src="https://cdn.utmify.com.br/scripts/pixel/pixel.js";document.head.appendChild(a);
+</script>
+<!-- Bullster Pixel -->
+<script>
+  window.pixelToken = '600f0a9c-c1ff-4e2f-8b18-fa28a712f3cc';
+  (function (d, s) {
+    var js = d.createElement(s);
+    js.src = 'https://cdn.bullster.app/pixel.js';
+    js.async = true;
+    d.head.appendChild(js);
+  })(document, 'script');
+</script>
+<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" async defer></script>
+<!-- Meta Pixel: removido do upsell/downsell (pixel só no front, 12/10) -->
+<style>
+  :root{--g1:#3d3328;--g2:#ad671c;--g3:#e7ad6e;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',sans-serif;background:#f9f5f0;color:#122619;min-height:100dvh;display:flex;flex-direction:column;align-items:center;padding:24px 16px}
+  .wrap{width:100%;max-width:430px}
+  .pcard{background:#fff;border:1px solid #eadccd;border-radius:22px;padding:24px 22px;box-shadow:0 22px 50px -28px rgba(173,103,28,.5)}
+  .stepline{display:flex;align-items:center;justify-content:space-between;font-size:11.5px;font-weight:700;color:#b87936;margin-bottom:8px}
+  .stepline span{color:#724413}
+  .track{height:12px;border-radius:100px;background:#f0e6db;overflow:hidden;position:relative}
+  .track .fill{position:absolute;inset:0;width:96%;background:linear-gradient(90deg,#ad671c,#e7ad6e);border-radius:100px}
+  .track .fill::after{content:"";position:absolute;right:0;top:0;bottom:0;width:18px;background:rgba(255,255,255,.5);animation:sh 1.4s infinite}
+  @keyframes sh{0%{opacity:.2}50%{opacity:.9}100%{opacity:.2}}
+  .pct{text-align:right;font-size:12px;font-weight:800;color:var(--g2);margin-top:6px}
+  h1{font-size:24px;font-weight:900;line-height:1.2;margin:18px 0 8px;text-align:center}
+  h1 b{color:var(--g2)}
+  .sub{text-align:center;font-size:13.5px;color:#845726;line-height:1.6}
+  .checks{margin:18px 0;display:grid;gap:9px}
+  .ck{display:flex;align-items:center;gap:11px;font-size:13.5px;color:#5e3e1b}
+  .ck .b{width:24px;height:24px;border-radius:50%;background:#ad671c;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px}
+  .ck.pend .b{background:#fff;border:2px dashed #ad671c;color:#ad671c}
+  .pricerow{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg,#3d3328,#ad671c);color:#fff;border-radius:16px;padding:16px 20px}
+  .pricerow .lab{font-size:12.5px;opacity:.85}
+  .pricerow .from{font-size:13px;color:#f1cea9;text-decoration:line-through}
+  .pricerow .v{font-size:30px;font-weight:900}
+  .btn{margin-top:16px;width:100%;border:none;cursor:pointer;background:linear-gradient(135deg,#ad671c,#3d3328);color:#fff;font-weight:800;font-size:16px;padding:17px;border-radius:13px;display:flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 14px 30px -12px rgba(173,103,28,.6)}
+  .foot{margin-top:16px;text-align:center;font-size:11px;color:#ba7a36;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="pcard">
+    <div class="stepline"><span>Liberação do crédito</span><span>Etapa 4 de 4</span></div>
+    <div class="track"><div class="fill"></div></div>
+    <div class="pct">96% concluído</div>
+
+    <h1>Falta só a <b>TAC</b> pro dinheiro cair<span id="hi"></span></h1>
+    <p class="sub">Você está a um passo. Como não concluiu, reduzimos a Taxa de Abertura de Crédito pela metade pra liberar agora.</p>
+
+    <div class="checks">
+      <div class="ck"><span class="b">✓</span> Análise e aprovação</div>
+      <div class="ck"><span class="b">✓</span> Conta validada</div>
+      <div class="ck pend"><span class="b">4</span> Pagamento da TAC — <b>agora</b></div>
+    </div>
+
+    <div class="pricerow">
+      <div><div class="lab">Taxa de Abertura (TAC)</div><div class="from">de R$ 16,92</div></div>
+      <div class="v">R$ 8,46</div>
+    </div>
+
+    <button class="btn" id="btn">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Pagar TAC e finalizar liberação
+    </button>
+    <div class="foot">Liberação imediata após o pagamento · CredFácil S.A.<br>CNPJ 15.484.329/0001-42</div>
+  </div>
+</div>
+<script>
+  (function(){
+    try{var n=(localStorage.getItem('nome')||'').trim();if(n)document.getElementById('hi').textContent=', '+n.split(' ')[0];}catch(e){}
+    document.getElementById('btn').addEventListener('click',function(){redirect('up10_ds');});
+  })();
+</script>
+<script src="../js/back-redirect.js?v=4"></script>
+
+<script src="../js/upsells-shared.js"></script>
+
+</body>
+</html>

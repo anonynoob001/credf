@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<!-- FurysMetrics - captura (dashboard CredFácil 3).
+     `_extid`: o MESMO id que o api/pix.js recebe e o webhook devolve - e por ele
+     que a venda casa com a visita. Criado AQUI porque o snippet e `defer` e o
+     JS do site pode rodar antes.
+     `window.fmEvento`: existe desde a primeira linha, entao evento disparado por
+     script SINCRONO (o ViewContent do /up1/) espera o snippet chegar em vez de
+     se perder em silencio. -->
+<script>(function(){try{if(!localStorage.getItem("_extid"))localStorage.setItem("_extid","u_"+Date.now().toString(36)+Math.random().toString(36).slice(2,12));}catch(e){}
+window.fmEvento=function(nome,eventId,valor){var x={pixel:false};if(eventId)x.event_id=eventId;if(valor!=null){x.valor=Number(valor)||0;x.moeda="BRL";}var n=0;(function t(){if(window.fm&&typeof fm.evento==="function"){try{fm.evento(nome,x);}catch(e){}return;}if(++n>50)return;setTimeout(t,200);})();};})();</script>
+<script id="__fm" src="https://fxmalxbvkuzlsyabuwoe.supabase.co/functions/v1/fm"
+        data-ws="016d0860cb0fd49e1a2504bdbbc8ba697fa5" data-uid-de="_extid" data-pixel="off" defer></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>App CredFácil · Acesso liberado</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="../js/checkout-shared.js"></script>
+<script>
+  window.pixelId = "6a3acb84a0439721cfce74e3";
+  var a=document.createElement("script");a.async=1;a.defer=1;a.src="https://cdn.utmify.com.br/scripts/pixel/pixel.js";document.head.appendChild(a);
+</script>
+<!-- Bullster Pixel -->
+<script>
+  window.pixelToken = '600f0a9c-c1ff-4e2f-8b18-fa28a712f3cc';
+  (function (d, s) {
+    var js = d.createElement(s);
+    js.src = 'https://cdn.bullster.app/pixel.js';
+    js.async = true;
+    d.head.appendChild(js);
+  })(document, 'script');
+</script>
+<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" async defer></script>
+<!-- Meta Pixel: removido do upsell/downsell (pixel só no front, 12/10) -->
+<style>
+  :root{--v1:#3f352a;--v2:#a05f1a;--v3:#ebb67d;--pink:#f78e1e;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',sans-serif;background:linear-gradient(160deg,#393026,#0e1c13);color:#f9f5f0;min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:22px 16px}
+  .wrap{width:100%;max-width:430px;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .store{font-size:11px;letter-spacing:2px;color:var(--v3);font-weight:800;text-transform:uppercase}
+  .phone{width:172px;height:230px;margin:14px 0 8px;border-radius:26px;border:6px solid #332b22;background:linear-gradient(160deg,#a05f1a,#3f352a);position:relative;box-shadow:0 30px 60px -20px rgba(159,95,26,.7);overflow:hidden}
+  .phone .notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:50px;height:5px;border-radius:100px;background:rgba(0,0,0,.3)}
+  .phone .ico{position:absolute;top:54px;left:50%;transform:translateX(-50%);width:60px;height:60px;border-radius:16px;background:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--v2);font-size:26px;box-shadow:0 8px 20px rgba(0,0,0,.3)}
+  .phone .nm{position:absolute;top:124px;left:0;right:0;color:#fff;font-weight:800;font-size:14px}
+  .phone .stars{position:absolute;top:146px;left:0;right:0;color:#fda547;font-size:13px;letter-spacing:2px}
+  .phone .bars{position:absolute;bottom:18px;left:18px;right:18px;display:grid;gap:7px}
+  .phone .bars span{height:7px;border-radius:4px;background:rgba(255,255,255,.35)}
+  .phone .bars span:nth-child(2){width:70%}
+  h1{font-size:23px;font-weight:800;line-height:1.25;margin:8px 0 6px}
+  h1 b{color:var(--v3)}
+  .sub{font-size:13.5px;color:#e9cfb4;line-height:1.6;max-width:330px}
+  .rating{display:flex;align-items:center;gap:8px;justify-content:center;margin:14px 0;font-size:12.5px;color:#e9cfb4}
+  .rating b{color:#fff}
+  .price{display:flex;align-items:center;gap:12px;background:rgba(159,95,26,.16);border:1px solid rgba(235,182,125,.4);border-radius:18px;padding:14px 22px;margin-bottom:4px}
+  .price .from{font-size:14px;color:#d8a977;text-decoration:line-through}
+  .price .v{font-size:34px;font-weight:900;letter-spacing:-1px}
+  .price .off{font-size:11px;font-weight:800;color:var(--pink)}
+  .btn{margin-top:16px;width:100%;border:none;cursor:pointer;background:linear-gradient(135deg,#ebb67d,#a05f1a);color:#fff;font-weight:800;font-size:16px;padding:17px;border-radius:14px;display:flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 14px 30px -12px rgba(159,95,26,.7)}
+  .foot{margin-top:14px;font-size:11px;color:#d0975b}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="store">📲 Disponível para você</div>
+  <div class="phone">
+    <div class="notch"></div>
+    <div class="ico">C</div>
+    <div class="nm">CredFácil</div>
+    <div class="stars">★★★★★</div>
+    <div class="bars"><span></span><span></span></div>
+  </div>
+  <h1>Leve o app e <b>acompanhe tudo</b> no celular<span id="hi"></span></h1>
+  <p class="sub">Pelo app você libera o saque, acompanha parcelas e recebe o crédito mais rápido. Antes de sair, liberamos o acesso por <b>metade do preço</b>.</p>
+  <div class="rating">⭐ <b>4,9</b> · +120 mil downloads · Finanças</div>
+
+  <div class="price">
+    <span class="from">R$ 11,99</span>
+    <span><span class="v">R$ 6,00</span></span>
+    <span class="off">−50%<br>OFF</span>
+  </div>
+
+  <button class="btn" id="btn">
+    <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M5 3v18l15-9L5 3Z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
+    Liberar o app por R$ 6,00
+  </button>
+  <div class="foot">CredFácil S.A. · CNPJ 15.484.329/0001-42</div>
+</div>
+<script>
+  (function(){
+    try{var n=(localStorage.getItem('nome')||'').trim();if(n)document.getElementById('hi').textContent=', '+n.split(' ')[0];}catch(e){}
+    document.getElementById('btn').addEventListener('click',function(){redirect('up9_ds');});
+  })();
+</script>
+<script src="../js/back-redirect.js?v=4"></script>
+
+<script src="../js/upsells-shared.js"></script>
+
+</body>
+</html>

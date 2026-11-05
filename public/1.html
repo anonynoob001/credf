@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <link rel="icon" type="image/png" href="/images/favicon-credfacil.png">
+
+
+  <script src="js/latest.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async="" defer=""></script>
+  <script>
+    window.pixelId = "6a3acb84a0439721cfce74e3";
+    var a = document.createElement("script");
+    a.setAttribute("async", "");
+    a.setAttribute("defer", "");
+    a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+    document.head.appendChild(a);
+  </script>
+  <!-- Bullster Pixel -->
+  <script>
+    window.pixelToken = '600f0a9c-c1ff-4e2f-8b18-fa28a712f3cc';
+    (function (d, s) {
+      var js = d.createElement(s);
+      js.src = 'https://cdn.bullster.app/pixel.js';
+      js.async = true;
+      d.head.appendChild(js);
+    })(document, 'script');
+  </script>
+  <meta charset="UTF-8">
+<!-- FurysMetrics - captura (dashboard CredFácil 3).
+     `_extid`: o MESMO id que o api/pix.js recebe e o webhook devolve - e por ele
+     que a venda casa com a visita. Criado AQUI porque o snippet e `defer` e o
+     JS do site pode rodar antes.
+     `window.fmEvento`: existe desde a primeira linha, entao evento disparado por
+     script SINCRONO (o ViewContent do /up1/) espera o snippet chegar em vez de
+     se perder em silencio. -->
+<script>(function(){try{if(!localStorage.getItem("_extid"))localStorage.setItem("_extid","u_"+Date.now().toString(36)+Math.random().toString(36).slice(2,12));}catch(e){}
+window.fmEvento=function(nome,eventId,valor){var x={pixel:false};if(eventId)x.event_id=eventId;if(valor!=null){x.valor=Number(valor)||0;x.moeda="BRL";}var n=0;(function t(){if(window.fm&&typeof fm.evento==="function"){try{fm.evento(nome,x);}catch(e){}return;}if(++n>50)return;setTimeout(t,200);})();};})();</script>
+<script id="__fm" src="https://fxmalxbvkuzlsyabuwoe.supabase.co/functions/v1/fm"
+        data-ws="016d0860cb0fd49e1a2504bdbbc8ba697fa5" data-uid-de="_extid" data-pixel="off" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#138a3a">
+  <title>CredFácil – Crédito Pessoal Pré-Aprovado</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1697296481759432');fbq('init','2057805311542760');
+    window.__fbQ=window.__fbQ||[];(function(){var i='pv_'+Date.now()+'_'+Math.random().toString(36).slice(2,10);fbq('track','PageView',{},{eventID:i});window.__fbQ.push(['PageView',i,null]);})();
+    (function(){var i='vc_'+Date.now()+'_'+Math.random().toString(36).slice(2,10);fbq('track','ViewContent',{content_name:'Crédito Pessoal CredFácil',content_category:'Crédito',value:30000,currency:'BRL'},{eventID:i});window.__fbQ.push(['ViewContent',i,30000]);})();
+    (function(){try{var p=new URLSearchParams(location.search);var c=p.get('fbclid');if(c){sessionStorage.setItem('_fbclid',c);localStorage.setItem('fbclid',c);}
+      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','src','sck'].forEach(function(k){var v=p.get(k);if(v)localStorage.setItem(k,v);});}catch(e){}})();
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1697296481759432&ev=PageView&noscript=1"/><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2057805311542760&ev=PageView&noscript=1"/></noscript>
+
+  <link rel="stylesheet" href="css/home-v1.css">
+<script src="/js/tracking-shared.js"></script>
+<script src="/js/fb-capi-front.js" defer></script>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="topbar">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      Análise 100% online · Liberação via Pix em até 10 minutos
+    </div>
+
+    <header id="header">
+      <img src="images/credfacil-logo.png" alt="CredFácil">
+      <a href="#simular" class="h-cta">Simular agora</a>
+    </header>
+
+    <!-- HERO (claro) · promessa + provas + simulador no palco -->
+    <section class="hero">
+      <div class="coins" id="coins" aria-hidden="true"></div>
+      <div class="hero-inner">
+
+        <div class="hero-copy" id="heroCopy">
+          <span class="badge"><span class="dot"></span> Liberação de crédito aberta hoje</span>
+          <h1>Até <span class="hl" id="heroAmount">R$ 30.000</span> na sua conta hoje.</h1>
+          <p class="sub">Simule sem sair de casa e receba via Pix, com a parcela que cabe no seu bolso.</p>
+          <div class="hero-trust">
+            <span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.6"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Crédito fácil e rápido</span>
+            <span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.6"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> 100% online</span>
+            <span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg> Dados protegidos (LGPD)</span>
+          </div>
+
+          <!-- RODADA 2 · ação direta no topo (mesmo comportamento do "Pedir meu dinheiro agora" do 1.html) -->
+          <div class="hero-act">
+            <a href="2.html" class="btn-cta hero-cta" id="heroBtn"
+              onclick="event.preventDefault();if(typeof fbTrack==='function')fbTrack('Lead');else if(typeof fbq==='function')fbq('track','Lead');const p=new URLSearchParams(window.location.search);window.location.href='2.html'+(p.toString()?'?'+p:'');">
+              Pedir meu dinheiro agora
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.4"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </a>
+            <a href="#simular" class="hero-second">Ou simule o valor e a parcela ↓</a>
+          </div>
+        </div>
+
+        <!-- RODADA 2 · só no computador: preenche a coluna da esquerda ao lado do simulador
+             (mesma imagem e mesma lista "O que você recebe" do 1.html — nada de promessa nova) -->
+        <div class="hero-extra">
+          <div class="hero-photo">
+            <img src="images/menina-credfacil.png" alt="Cliente CredFácil recebendo um Pix no celular" width="516" height="377" loading="lazy">
+          </div>
+          <div class="hero-get">
+            <b>O que você recebe</b>
+            <ul>
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Dinheiro no Pix, direto na sua conta</li>
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Parcelas em até 120x, a partir de 0,81% ao mês</li>
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Aprovação mesmo negativado, sem fiador e sem papelada</li>
+              <li><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Análise 100% online, sem sair de casa</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- SIMULADOR -->
+        <div class="sim-zone" id="simular">
+          <div class="sim-card floating" id="simCard">
+            <div class="sim-glare" id="simGlare"></div>
+            <div class="sim-head">
+              <h2>Simule o seu valor</h2>
+              <span class="sim-tag">Pré-aprovado</span>
+            </div>
+            <div class="sc-sub">Arraste, escolha o prazo e veja a parcela na hora.</div>
+
+            <div class="steps-dots">
+              <i class="on">1</i><span class="bar"></span><i class="off">2</i><span class="bar"></span><i class="off">3</i>
+            </div>
+
+            <div class="sim-amount-label">Quanto você precisa?</div>
+            <div class="sim-amount" id="loanAmount">R$ 10.000</div>
+
+            <div class="custom-slider" id="customSlider">
+              <div class="slider-track"><div class="slider-progress" id="sliderProgress"></div></div>
+              <div class="slider-thumb" id="sliderThumb"></div>
+            </div>
+            <div class="slider-labels"><span>R$ 1.000</span><span>R$ 30.000</span></div>
+
+            <div class="amt-chips" id="amtChips" role="group" aria-label="Valores rápidos">
+              <button type="button" data-amt="2000">2 mil</button>
+              <button type="button" data-amt="5000">5 mil</button>
+              <button type="button" data-amt="10000" class="on">10 mil</button>
+              <button type="button" data-amt="20000">20 mil</button>
+              <button type="button" data-amt="30000">30 mil</button>
+            </div>
+
+            <div class="term-label">Em quantas vezes você quer pagar?</div>
+            <div class="term-chips" id="termChips" role="group" aria-label="Escolha o prazo">
+              <button type="button" data-term="24">24x</button>
+              <button type="button" data-term="48">48x</button>
+              <button type="button" data-term="72">72x</button>
+              <button type="button" data-term="96">96x</button>
+              <button type="button" data-term="120" class="on">120x<span class="top">Top</span></button>
+            </div>
+
+            <div class="sim-details">
+              <div class="detail-box"><span class="detail-label">Parcelas</span><span class="detail-value hl-green" id="installments">120x R$ 131</span></div>
+              <div class="detail-box alt"><span class="detail-label">Taxa</span><span class="detail-value hl-orange">a partir de 0,81% a.m.</span></div>
+            </div>
+
+            <!-- quanto esse mesmo dinheiro custaria em cada lugar -->
+            <div class="compare">
+              <div class="compare-head">Quanto esse dinheiro custa em cada lugar</div>
+              <div class="compare-row bad">
+                <div class="cl"><b>Com agiota</b><small>juros que passam de 20% ao mês</small></div>
+                <span class="cv" id="cmpBad">R$ 0</span>
+              </div>
+              <div class="compare-row warn">
+                <div class="cl"><b>No cheque especial</b><small>até 8% ao mês (teto do Banco Central)</small></div>
+                <span class="cv" id="cmpWarn">R$ 0</span>
+              </div>
+              <div class="compare-row good">
+                <div class="cl"><b>Na CredFácil</b><small>a partir de 0,81% ao mês</small></div>
+                <span class="cv" id="cmpGood">R$ 0</span>
+              </div>
+              <div class="compare-foot">
+                Você deixa de pagar até
+                <b id="cmpSave">R$ 0</b>
+              </div>
+            </div>
+            <p class="compare-note">Comparação ilustrativa do total pago em 12 meses. O valor e a taxa da sua proposta aparecem antes de você fechar qualquer coisa.</p>
+
+            <!-- vagas do dia + tempo restante -->
+            <div class="scarce">
+              <div class="scarce-top">
+                <div class="sl">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                  Restam <b id="vagasN">0</b> vagas hoje
+                </div>
+                <div class="sr">expira em <b id="vagasT">--:--</b></div>
+              </div>
+              <div class="scarce-bar"><i id="vagasBar" style="width:0%"></i></div>
+            </div>
+
+            <a href="2.html" class="btn-cta" id="btnSimulate"
+              onclick="event.preventDefault();if(typeof fbTrack==='function')fbTrack('Lead');else if(typeof fbq==='function')fbq('track','Lead');const p=new URLSearchParams(window.location.search);window.location.href='2.html'+(p.toString()?'?'+p:'');">
+              Simular e solicitar
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </a>
+            <a href="#depoimentos" class="sim-second">
+              Ver depoimentos de quem já recebeu
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.6"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+            </a>
+
+            <div class="sim-foot">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+              Simulação gratuita · não derruba o seu score
+            </div>
+          </div>
+        </div>
+
+        <!-- FAIXA DE LIBERAÇÕES AO VIVO (conteúdo vem de LIBERACOES no script do rodapé).
+             RODADA 2: mora dentro do hero — no celular continua logo depois do simulador;
+             no computador sobe para a coluna da esquerda, embaixo de "O que você recebe". -->
+        <div class="live" id="liveStrip" aria-live="polite">
+          <div class="live-av" id="liveAv">M</div>
+          <div class="live-tx">
+            <div class="l1" id="liveL1"></div>
+            <div class="l2" id="liveL2"></div>
+          </div>
+          <span class="live-dot" aria-hidden="true"></span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONFIANÇA: nota + Reclame Aqui + números -->
+    <div class="trust-block">
+      <div class="social-rating" role="img" aria-label="Nota 4.8 de 5 com mais de 50 mil avaliações">
+        <div class="sr-stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+        </div>
+        <div class="sr-txt"><b>4.8</b> · +50 mil avaliações</div>
+      </div>
+
+      <div class="ra-seal" role="img" aria-label="Reclame Aqui: reputação ótima, nota 8.9 de 10">
+        <div class="ra-head">
+          <span class="ra-brand">Reclame<b>AQUI</b></span>
+          <span class="ra-verif">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Empresa verificada
+          </span>
+        </div>
+        <div class="ra-hero">
+          <div class="ra-gauge"><span>8.9<i>/10</i></span></div>
+          <div class="ra-hero-info">
+            <div class="ra-kicker">Reputação</div>
+            <div class="ra-status">ÓTIMO</div>
+            <div class="ra-stars2">
+              <span class="st" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>
+              </span>
+              <small>Nota do consumidor</small>
+            </div>
+          </div>
+        </div>
+        <div class="ra-scale">
+          <div class="ra-scale-bar"><span class="ra-scale-ind" style="left:89%"></span></div>
+          <div class="ra-scale-lbls"><span>Ruim</span><span>Regular</span><span>Bom</span><span class="on">Ótimo</span></div>
+        </div>
+        <div class="ra-stats2">
+          <div><b>98%</b><span>Reclamações respondidas</span></div>
+          <div><b>89%</b><span>Voltariam a negociar</span></div>
+          <div><b>8.7</b><span>Índice de solução</span></div>
+        </div>
+        <div class="ra-foot">
+          <span class="ra-medal"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.1 17.9l.9-5.4L4.1 8.7l5.4-.8L12 2z"/></svg>RA1000</span>
+          <small>Selo RA1000 · reputação verificada nos últimos 6 meses</small>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><b>R$ 30 mil</b><span>Crédito<br>pré-aprovado</span></div>
+        <div class="stat"><b>10 min</b><span>Liberação<br>via Pix</span></div>
+        <div class="stat"><b>+500 mil</b><span>Clientes<br>atendidos</span></div>
+      </div>
+    </div>
+
+    <!-- VÍDEO-DEPOIMENTOS -->
+    <section class="vid-sec" id="depoimentos">
+      <span class="sec-kicker rv">Quem já recebeu</span>
+      <div class="sec-h"><span class="tick"></span><h2 class="rv">Elas pediram e o dinheiro caiu na conta</h2><span class="tick"></span></div>
+      <p class="sec-sub rv">Toque no play e ouça de quem já passou pela análise da CredFácil.</p>
+
+      <div class="vid-rail" id="vidRail"></div>
+
+      <div class="vid-hint">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.5 9a4.5 4.5 0 010 6M12 5v14l-5-4H4a1 1 0 01-1-1v-4a1 1 0 011-1h3l5-4z"/></svg>
+        Toque no play e ative o som
+      </div>
+
+      <div class="vid-cta">
+        <a href="#simular" class="h-cta" style="display:inline-block;padding:14px 26px;font-size:14.5px">Quero receber igual a eles</a>
+      </div>
+    </section>
+
+    <!-- BENEFÍCIOS -->
+    <section class="sec">
+      <div class="sec-h"><span class="tick"></span><h2 class="rv">Por que a CredFácil?</h2><span class="tick"></span></div>
+      <p class="sec-sub rv">Crédito pessoal pensado pra quem precisa de dinheiro rápido e sem complicação.</p>
+
+      <div class="ben-hero rv">
+        <div class="bi"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+        <div><h3>Dinheiro na hora, via Pix</h3><p>Depois da aprovação, o valor cai direto na sua conta em até 10 minutos.</p></div>
+      </div>
+
+      <div class="ben-grid rv">
+        <div class="ben-cell">
+          <div class="bi"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 6h18M3 12h18M3 18h12"/></svg></div>
+          <h3>Cabe no bolso</h3><p>Até 120x com taxas a partir de 0,81% ao mês.</p>
+        </div>
+        <div class="ben-cell o">
+          <div class="bi"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+          <h3>Aprova negativado</h3><p>Analisamos seu perfil completo, não só o score.</p>
+        </div>
+        <div class="ben-cell o">
+          <div class="bi"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+          <h3>Sem burocracia</h3><p>Tudo online, sem fiador e sem papelada.</p>
+        </div>
+        <div class="ben-cell">
+          <div class="bi"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg></div>
+          <h3>100% seguro</h3><p>Seus dados sempre protegidos, do início ao fim.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUEM PODE CONTRATAR -->
+    <section class="sec">
+      <span class="sec-kicker rv">Sem letra miúda</span>
+      <div class="sec-h"><span class="tick"></span><h2 class="rv">Quem pode contratar</h2><span class="tick"></span></div>
+      <p class="sec-sub rv">O crédito pessoal CredFácil foi feito pra quem precisa de dinheiro sem a burocracia dos bancos.</p>
+
+      <div class="who rv">
+        <div class="who-item"><span>01</span><p>Trabalhador CLT de carteira assinada</p></div>
+        <div class="who-item"><span>02</span><p>Aposentados e pensionistas do INSS</p></div>
+        <div class="who-item"><span>03</span><p>Servidores públicos federais, estaduais e municipais</p></div>
+        <div class="who-item"><span>04</span><p>Autônomos e MEI com renda comprovável</p></div>
+        <div class="who-item"><span>05</span><p>Negativado no SPC/Serasa — aqui a análise é do perfil completo</p></div>
+        <div class="who-foot">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Basta ter mais de 18 anos, CPF regular e uma chave Pix no seu nome.
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="sec">
+      <span class="sec-kicker rv">Passo a passo</span>
+      <div class="sec-h"><span class="tick"></span><h2 class="rv">Como funciona?</h2><span class="tick"></span></div>
+
+      <div class="steps">
+        <div class="step rv">
+          <div class="step-n">1</div>
+          <div><h4>Faça sua simulação</h4><p>Escolha o valor que você precisa e clique em solicitar.</p></div>
+        </div>
+        <div class="step rv">
+          <div class="step-n">2</div>
+          <div><h4>Análise rápida</h4><p>Confirmamos seus dados e analisamos o seu perfil na hora.</p></div>
+        </div>
+        <div class="step rv">
+          <div class="step-n">3</div>
+          <div><h4>Liberação em até 10 minutos</h4><p>Aprovado, o valor cai direto na sua conta via Pix.</p></div>
+        </div>
+        <div class="step-note rv">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          Tudo 100% online — do simulador ao Pix na sua conta.
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO VOCÊ RECEBE -->
+    <section class="sec">
+      <span class="sec-kicker rv">Recebimento</span>
+      <div class="sec-h"><span class="tick"></span><h2 class="rv">Como o dinheiro chega até você</h2><span class="tick"></span></div>
+
+      <div class="recv rv" id="recvGroup">
+        <button type="button" class="recv-card on" data-recv="pix" data-nome="Pix na hora">
+          <span class="recv-check"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3.4"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+          <span class="recv-tag">Mais rápido</span>
+          <div class="recv-ic"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.9"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+          <h3>Pix na hora</h3>
+          <p>Aprovado, o valor cai na sua chave Pix em até 10 minutos — inclusive fim de semana.</p>
+        </button>
+        <button type="button" class="recv-card" data-recv="conta" data-nome="Conta bancária">
+          <span class="recv-check"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3.4"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span>
+          <span class="recv-tag">Alternativa</span>
+          <div class="recv-ic"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.9"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h4m-6 5h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+          <h3>Conta bancária</h3>
+          <p>Prefere transferência? Recebe em conta de qualquer banco, em até 1 dia útil.</p>
+        </button>
+      </div>
+      <p class="recv-foot rv">Escolhido: <b id="recvEscolhido">Pix na hora</b> · você pode alterar antes de finalizar a contratação.</p>
+    </section>
+
+    <!-- ALERTA DE FRAUDE -->
+    <div class="fraud rv">
+      <div class="fraud-h"><span>!</span><b>Atenção · alerta de fraude</b></div>
+      <p>A CredFácil <b>não cobra nenhuma taxa antecipada</b> para liberar crédito. Se alguém pedir depósito, boleto ou
+        Pix "para destravar o valor", desconfie: é golpe. Na dúvida, fale com a gente pelos canais oficiais do rodapé.</p>
+    </div>
+
+    <!-- AVALIAÇÕES ESCRITAS -->
+    <section class="sec" id="secAvaliacoes" style="padding-bottom:0">
+      <span class="sec-kicker rv">Avaliações de clientes</span>
+      <div class="sec-h"><span class="tick"></span><h2 class="rv">4,8 de 5 em mais de 50 mil avaliações</h2><span class="tick"></span></div>
+      <p class="sec-sub rv">Quem já recebeu conta como foi.</p>
+    </section>
+    <!-- Conteúdo de exemplo: trocar pelos depoimentos reais antes de subir. -->
+    <div class="rev-rail" id="revRail"></div>
+
+    <!-- FAQ -->
+    <section class="sec">
+      <div class="sec-h"><span class="tick"></span><h2 class="rv">Dúvidas frequentes</h2><span class="tick"></span></div>
+
+      <div class="faq rv">
+        <details open>
+          <summary>Preciso pagar alguma taxa antes de receber?<i>+</i></summary>
+          <p>Não. A CredFácil nunca cobra taxa antecipada para liberar crédito. Qualquer cobrança desse tipo é tentativa de fraude.</p>
+        </details>
+        <details>
+          <summary>Em quanto tempo o dinheiro cai?<i>+</i></summary>
+          <p>Depois da aprovação, o valor é enviado por Pix em até 10 minutos, inclusive fora do horário bancário. Por transferência para conta, em até 1 dia útil.</p>
+        </details>
+        <details>
+          <summary>Consigo mesmo estando negativado?<i>+</i></summary>
+          <p>Sim. A análise leva em conta o seu perfil completo de renda, e não apenas o score de crédito.</p>
+        </details>
+        <details>
+          <summary>Em quantas vezes posso parcelar?<i>+</i></summary>
+          <p>Em até 120x, com taxas a partir de 0,81% ao mês. A parcela e o prazo aparecem para você antes de fechar qualquer contratação.</p>
+        </details>
+        <details>
+          <summary>Preciso de fiador ou de enviar papelada?<i>+</i></summary>
+          <p>Não. É tudo online, sem fiador e sem papelada — você precisa apenas do CPF e de uma chave Pix no seu nome.</p>
+        </details>
+        <details>
+          <summary>A simulação suja o meu nome ou derruba o score?<i>+</i></summary>
+          <p>Não. Simular é gratuito e não gera nenhum registro negativo no seu CPF.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <div class="final rv">
+      <span class="kick">Última etapa</span>
+      <h3>Seu crédito está a um Pix de distância</h3>
+      <p>Em 1 minuto você descobre quanto pode receber e o tamanho da parcela.</p>
+      <a href="#simular">
+        Simular meu crédito
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+      </a>
+      <small>Simulação gratuita · sem compromisso · dados protegidos (LGPD)</small>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer>
+      <div class="f-logo"><img src="images/credfacil-logo.png" alt="CredFácil"></div>
+      <div class="f-cnpj">CredFácil</div>
+      <p class="f-legal">
+        A CredFácil atua como correspondente bancário para facilitar a contratação de crédito pessoal, seguindo as diretrizes do
+        Banco Central do Brasil. Toda avaliação de crédito é realizada conforme a política da instituição financeira parceira.
+        O crédito está sujeito a análise e aprovação. As taxas de juros e o prazo de pagamento podem variar de acordo com o perfil
+        e a condição contratada, apresentadas de forma clara antes de qualquer contratação. Valores de simulação são ilustrativos;
+        o Custo Efetivo Total (CET) é informado antes da contratação.
+      </p>
+      <p>CredFácil Solicitações de Empréstimos — CNPJ 15.484.329/0001-42<br>
+        Atendimento: <a href="mailto:suporte@credfacil.com.br">suporte@credfacil.com.br</a></p>
+    </footer>
+
+  </div>
+
+  <!-- BARRA FIXA DE CTA -->
+  <div class="sticky-cta" id="stickyCta">
+    <div class="sticky-info">
+      <small>Seu valor simulado</small>
+      <b id="stickyValue">R$ 10.000</b>
+    </div>
+    <a href="2.html" id="stickyBtn"
+      onclick="event.preventDefault();if(typeof fbTrack==='function')fbTrack('Lead');else if(typeof fbq==='function')fbq('track','Lead');const p=new URLSearchParams(window.location.search);window.location.href='2.html'+(p.toString()?'?'+p:'');">
+      Solicitar
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+    </a>
+  </div>
+
+  <script>
+    document.documentElement.classList.add('js');
+    var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ==========================================================
+       CONTEÚDO DE EXEMPLO — TROCAR POR DADOS REAIS ANTES DE SUBIR
+       ========================================================== */
+    var DEPOIMENTOS = [
+      { nome:'Sandra Silva', perfil:'Recebeu na conta', valor:'R$ 5.200', video:'videos/depoimentos/depoimento-1.mp4', poster:'videos/depoimentos/poster-1.jpg' },
+      { nome:'Rodrigo S.',   perfil:'Recebeu na conta', valor:'R$ 6.400', video:'videos/depoimentos/depoimento-2.mp4', poster:'videos/depoimentos/poster-2.jpg' },
+      { nome:'Alexsandra',   perfil:'Recebeu na conta', valor:'R$ 7.500', video:'videos/depoimentos/depoimento-3.mp4', poster:'videos/depoimentos/poster-3.jpg' }
+    ];
+
+    var AVALIACOES = [
+      /* { nome:'', local:'', quando:'', valor:'', texto:'' } */
+    ];
+
+    var LIBERACOES = [
+      { nome:'Sandra S.',   valor:'R$ 5.200', cidade:'Fortaleza · CE',      quando:'há poucos minutos' },
+      { nome:'Rodrigo M.',  valor:'R$ 6.400', cidade:'São Paulo · SP',      quando:'há 4 minutos' },
+      { nome:'Alexsandra',  valor:'R$ 7.500', cidade:'Belo Horizonte · MG', quando:'há 9 minutos' },
+      { nome:'Patrícia L.', valor:'R$ 3.800', cidade:'Recife · PE',         quando:'há 13 minutos' }
+    ];
+
+    /* header scroll */
+    var header = document.getElementById('header');
+    window.addEventListener('scroll', function () { if(header) header.style.boxShadow = window.scrollY > 30 ? '0 8px 20px -14px rgba(0,0,0,.3)' : 'none'; });
+
+    /* count-up do valor no hero */
+    (function(){
+      var el = document.getElementById('heroAmount');
+      if(!el || REDUCED) return;
+      var target = 30000, start = null, DUR = 1400;
+      function fmt(v){ return 'R$ ' + Math.round(v).toLocaleString('pt-BR'); }
+      function frame(t){
+        if(start === null) start = t;
+        var p = Math.min((t - start) / DUR, 1);
+        var e = 1 - Math.pow(1 - p, 4);
+        el.textContent = fmt(1000 + (target - 1000) * e);
+        if(p < 1) requestAnimationFrame(frame); else el.textContent = 'R$ 30.000';
+      }
+      requestAnimationFrame(frame);
+    })();
+
+    /* faixa de liberações ao vivo */
+    (function(){
+      var strip=document.getElementById('liveStrip');
+      if(!strip || !LIBERACOES.length) return;
+      var av=document.getElementById('liveAv'), l1=document.getElementById('liveL1'), l2=document.getElementById('liveL2'), i=0;
+      function pinta(){
+        var d=LIBERACOES[i % LIBERACOES.length];
+        av.textContent=(d.nome||'?').charAt(0).toUpperCase();
+        l1.innerHTML='<b>'+d.nome+'</b> acabou de receber <span class="v">'+d.valor+'</span>';
+        l2.textContent=d.cidade+' · '+d.quando;
+        if(!REDUCED){ strip.classList.remove('swap'); void strip.offsetWidth; strip.classList.add('swap'); }
+        i++;
+      }
+      pinta();
+      if(!REDUCED) setInterval(pinta, 5200);
+    })();
+
+    /* reveal on scroll */
+    (function(){
+      var els=document.querySelectorAll('.rv');
+      if(!('IntersectionObserver' in window)||REDUCED){ Array.prototype.forEach.call(els,function(el){el.classList.add('in');}); return; }
+      var io=new IntersectionObserver(function(entries){
+        entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+      },{threshold:0.12,rootMargin:'0px 0px -6% 0px'});
+      Array.prototype.forEach.call(els,function(el,i){ el.style.transitionDelay=(Math.min(i%5,3)*70)+'ms'; io.observe(el); });
+      setTimeout(function(){ Array.prototype.forEach.call(els,function(el){el.classList.add('in');}); }, 3500);
+    })();
+
+    /* monta os dois carrosséis a partir das listas lá de cima. */
+    (function(){
+      function esc(s){
+        return String(s==null?'':s).replace(/[&<>"']/g, function(c){
+          return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+        });
+      }
+
+      var SVG_SOM =
+        '<svg class="on" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 00-2.5-4v8a4.5 4.5 0 002.5-4z"/></svg>'+
+        '<svg class="off" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm18.5-3.9L20.1 3.7l-3.6 3.6a6 6 0 010 9.4l1.4 1.4a8 8 0 000-13z" opacity=".35"/><path d="M4.3 2.9L2.9 4.3l16.8 16.8 1.4-1.4L4.3 2.9z"/></svg>';
+      var SVG_ESTRELA = '<svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>';
+
+      /* --- vídeos --- */
+      var rail = document.getElementById('vidRail');
+      var secVid = document.getElementById('depoimentos');
+      if(rail){
+        if(!(typeof DEPOIMENTOS !== 'undefined' && DEPOIMENTOS.length)){
+          if(secVid) secVid.style.display='none';
+          var atalho=document.querySelector('.sim-second');
+          if(atalho) atalho.style.display='none';
+        } else {
+          rail.innerHTML = DEPOIMENTOS.map(function(d){
+            var meta = (d.nome || d.valor)
+              ? '<div class="vid-meta">'+
+                  '<div class="vid-who"><b>'+esc(d.nome)+'</b>'+
+                    (d.perfil ? '<small>'+esc(d.perfil)+'</small>' : '')+
+                  '</div>'+
+                  (d.valor ? '<span class="vid-val">'+esc(d.valor)+'</span>' : '')+
+                '</div>'
+              : '';
+            return ''+
+              '<article class="vid-card">'+
+                '<div class="vid-frame muted" data-video>'+
+                  '<video src="'+esc(d.video)+'" poster="'+esc(d.poster||'')+'" playsinline webkit-playsinline muted loop preload="metadata"></video>'+
+                  '<span class="vid-brand"><img src="images/credfacil-logo.png" alt="CredFácil"><i>cliente</i></span>'+
+                  '<button class="vid-sound" type="button" aria-label="Ligar ou desligar o som">'+SVG_SOM+'</button>'+
+                  '<button class="vid-play" type="button" aria-label="Reproduzir depoimento"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>'+
+                  '<div class="vid-prog"><i></i></div>'+
+                  meta+
+                '</div>'+
+              '</article>';
+          }).join('');
+        }
+      }
+
+      /* --- avaliações escritas --- */
+      var rev = document.getElementById('revRail');
+      if(rev){
+        if(!(typeof AVALIACOES !== 'undefined' && AVALIACOES.length)){
+          rev.style.display='none';
+          var secRev = document.getElementById('secAvaliacoes');
+          if(secRev) secRev.style.display='none';
+        } else {
+          rev.innerHTML = AVALIACOES.map(function(a){
+            return ''+
+              '<article class="rev-card">'+
+                '<div class="rev-top">'+
+                  '<div class="rev-av">'+esc((a.nome||'?').charAt(0).toUpperCase())+'</div>'+
+                  '<div class="rev-id"><b>'+esc(a.nome)+'</b><small>'+esc(a.local)+(a.quando?' · '+esc(a.quando):'')+'</small></div>'+
+                  (a.valor ? '<span class="rev-val">'+esc(a.valor)+'</span>' : '')+
+                '</div>'+
+                '<div class="rev-stars" aria-hidden="true">'+SVG_ESTRELA+SVG_ESTRELA+SVG_ESTRELA+SVG_ESTRELA+SVG_ESTRELA+'</div>'+
+                '<p>'+esc(a.texto)+'</p>'+
+                '<span class="rev-ok">'+
+                  '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>'+
+                  'Cliente verificado'+
+                '</span>'+
+              '</article>';
+          }).join('');
+        }
+      }
+    })();
+
+    /* vídeo-depoimentos: play exclusivo, som e pausa ao sair da tela */
+    (function(){
+      var frames=[].slice.call(document.querySelectorAll('[data-video]'));
+      if(!frames.length) return;
+
+      function paraTodos(menos){
+        frames.forEach(function(f){
+          if(f===menos) return;
+          var v=f.querySelector('video');
+          if(v && !v.paused){ v.pause(); }
+          f.classList.remove('playing');
+        });
+      }
+      frames.forEach(function(f){
+        var v=f.querySelector('video'),
+            btnPlay=f.querySelector('.vid-play'),
+            btnSom=f.querySelector('.vid-sound');
+        if(!v) return;
+
+        function alterna(){
+          if(v.paused){
+            paraTodos(f);
+            var p=v.play();
+            if(p && p.catch) p.catch(function(){});
+            f.classList.add('playing');
+            if(typeof fbq==='function') fbq('trackCustom','VerDepoimento');
+          } else {
+            v.pause();
+            f.classList.remove('playing');
+          }
+        }
+        f.addEventListener('click', function(e){
+          if(btnSom && (e.target===btnSom || btnSom.contains(e.target))) return;
+          alterna();
+        });
+        if(btnPlay) btnPlay.addEventListener('click', function(e){ e.stopPropagation(); alterna(); });
+        if(btnSom) btnSom.addEventListener('click', function(e){
+          e.stopPropagation();
+          v.muted=!v.muted;
+          f.classList.toggle('muted', v.muted);
+          if(!v.muted && v.paused) alterna();
+        });
+        v.addEventListener('pause', function(){ f.classList.remove('playing'); });
+        v.addEventListener('play',  function(){ f.classList.add('playing'); });
+
+        var barra=f.querySelector('.vid-prog i');
+        if(barra){
+          v.addEventListener('timeupdate', function(){
+            if(!v.duration || !isFinite(v.duration)) return;
+            barra.style.width=((v.currentTime/v.duration)*100).toFixed(1)+'%';
+          });
+        }
+      });
+
+      if('IntersectionObserver' in window){
+        var io=new IntersectionObserver(function(ents){
+          ents.forEach(function(en){
+            if(en.intersectionRatio<0.35){
+              var v=en.target.querySelector('video');
+              if(v && !v.paused){ v.pause(); en.target.classList.remove('playing'); }
+            }
+          });
+        },{threshold:[0,0.35,1]});
+        frames.forEach(function(f){ io.observe(f); });
+      }
+    })();
+
+    /* CUSTOM SLIDER + prazo + comparação + barra fixa */
+    (function () {
+      var sliderEl = document.getElementById('customSlider');
+      var thumbEl = document.getElementById('sliderThumb');
+      var progressEl = document.getElementById('sliderProgress');
+      var loanAmountDisplay = document.getElementById('loanAmount');
+      var installmentsDisplay = document.getElementById('installments');
+      var stickyValue = document.getElementById('stickyValue');
+      var chipsHost = document.getElementById('termChips');
+      var amtHost = document.getElementById('amtChips');
+      var cmpBad = document.getElementById('cmpBad');
+      var cmpWarn = document.getElementById('cmpWarn');
+      var cmpGood = document.getElementById('cmpGood');
+      var cmpSave = document.getElementById('cmpSave');
+      if (!sliderEl || !thumbEl || !progressEl) return;
+
+      var SLIDER_MIN = 1000, SLIDER_MAX = 30000, SLIDER_STEP = 500;
+      var TAXA = 0.0081;        /* 0,81% a.m. — taxa anunciada da CredFácil */
+      var TAXA_AGIOTA = 0.20;   /* 20% a.m. — juros de agiota (ilustrativo) */
+      var TAXA_CHEQUE = 0.08;   /* 8% a.m. — teto do cheque especial */
+      var PRAZO_CMP = 12;       /* a comparação usa 12 meses nos três casos */
+      var currentValue = 10000, currentTerm = 120, isDragging = false, tickTimer = null;
+
+      function formatCurrency(value){ return value.toLocaleString('pt-BR',{style:'currency',currency:'BRL',minimumFractionDigits:0,maximumFractionDigits:0}); }
+      function calculateInstallment(p,r,m){ return p*(r*Math.pow(1+r,m))/(Math.pow(1+r,m)-1); }
+      function snapToStep(v){ return Math.round(v/SLIDER_STEP)*SLIDER_STEP; }
+      function clamp(v,mi,ma){ return Math.max(mi,Math.min(ma,v)); }
+      function getValueFromPosition(x){ var rect=sliderEl.getBoundingClientRect(); var pct=(x-rect.left)/rect.width; return snapToStep(clamp(SLIDER_MIN+pct*(SLIDER_MAX-SLIDER_MIN),SLIDER_MIN,SLIDER_MAX)); }
+
+      function updateUI(){
+        var pct=((currentValue-SLIDER_MIN)/(SLIDER_MAX-SLIDER_MIN))*100; progressEl.style.width=pct+'%'; thumbEl.style.left=pct+'%';
+        var prev=loanAmountDisplay.textContent;
+        loanAmountDisplay.textContent=formatCurrency(currentValue);
+        if(prev!==loanAmountDisplay.textContent && !REDUCED){ loanAmountDisplay.classList.add('tick'); clearTimeout(tickTimer); tickTimer=setTimeout(function(){ loanAmountDisplay.classList.remove('tick'); },140); }
+
+        installmentsDisplay.textContent=currentTerm+'x '+formatCurrency(Math.round(calculateInstallment(currentValue,TAXA,currentTerm)));
+        if(stickyValue) stickyValue.textContent=formatCurrency(currentValue);
+
+        if(cmpBad && cmpWarn && cmpGood && cmpSave){
+          var totBad  = calculateInstallment(currentValue,TAXA_AGIOTA,PRAZO_CMP)*PRAZO_CMP;
+          var totWarn = calculateInstallment(currentValue,TAXA_CHEQUE,PRAZO_CMP)*PRAZO_CMP;
+          var totGood = calculateInstallment(currentValue,TAXA,PRAZO_CMP)*PRAZO_CMP;
+          cmpBad.textContent  = formatCurrency(Math.round(totBad));
+          cmpWarn.textContent = formatCurrency(Math.round(totWarn));
+          cmpGood.textContent = formatCurrency(Math.round(totGood));
+          cmpSave.textContent = formatCurrency(Math.round(totBad-totGood));
+        }
+
+        if(amtHost){
+          [].slice.call(amtHost.querySelectorAll('button')).forEach(function(x){
+            x.classList.toggle('on', parseInt(x.getAttribute('data-amt'),10) === currentValue);
+          });
+        }
+
+        try{
+          localStorage.setItem('selectedLoanAmount', currentValue);
+          localStorage.setItem('selectedTerm', currentTerm);
+        }catch(e){}
+      }
+
+      if(amtHost){
+        amtHost.addEventListener('click', function(e){
+          var b=e.target.closest('button[data-amt]');
+          if(!b) return;
+          currentValue=parseInt(b.getAttribute('data-amt'),10)||10000;
+          updateUI();
+        });
+      }
+
+      if(chipsHost){
+        chipsHost.addEventListener('click', function(e){
+          var b=e.target.closest('button[data-term]');
+          if(!b) return;
+          currentTerm=parseInt(b.getAttribute('data-term'),10)||120;
+          [].slice.call(chipsHost.querySelectorAll('button')).forEach(function(x){ x.classList.toggle('on', x===b); });
+          updateUI();
+        });
+      }
+
+      function startDrag(e){ e.preventDefault(); e.stopPropagation(); isDragging=true; thumbEl.classList.add('active'); }
+      function onMove(x){ if(!isDragging)return; currentValue=getValueFromPosition(x); updateUI(); }
+      function stopDrag(){ if(isDragging){ isDragging=false; thumbEl.classList.remove('active'); } }
+      function clickTrack(x){ isDragging=true; thumbEl.classList.add('active'); currentValue=getValueFromPosition(x); updateUI(); }
+
+      thumbEl.addEventListener('mousedown', startDrag);
+      document.addEventListener('mousemove', function(e){ if(!isDragging)return; e.preventDefault(); onMove(e.clientX); });
+      document.addEventListener('mouseup', stopDrag);
+      sliderEl.addEventListener('mousedown', function(e){ if(e.target===thumbEl||thumbEl.contains(e.target))return; e.preventDefault(); clickTrack(e.clientX); });
+      thumbEl.addEventListener('touchstart', function(e){ e.preventDefault(); e.stopPropagation(); isDragging=true; thumbEl.classList.add('active'); }, {passive:false});
+      sliderEl.addEventListener('touchstart', function(e){ if(e.target===thumbEl||thumbEl.contains(e.target))return; e.preventDefault(); e.stopPropagation(); clickTrack(e.touches[0].clientX); }, {passive:false});
+      document.addEventListener('touchmove', function(e){ if(!isDragging)return; e.preventDefault(); onMove(e.touches[0].clientX); }, {passive:false});
+      document.addEventListener('touchend', stopDrag);
+      document.addEventListener('touchcancel', stopDrag);
+      updateUI();
+    })();
+
+    /* vagas do dia + tempo restante */
+    (function(){
+      var elN=document.getElementById('vagasN'), elT=document.getElementById('vagasT'), elBar=document.getElementById('vagasBar');
+      if(!elN||!elT) return;
+      var TOTAL=80, RESTAM=13, MINUTOS=15;   /* ajuste aqui */
+
+      elN.textContent=RESTAM;
+      if(elBar) elBar.style.width=Math.round((RESTAM/TOTAL)*100)+'%';
+
+      var fim;
+      try{ fim=parseInt(sessionStorage.getItem('_ssFim'),10); }catch(e){}
+      if(!fim || isNaN(fim) || fim < Date.now()){
+        fim=Date.now()+MINUTOS*60*1000;
+        try{ sessionStorage.setItem('_ssFim', fim); }catch(e){}
+      }
+      function tick(){
+        var s=Math.max(0,Math.floor((fim-Date.now())/1000));
+        var m=Math.floor(s/60), r=s%60;
+        elT.textContent=(m<10?'0':'')+m+':'+(r<10?'0':'')+r;
+      }
+      tick();
+      setInterval(tick,1000);
+    })();
+
+    /* escolha de como receber */
+    (function(){
+      var grupo=document.getElementById('recvGroup'), saida=document.getElementById('recvEscolhido');
+      if(!grupo) return;
+      grupo.addEventListener('click', function(e){
+        var b=e.target.closest('button[data-recv]');
+        if(!b) return;
+        [].slice.call(grupo.querySelectorAll('button')).forEach(function(x){ x.classList.toggle('on', x===b); });
+        if(saida) saida.textContent=b.getAttribute('data-nome')||'Pix na hora';
+        try{ localStorage.setItem('formaRecebimento', b.getAttribute('data-recv')); }catch(err){}
+      });
+    })();
+
+    /* números da faixa sobem ao entrar na tela */
+    (function(){
+      var faixa=document.querySelector('.stats');
+      if(!faixa || REDUCED || !('IntersectionObserver' in window)) return;
+      var alvos=[].slice.call(faixa.querySelectorAll('b'));
+      var io=new IntersectionObserver(function(ents){
+        ents.forEach(function(en){
+          if(!en.isIntersecting) return;
+          io.unobserve(en.target);
+          alvos.forEach(function(b){
+            var txt=b.textContent, m=txt.match(/([\d.]+)/);
+            if(!m) return;
+            var alvo=parseFloat(m[1].replace('.','')), t0=null, DUR=1100;
+            function frame(t){
+              if(t0===null) t0=t;
+              var p=Math.min((t-t0)/DUR,1), e=1-Math.pow(1-p,4);
+              var v=Math.round(alvo*e);
+              b.textContent=txt.replace(m[1], v.toLocaleString('pt-BR'));
+              if(p<1) requestAnimationFrame(frame); else b.textContent=txt;
+            }
+            requestAnimationFrame(frame);
+          });
+        });
+      },{threshold:.4});
+      io.observe(faixa);
+    })();
+
+    /* barra fixa aparece depois que o simulador sai da tela */
+    (function(){
+      var bar=document.getElementById('stickyCta'), alvo=document.getElementById('simular');
+      if(!bar||!alvo) return;
+      function checa(){
+        var r=alvo.getBoundingClientRect();
+        var mostra = r.bottom < 40;
+        bar.classList.toggle('show', mostra);
+        document.body.classList.toggle('has-sticky', mostra);
+      }
+      window.addEventListener('scroll', checa, {passive:true});
+      window.addEventListener('resize', checa);
+      checa();
+    })();
+  </script>
+
+  <script defer="" src="beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516"
+    integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg=="
+    data-cf-beacon='{"version":"2024.11.0","token":"291788ee003a413395b0add202b81cef","r":1}'
+    crossorigin="anonymous"></script>
+  <script src="js/front-boost.js?v=2" defer></script>
+
+</body>
+
+</html>

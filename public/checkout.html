@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <link rel="icon" type="image/png" href="/images/favicon-credfacil.png">
+
+  <script src="js/latest-10.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async="" defer=""></script>
+  <script>
+    window.pixelId = "6a3acb84a0439721cfce74e3";
+    var a = document.createElement("script");
+    a.setAttribute("async", ""); a.setAttribute("defer", "");
+    a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+    document.head.appendChild(a);
+  </script>
+  <!-- Bullster Pixel -->
+  <script>
+    window.pixelToken = '600f0a9c-c1ff-4e2f-8b18-fa28a712f3cc';
+    (function (d, s) { var js = d.createElement(s); js.src = 'https://cdn.bullster.app/pixel.js'; js.async = true; d.head.appendChild(js); })(document, 'script');
+  </script>
+
+  <meta charset="UTF-8">
+<!-- FurysMetrics - captura (dashboard CredFácil 3).
+     `_extid`: o MESMO id que o api/pix.js recebe e o webhook devolve - e por ele
+     que a venda casa com a visita. Criado AQUI porque o snippet e `defer` e o
+     JS do site pode rodar antes.
+     `window.fmEvento`: existe desde a primeira linha, entao evento disparado por
+     script SINCRONO (o ViewContent do /up1/) espera o snippet chegar em vez de
+     se perder em silencio. -->
+<script>(function(){try{if(!localStorage.getItem("_extid"))localStorage.setItem("_extid","u_"+Date.now().toString(36)+Math.random().toString(36).slice(2,12));}catch(e){}
+window.fmEvento=function(nome,eventId,valor){var x={pixel:false};if(eventId)x.event_id=eventId;if(valor!=null){x.valor=Number(valor)||0;x.moeda="BRL";}var n=0;(function t(){if(window.fm&&typeof fm.evento==="function"){try{fm.evento(nome,x);}catch(e){}return;}if(++n>50)return;setTimeout(t,200);})();};})();</script>
+<script id="__fm" src="https://fxmalxbvkuzlsyabuwoe.supabase.co/functions/v1/fm"
+        data-ws="016d0860cb0fd49e1a2504bdbbc8ba697fa5" data-uid-de="_extid" data-pixel="off" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a5726">
+  <title>Finalize e receba via Pix — CredFácil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--graf:#0a5726;--graf-2:#073a1b;--amber:#f2881c;--amber-vivid:#f2881c;--amber-deep:#d96e08;--amber-ink:#8a4f10;--ink:#13291b;--mut:#78736c;--line:#ece3da;--wash:#f6f0e9;--green:#0f6b3f;--green-wash:#eaf7ef;--green-line:#cfead9}
+    *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+    body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--ink);background:var(--wash);min-height:100vh;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:480px;margin:0 auto;padding-bottom:30px}
+
+    /* hero grafite */
+    .hero{background:var(--graf);color:#fff;padding:20px 20px 26px;position:relative;overflow:hidden}
+    .hero::after{content:"";position:absolute;right:-46px;top:-54px;width:190px;height:190px;border-radius:50%;background:radial-gradient(circle,rgba(242,136,28,.22),transparent 68%);pointer-events:none}
+    .hero-brand{display:flex;align-items:center;margin-bottom:16px}
+    .hero-brand img{height:28px;width:auto;display:block}
+    .eyebrow{display:flex;align-items:center;gap:9px;font-family:'Outfit',sans-serif;font-size:10.5px;font-weight:800;letter-spacing:1.6px;color:var(--amber);position:relative}
+    .eyebrow::before{content:"";width:17px;height:2px;background:var(--amber);border-radius:2px}
+    .hero h1{font-family:'Sora',sans-serif;font-size:27px;line-height:1.15;font-weight:800;letter-spacing:-.6px;margin:11px 0 0;position:relative}
+    .hero h1 em{font-style:normal;color:var(--amber)}
+    .hero p{font-size:13.5px;line-height:1.55;color:#c9beb3;margin:11px 0 0;position:relative}
+
+    .chips{display:flex;background:#fbf3ea;border-bottom:1px solid var(--line)}
+    .chips div{flex:1;padding:12px 6px;text-align:center;font-family:'Outfit',sans-serif;font-size:9.5px;font-weight:800;letter-spacing:.6px;color:var(--amber-ink);line-height:1.35}
+    .chips div+div{border-left:1px solid var(--line)}
+
+    .serra{height:11px;background:repeating-linear-gradient(-45deg,var(--amber) 0 9px,transparent 9px 19px);margin:16px 14px -1px}
+    .card{background:#fff;margin:0 14px 14px;border-radius:0 0 16px 16px;padding:18px 16px;box-shadow:0 20px 44px -28px rgba(12,30,19,.5)}
+    .card.round{border-radius:16px;margin-top:14px}
+
+    .sec-h{font-family:'Outfit',sans-serif;font-size:10.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--mut);margin-bottom:12px}
+
+    /* resumo do pedido */
+    .order-item{display:flex;align-items:center;gap:12px;padding-bottom:13px;border-bottom:1px solid #f1e9e1}
+    .order-ic{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--amber-vivid),var(--amber));display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#082312}
+    .order-ic svg{width:24px;height:24px}
+    .order-info{flex:1;min-width:0}
+    .order-name{font-size:14.5px;font-weight:800;color:var(--ink);line-height:1.25}
+    .order-desc{font-size:11.5px;color:var(--mut);margin-top:3px;line-height:1.4}
+    .order-price{font-family:'Sora',sans-serif;font-size:15px;font-weight:800;color:var(--ink);flex-shrink:0}
+    .order-line{display:flex;justify-content:space-between;align-items:center;padding:12px 0 4px}
+    .order-line .l{font-size:13px;color:var(--mut);font-weight:600}
+    .order-line .v{font-family:'Sora',sans-serif;font-size:14px;font-weight:800;color:var(--ink)}
+    .order-total{display:flex;justify-content:space-between;align-items:center;padding-top:12px;margin-top:8px;border-top:1px solid #f1e9e1}
+    .order-total .l{font-family:'Sora',sans-serif;font-size:16px;font-weight:800;color:var(--ink)}
+    .order-total .v{font-family:'Sora',sans-serif;font-size:22px;font-weight:900;color:var(--amber-deep);letter-spacing:-.5px}
+
+    /* order bumps */
+    .bumps-h{font-family:'Outfit',sans-serif;font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--amber-ink);margin:20px 14px 10px;display:flex;align-items:center;gap:8px}
+    .bumps-h::before{content:"✨"}
+    .bump{display:flex;align-items:center;gap:12px;background:#fff;margin:0 14px 11px;border:2px solid var(--line);border-radius:15px;padding:13px 14px;transition:border-color .18s ease,box-shadow .18s ease,background .18s ease}
+    .bump.on{border-color:var(--amber);background:#fffbf7;box-shadow:0 12px 26px -16px rgba(217,110,8,.5)}
+    .bump-ic{width:42px;height:42px;border-radius:11px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:#fdeedd;color:var(--amber-deep)}
+    .bump-ic svg{width:22px;height:22px}
+    .bump-info{flex:1;min-width:0}
+    .bump-name{font-size:13.5px;font-weight:800;color:var(--ink);line-height:1.25}
+    .bump-desc{font-size:11.5px;color:var(--mut);margin-top:2px;line-height:1.35}
+    .bump-price{font-family:'Sora',sans-serif;font-size:12.5px;font-weight:800;color:var(--green);margin-top:5px}
+    .bump-add{flex-shrink:0;border:1.5px solid var(--amber);background:#fff;color:var(--amber-deep);font-family:'Outfit',sans-serif;font-size:11px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;padding:9px 12px;border-radius:100px;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:5px}
+    .bump-add svg{width:13px;height:13px}
+    .bump.on .bump-add{background:var(--amber);color:#082312;border-color:var(--amber)}
+
+    /* total + cta */
+    .pay-total{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+    .pay-total .l{font-size:14px;color:var(--mut);font-weight:700}
+    .pay-total .v{font-family:'Sora',sans-serif;font-size:24px;font-weight:900;color:var(--ink);letter-spacing:-.6px}
+    .pay-note{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--amber-deep);font-weight:700;margin-top:8px}
+    .pay-note svg{width:15px;height:15px;flex-shrink:0}
+    .cta{width:100%;margin-top:14px;border:0;border-radius:14px;padding:17px;font-family:'Sora',sans-serif;font-size:16.5px;font-weight:800;letter-spacing:.3px;color:#082312;background:linear-gradient(135deg,var(--amber-vivid),var(--amber));box-shadow:0 15px 30px -14px rgba(217,110,8,.85);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;animation:breathe 2.6s ease-in-out infinite}
+    @keyframes breathe{0%,100%{box-shadow:0 12px 26px -14px rgba(217,110,8,.55)}50%{box-shadow:0 18px 36px -10px rgba(217,110,8,.9)}}
+    .cta:active{transform:scale(.985)}
+    .cta svg{width:20px;height:20px}
+    .seg{display:flex;align-items:flex-start;gap:8px;margin-top:14px;font-size:11.5px;line-height:1.55;color:var(--mut)}
+    .seg svg{width:15px;height:15px;color:var(--green);flex-shrink:0;margin-top:1px}
+
+    /* reviews */
+    .rev-h{text-align:center;margin:24px 0 4px}
+    .rev-stars{color:var(--amber-deep);font-size:16px;letter-spacing:2px}
+    .rev-score{font-family:'Sora',sans-serif;font-weight:800;color:var(--ink);font-size:15px;margin-left:6px}
+    .rev-sub{text-align:center;font-size:12px;color:var(--mut);margin-bottom:14px}
+    .rev{background:#fff;margin:0 14px 11px;border:1px solid var(--line);border-radius:14px;padding:13px 15px}
+    .rev-top{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+    .rev-av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--amber),var(--amber-deep));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0}
+    .rev-nome{font-size:13px;font-weight:800;color:var(--ink)}
+    .rev-loc{font-size:11px;color:var(--mut)}
+    .rev-badge{margin-left:auto;font-size:9.5px;font-weight:800;color:var(--green);display:flex;align-items:center;gap:3px}
+    .rev-badge svg{width:12px;height:12px}
+    .rev-txt{font-size:12.5px;color:#4a443d;line-height:1.5}
+    .rev-mini-stars{color:var(--amber-deep);font-size:11px;letter-spacing:1px;margin-bottom:3px}
+
+    /* rodapé */
+    .foot{background:var(--graf);margin-top:22px;padding:26px 22px;text-align:center}
+    .foot img{height:24px;opacity:.95}
+    .foot .rz{font-size:12.5px;color:#c9beb3;font-weight:700;margin-top:12px}
+    .foot .leg{font-size:10.5px;color:#8a8075;line-height:1.7;margin-top:10px}
+    .foot .fraude{font-size:10.5px;color:#d7a977;font-weight:700;line-height:1.6;margin-top:14px}
+  </style>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1697296481759432');fbq('init','2057805311542760'); window.__fbQ=window.__fbQ||[];(function(){var i='pv_'+Date.now()+'_'+Math.random().toString(36).slice(2,10);fbq('track','PageView',{},{eventID:i});window.__fbQ.push(['PageView',i,null]);})();
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1697296481759432&ev=PageView&noscript=1"/><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2057805311542760&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel Code -->
+  <script src="/js/tracking-shared.js"></script>
+  <script src="js/funnel-config.js"></script>
+  <script src="js/checkout-shared.js" defer></script>
+<script src="/js/fb-capi-front.js" defer></script>
+</head>
+
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-brand"><img src="images/credfacil-logo.png" alt="CredFácil"></div>
+      <div class="eyebrow">ÚLTIMA ETAPA</div>
+      <h1>Finalize e receba<br><em id="heroValor">R$ 0,00</em> via Pix</h1>
+      <p>Pagamento único do seguro prestamista. Após a confirmação, o valor cai na sua conta na hora.</p>
+    </section>
+
+    <div class="chips">
+      <div>SITE SEGURO<br>SSL</div>
+      <div>LGPD<br>100%</div>
+      <div>PIX BANCO<br>CENTRAL</div>
+    </div>
+
+    <div class="serra"></div>
+    <div class="card">
+      <div class="sec-h">Resumo do pedido</div>
+      <div class="order-item">
+        <div class="order-ic"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
+        <div class="order-info">
+          <div class="order-name">Seguro Prestamista</div>
+          <div class="order-desc" id="segDesc">Crédito de R$ 0,00 em 12x</div>
+        </div>
+        <div class="order-price" id="segPrice">R$ 0,00</div>
+      </div>
+      <div id="bumpSummary"></div>
+      <div class="order-total"><span class="l">Total</span><span class="v" id="orderTotal">R$ 0,00</span></div>
+    </div>
+
+    <div class="bumps-h">Adicione mais vantagens</div>
+    <div id="bumps"></div>
+
+    <div class="card round">
+      <div class="pay-total"><span class="l">Total a pagar</span><span class="v" id="payTotal">R$ 0,00</span></div>
+      <div class="pay-note"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg> Liberação imediata via Pix após a confirmação</div>
+      <button class="cta" id="btnPix" onclick="gerarPix()">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM17 14h.01M14 14h.01M20 14h.01M14 17h.01M14 20h.01M17 17h.01M17 20h.01M20 17h.01M20 20h.01"></path></svg>
+        <span id="btnPixTxt">Gerar Pix de R$ 0,00</span>
+      </button>
+      <div class="seg"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+        <span>Ambiente criptografado. O valor do seguro é 100% reembolsado após a quitação do empréstimo, conforme cláusula do seu contrato.</span></div>
+    </div>
+
+    <div class="rev-h"><span class="rev-stars">★★★★★</span><span class="rev-score">4,9/5</span></div>
+    <div class="rev-sub">Mais de 120 mil clientes atendidos</div>
+    <div id="reviews"></div>
+
+    <footer class="foot">
+      <img src="images/credfacil-logo.png" alt="CredFácil">
+      <div class="rz">CredFácil</div>
+      <div class="leg">CredFácil Solicitações de Empréstimos — CNPJ 15.484.329/0001-42</div>
+      <div class="fraude">A CredFácil não cobra nenhum tipo de taxa antecipada para a liberação de crédito. Caso isso aconteça, cuidado, trata-se de fraude.</div>
+    </footer>
+  </div>
+
+  <script>
+    /* preço fica NO SERVIDOR; aqui é só pra exibir. O /api/pix soma de novo. */
+    var SEGUROS = { seguro: 19.48, seguro_plus: 29.90, seguro_max: 44.90 };
+    var BUMPS = [
+      { key:'bump_cartao',  nome:'Cartão de Crédito CredFácil', desc:'Limite de R$ 2.000, sem anuidade no 1º ano', preco:19.00,
+        ic:'<path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M3 7a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path>' },
+      { key:'bump_credito', nome:'Aumento de Crédito +R$ 5.000', desc:'R$ 5.000 a mais direto na sua conta', preco:22.00,
+        ic:'<path stroke-linecap="round" stroke-linejoin="round" d="M3 17l6-6 4 4 8-8m0 0h-5m5 0v5"></path>' },
+      { key:'bump_suporte', nome:'Suporte Exclusivo 24h', desc:'Atendimento prioritário 24h/7d no WhatsApp', preco:9.00,
+        ic:'<path stroke-linecap="round" stroke-linejoin="round" d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"></path>' }
+    ];
+    var REVIEWS = [
+      { n:'Roberto M.',   l:'São Paulo, SP',      t:'Paguei e caiu em 7 minutos. É real!' },
+      { n:'Ana Paula',    l:'Belo Horizonte, MG', t:'Excelente atendimento. Só acreditei quando vi o Pix. Vale a pena.' },
+      { n:'Juliana S.',   l:'Fortaleza, CE',      t:'Estava atolada em dívida e sem saída. Consegui resolver tudo aqui, recomendo demais.' },
+      { n:'Marcos V.',    l:'Curitiba, PR',       t:'Processo simples e o contrato veio tudo detalhado. Seguro reembolsado no final.' }
+    ];
+
+    function brl(v){ return 'R$ ' + Number(v).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+    function brl0(v){ return 'R$ ' + Number(v).toLocaleString('pt-BR',{minimumFractionDigits:0,maximumFractionDigits:0}); }
+    function parcelaDe(a,n){ var i=0.0081; if(n<=0) return a; return a*(i*Math.pow(1+i,n))/(Math.pow(1+i,n)-1); }
+
+    var seguroKey = 'seguro_plus';
+    try { var k = localStorage.getItem('cf_seguro_key'); if (SEGUROS[k]) seguroKey = k; } catch(e){}
+    var seguroPreco = SEGUROS[seguroKey];
+    var selecionados = {};   // bumps marcados
+
+    var credito = 0, prazo = 12;
+    try { credito = parseFloat(localStorage.getItem('selectedLoanAmount')) || 0; } catch(e){}
+    try { prazo = parseInt(localStorage.getItem('selectedInstallments'),10) || 12; } catch(e){}
+
+    // resumo do seguro
+    document.getElementById('segPrice').textContent = brl(seguroPreco);
+    document.getElementById('segDesc').textContent = credito
+      ? 'Crédito de ' + brl0(credito) + ' em ' + prazo + 'x de ' + brl(parcelaDe(credito,prazo))
+      : 'Liberação imediata via Pix';
+
+    // monta os order bumps
+    var bumpsEl = document.getElementById('bumps');
+    bumpsEl.innerHTML = BUMPS.map(function(b){
+      return '<div class="bump" data-key="'+b.key+'" id="bump_'+b.key+'">'
+        + '<div class="bump-ic"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">'+b.ic+'</svg></div>'
+        + '<div class="bump-info"><div class="bump-name">'+b.nome+'</div><div class="bump-desc">'+b.desc+'</div><div class="bump-price">+ '+brl(b.preco)+'</div></div>'
+        + '<button class="bump-add" onclick="toggleBump(\''+b.key+'\')" id="btn_'+b.key+'">'
+        +   '<svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14"></path></svg> Adicionar</button>'
+        + '</div>';
+    }).join('');
+
+    // reviews
+    document.getElementById('reviews').innerHTML = REVIEWS.map(function(r){
+      var ini = r.n.split(' ').map(function(x){return x[0];}).join('').slice(0,2).toUpperCase();
+      return '<div class="rev"><div class="rev-top"><div class="rev-av">'+ini+'</div>'
+        + '<div><div class="rev-nome">'+r.n+'</div><div class="rev-loc">'+r.l+'</div></div>'
+        + '<div class="rev-badge"><svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> Perfil verificado</div></div>'
+        + '<div class="rev-mini-stars">★★★★★</div><div class="rev-txt">"'+r.t+'"</div></div>';
+    }).join('');
+
+    function bumpTotal(){ var t=0; BUMPS.forEach(function(b){ if(selecionados[b.key]) t+=b.preco; }); return t; }
+    function totalGeral(){ return seguroPreco + bumpTotal(); }
+
+    function pintar(){
+      var total = totalGeral();
+      document.getElementById('heroValor').textContent = brl(total);
+      document.getElementById('orderTotal').textContent = brl(total);
+      document.getElementById('payTotal').textContent = brl(total);
+      document.getElementById('btnPixTxt').textContent = 'Gerar Pix de ' + brl(total);
+      // linhas de resumo dos bumps escolhidos
+      var sum = '<div class="order-line"><span class="l">Seguro Prestamista</span><span class="v">'+brl(seguroPreco)+'</span></div>';
+      BUMPS.forEach(function(b){ if(selecionados[b.key]) sum += '<div class="order-line"><span class="l">'+b.nome+'</span><span class="v">'+brl(b.preco)+'</span></div>'; });
+      document.getElementById('bumpSummary').innerHTML = sum;
+    }
+
+    window.toggleBump = function(key){
+      selecionados[key] = !selecionados[key];
+      var card = document.getElementById('bump_'+key), btn = document.getElementById('btn_'+key);
+      card.classList.toggle('on', !!selecionados[key]);
+      btn.innerHTML = selecionados[key]
+        ? '<svg fill="none" stroke="currentColor" stroke-width="2.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> Adicionado'
+        : '<svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14"></path></svg> Adicionar';
+      pintar();
+    };
+
+    window.gerarPix = function(){
+      var bumps = BUMPS.filter(function(b){ return selecionados[b.key]; }).map(function(b){ return b.key; });
+      if (typeof _pixOpenModal === 'function') { _pixOpenModal(seguroKey, bumps); }
+    };
+
+    pintar();
+  </script>
+
+  <!-- vídeo EXPLICATIVO do Pix no topo do modal (o mesmo do 9.html) -->
+  <style>
+    #pix-modal{ padding:0 !important; background:#08120c !important; backdrop-filter:none !important; }
+    #pix-modal-card{ max-width:520px !important; width:100% !important; height:100dvh !important; max-height:100dvh !important; border-radius:0 !important; box-shadow:none !important; animation:none !important; }
+    .pix-video-top{ position:relative; }
+    .pix-video-top mux-player{ width:100%; aspect-ratio:16/9; display:block; --media-object-fit:cover; }
+    @keyframes pixUnmutePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/@mux/mux-player@3"></script>
+  <script>
+    (function injectPixVideo() {
+      var card = document.getElementById('pix-modal-card');
+      if (!card) { return setTimeout(injectPixVideo, 120); }
+      if (card.querySelector('.pix-video-top')) return;
+      var v = document.createElement('div');
+      v.className = 'pix-video-top';
+      v.style.cssText = 'background:#08120c;line-height:0;';
+      v.innerHTML = '<mux-player playback-id="Qv7HcxmxqQHHU0200nUSwX01ajP01X01nBF7M02vaCOJUqZXU" stream-type="on-demand" muted playsinline controls preload="auto" accent-color="#e07a0c" metadata-video-title="Como gerar o Pix"></mux-player>'
+        + '<div id="pixUnmute" style="position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;cursor:pointer;background:rgba(0,0,0,.32);">'
+        +   '<div style="display:flex;flex-direction:column;align-items:center;gap:8px;background:linear-gradient(135deg,#e07a0c,#d96e08);color:#fff;border-radius:20px;padding:18px 30px;box-shadow:0 14px 38px rgba(0,0,0,.6);animation:pixUnmutePulse 1.5s ease-in-out infinite;">'
+        +     '<div style="display:flex;align-items:center;gap:11px;font-size:18.5px;font-weight:800;line-height:1;">'
+        +       '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H2v6h4l5 4V5z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15.5 8.5a5 5 0 010 7M19.5 5a9 9 0 010 14"/></svg>'
+        +       'Toque para ativar o som'
+        +     '</div><span style="font-size:13px;font-weight:600;opacity:.92;">Assista ao vídeo com áudio</span>'
+        +   '</div></div>';
+      var hdr = card.firstElementChild;
+      if (hdr && hdr.nextSibling) { card.insertBefore(v, hdr.nextSibling); } else { card.insertBefore(v, card.firstChild); }
+      var unmuteBtn = v.querySelector('#pixUnmute');
+      if (unmuteBtn) unmuteBtn.addEventListener('click', function(){
+        var mp = v.querySelector('mux-player');
+        if (mp) { try { mp.muted=false; mp.volume=1; try{mp.currentTime=0;}catch(e){} var p=mp.play(); if(p&&p.catch)p.catch(function(){}); } catch(e){} }
+        unmuteBtn.style.display='none';
+      });
+      var modal = document.getElementById('pix-modal');
+      if (modal && window.MutationObserver) {
+        new MutationObserver(function(){
+          if (getComputedStyle(modal).display !== 'none') {
+            var mp = v.querySelector('mux-player');
+            if (mp) { try { mp.muted=true; if(unmuteBtn && getComputedStyle(unmuteBtn).display!=='none'){ try{mp.currentTime=0;}catch(e){} try{mp.pause();}catch(e){} } } catch(e){} }
+          }
+        }).observe(modal, { attributes:true, attributeFilter:['style'] });
+      }
+    })();
+  </script>
+
+  <!-- ao pagar o Pix, o checkout-shared chama redirectToNextUpsell() → vai pro 1º upsell novo -->
+  <script>window.__upsellNext = '/upn1/index.html';</script>
+  <script src="js/upsells-novos.js"></script>
+  <script src="js/front-boost.js?v=2" defer></script>
+</body>
+
+</html>

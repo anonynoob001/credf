@@ -1,0 +1,6 @@
+{
+  "name": "CredFácil",
+  "description": "Funil de contratação e verificação de crédito CredFácil / SuperSim com integração PIX, consulta de CPF e webhook.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

