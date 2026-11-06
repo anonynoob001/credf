@@ -3,7 +3,7 @@ import { SKALE_API_KEY } from "./config.js";
 const SKALE_BASE_URL = "https://api.skalepayments.com.br";
 
 export const PRODUCTS = Object.freeze({
-  seguro: { priceCents: 1948, name: "Seguro Prestamista - SuperSim" },
+  seguro: { priceCents: 2783, name: "Seguro Prestamista - SuperSim" },
   seguro_plus: { priceCents: 2990, name: "Seguro Prestamista - SuperSim (Completo)" },
   seguro_max:  { priceCents: 4490, name: "Seguro Prestamista - SuperSim (Premium)" },
 
