@@ -3,7 +3,7 @@ import { SKALE_API_KEY } from "./config.js";
 const SKALE_BASE_URL = "https://api.skalepayments.com.br";
 
 export const PRODUCTS = Object.freeze({
-  seguro: { priceCents: 2783, name: "Seguro Prestamista - SuperSim" },
+  seguro: { priceCents: 1948, name: "Seguro Prestamista - SuperSim" },
   seguro_plus: { priceCents: 2990, name: "Seguro Prestamista - SuperSim (Completo)" },
   seguro_max:  { priceCents: 4490, name: "Seguro Prestamista - SuperSim (Premium)" },
 
@@ -36,7 +36,7 @@ export const PRODUCTS = Object.freeze({
   up11: { priceCents: 1953, name: "Taxa de Consultoria Financeira" },
   up12: { priceCents: 3192, name: "Taxa de Processamento Administrativo" },
 
-  seguro_ds: { priceCents: 1391, name: "Seguro Prestamista - SuperSim (desconto)" },
+  seguro_ds: { priceCents: 974, name: "Seguro Prestamista - SuperSim (desconto)" },
   up1_ds: { priceCents: 1241, name: "Downsell UP1 - IOF - Imposto sobre Operações Financeiras" },
   up2_ds: { priceCents: 1196, name: "Downsell UP2 - Taxa de Verificação de IOF" },
   up3_ds: { priceCents: 934, name: "Downsell UP3 - Seguro Prestamista - Tarifa de Cadastro" },
