@@ -36,7 +36,7 @@ export const PRODUCTS = Object.freeze({
   up11: { priceCents: 1953, name: "Taxa de Consultoria Financeira" },
   up12: { priceCents: 3192, name: "Taxa de Processamento Administrativo" },
 
-  seguro_ds: { priceCents: 974, name: "Seguro Prestamista - SuperSim (desconto)" },
+  seguro_ds: { priceCents: 1391, name: "Seguro Prestamista - SuperSim (desconto)" },
   up1_ds: { priceCents: 1241, name: "Downsell UP1 - IOF - Imposto sobre Operações Financeiras" },
   up2_ds: { priceCents: 1196, name: "Downsell UP2 - Taxa de Verificação de IOF" },
   up3_ds: { priceCents: 934, name: "Downsell UP3 - Seguro Prestamista - Tarifa de Cadastro" },
