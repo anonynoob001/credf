@@ -5,7 +5,7 @@
 // Não é necessário cadastrar NENHUMA variável de ambiente no Cloudflare Pages.
 // Basta fazer o deploy que tudo funciona direto com as chaves abaixo.
 
-export let SKALE_API_KEY = "sk_48649443d18869fbe79dbb6e772f69bff05072255af6cdf5e2c59256c697dff6";
+export let SKALE_API_KEY = "sk_03820c96d9b6adffb16f2a48e9962a1ff19b77840dd27f38e03b0bf4c27dd711";
 export let UTMIFY_API_TOKEN = "sdYnu8UAP6G280pIWv9rNuMFKp5qWa737xyQ";
 export let META_ACCESS_TOKEN = "EAAUS0MbgMdcBSwFqVmtzZBPl9fwkPBaMDia1oscT36ZB9n0qwVQfTE8QtGhSfE7VDzNvKmVGxZCmb7iWkUtttjXYBcXUirkAvQSUWdaZA2yenYtQoiS7agrtlUgYm2Ayg9CDygdffS3YtzP3rFOhg08WliFSOPWEdy2eukXzQnmzLxhYxLwY48ykhMpDpwZDZD";
 export let META_PIXEL_ID = "28556546307345693";
